@@ -12,7 +12,7 @@ import html
 # ==================================================
 CSV_DIR = Path("logs_report")
 KEEP_SEVERITY = {"WARNING", "ERROR"}
-WRAP_CHARS = 80  # number of chars before inserting a line break in Description
+WRAP_CHARS = 80  # Wrap text in Description column every 80 chars
 
 # ==================================================
 # HTML WRITER
@@ -46,7 +46,6 @@ def write_summary_html(html_path, fieldnames, rows):
             for h in fieldnames:
                 val = row.get(h, "")
                 if h == "Description":
-                    # wrap text inside HTML pre
                     f.write("<td><pre>{}</pre></td>".format(html.escape(val)))
                 else:
                     f.write("<td>{}</td>".format(html.escape(val)))
@@ -105,4 +104,20 @@ for csv_path in csv_files:
     # --------------------------------------------------
     # Write summary CSV (Windows Excel compatible)
     # --------------------------------------------------
+    summary_csv = csv_path.with_name(csv_path.stem + "_summary.csv")
+    with open(summary_csv, "w", newline="\r\n", encoding="utf-8-sig") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        for r in rows:
+            writer.writerow(r)
+    print("  → Summary CSV written:", summary_csv)
+
+    # --------------------------------------------------
+    # Write summary HTML
+    # --------------------------------------------------
+    summary_html = csv_path.with_name(csv_path.stem + "_summary.html")
+    write_summary_html(summary_html, fieldnames, rows)
+    print("  → Summary HTML written:", summary_html)
+
+print("\nDONE: CSV + HTML summary generated (Excel compatible)")
 
