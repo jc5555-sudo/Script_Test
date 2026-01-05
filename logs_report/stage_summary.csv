@@ -1,0 +1,47 @@
+Code,Severity,Description,User Severity,rpt msg,solution
+CHF-011,Warning,"NAME
+       CHF-011 (Warning) filler ref cell %s not marked filler type.
+
+DESCRIPTION
+       You  received  this warning message because your filler ref cell is not
+       marked filler type.
+
+WHAT NEXT
+       Please check your filler ref cell type.",,Warning: filler ref cell DCAP_HVT not marked filler type. (CHF-011) (MSG-3032),
+CHF-014,Warning,"NAME
+       CHF-014 (Warning) option -continue_on_error turned on automatically.
+
+DESCRIPTION
+       You  receive  this  warning  message  because you did not specify -con-
+       tinue_on_error and  -rules  {  no_1x},  and  doesn't  provide  size  1x
+       fillers.  Tool therefore turn on -continue_on_error automatically so it
+       will skip unfillable 1x gaps and continue to fill the  rest.  This  may
+       lead to unfillable gaps.
+
+WHAT NEXT
+       Please include fillers of all needed sizes",,Warning: option -continue_on_error turned on automatically. (CHF-014) (MSG-3032),
+CHF-073,Warning,"NAME
+       CHF-073 (Warning) Smallest filler provided is greater than specified in
+       option place.rules.min_vt_filler_size
+
+DESCRIPTION
+       The smallest fillers specified in  ""create_stdcell_fillers  -lib_cells""
+       is     larger    than    what    is    specified    in    app    option
+       place.rules.min_vt_filler_size. This may cause unfillable gaps.
+
+WHAT NEXT
+       Please  include  missing   size   fillers   in   create_stdcell_fillers
+       -lib_cells.",,Warning: Smallest filler provided is greater than specified in option place.rules.min_vt_filler_size (CHF-073) (MSG-3032),
+ZRT-825,Warning,"NAME
+       ZRT-825  (Warning)  Pin or route connects to PG user_route (%.3f, %.3f,
+       %.3f, %.3f) on layer (%s) is considered  as  tied.  Would  not  further
+       check or build connectivity to tie to other PG pre-routes.
+
+DESCRIPTION
+       This  warning  is issued for possible incorrect usage of PG user_route.
+       In router, pins or routes connect to PG user_routes are treated as con-
+       nected  to  pre-routes. Router will not take them as opens or floatings
+       which need further tie off connections.
+
+WHAT NEXT
+       Set the user_route to other shape_use if necessary.",,"Pin or route connects to PG user_route (%.3f, %.3f, %.3f, %.3f) on layer (%s) is considered as tied. Would not further check or build connectivity to tie to other PG pre-routes.\n (MSG-3032)",

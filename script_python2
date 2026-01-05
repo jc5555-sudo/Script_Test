@@ -1,0 +1,178 @@
+#!/usr/bin/env python3
+# Python 3.6 compatible
+# Enrich ALL CSV files using Fusion Compiler man pages
+# Clean FC headers/footers/prompts
+# Regenerate HTML from enriched CSV
+
+import csv
+import subprocess
+import re
+import shutil
+from pathlib import Path
+import html
+
+# ------------------------------------------------------------
+# CONFIG
+# ------------------------------------------------------------
+CSV_DIR = Path("logs_report")   # <-- FIXED HERE
+
+# ------------------------------------------------------------
+# Clean MAN text: keep only NAME / DESCRIPTION / WHAT NEXT
+# ------------------------------------------------------------
+def clean_man_text(text):
+    lines = text.splitlines()
+    cleaned = []
+    recording = False
+
+    for line in lines:
+        line = line.rstrip()
+
+        if line.strip().startswith("fc_shell>"):
+            continue
+
+        if line.strip() == "NAME":
+            recording = True
+
+        if line.strip().startswith("Version "):
+            break
+
+        if recording:
+            cleaned.append(line)
+
+    return "\n".join(cleaned).strip()
+
+
+def run_fc_man(codes):
+    tcl_lines = []
+    for c in codes:
+        tcl_lines.append('puts "<<<CODE:{}>>>"'.format(c))
+        tcl_lines.append('man {}'.format(c))
+        tcl_lines.append('puts "<<<END>>>"')
+
+    tcl_script = "\n".join(tcl_lines) + "\nexit\n"
+
+    try:
+        cmd = "echo '{}' | fc_shell -no_init -no_local_init".format(
+            tcl_script.replace("'", "'\\''")
+        )
+        output = subprocess.check_output(
+            cmd,
+            shell=True,
+            stderr=subprocess.STDOUT,
+            universal_newlines=True
+        )
+    except subprocess.CalledProcessError as e:
+        print("ERROR: Fusion Compiler failed")
+        print(e.output)
+        return {}
+
+    man_db = {}
+    blocks = re.findall(
+        r'<<<CODE:(.*?)>>>(.*?)<<<END>>>',
+        output,
+        re.S
+    )
+
+    for code, body in blocks:
+        man_db[code.strip()] = clean_man_text(body)
+
+    return man_db
+
+
+def write_html(csv_path, fieldnames, rows):
+    html_path = csv_path.with_suffix(".html")
+
+    with open(html_path, "w") as f:
+        f.write("<html><head><meta charset='UTF-8'>\n")
+        f.write("<title>{}</title>\n".format(csv_path.name))
+        f.write("<style>\n")
+        f.write("body { font-family: Arial, sans-serif; }\n")
+        f.write("table { border-collapse: collapse; width: 100%; }\n")
+        f.write("th, td { border: 1px solid #888; padding: 6px; vertical-align: top; }\n")
+        f.write("th { background-color: #f0f0f0; }\n")
+        f.write("pre { white-space: pre-wrap; max-height: 320px; overflow-y: auto; }\n")
+        f.write("</style></head><body>\n")
+
+        f.write("<h2>{}</h2>\n".format(html.escape(csv_path.name)))
+        f.write("<table>\n<tr>")
+
+        for h in fieldnames:
+            f.write("<th>{}</th>".format(html.escape(h)))
+        f.write("</tr>\n")
+
+        for row in rows:
+            f.write("<tr>")
+            for h in fieldnames:
+                val = row.get(h, "")
+                if h == "Description":
+                    f.write("<td><pre>{}</pre></td>".format(html.escape(val)))
+                else:
+                    f.write("<td>{}</td>".format(html.escape(val)))
+            f.write("</tr>\n")
+
+        f.write("</table>\n</body></html>")
+
+    print("  → HTML written:", html_path)
+
+
+# ------------------------------------------------------------
+# Main flow
+# ------------------------------------------------------------
+for csv_path in CSV_DIR.glob("*.csv"):
+
+    if csv_path.name.endswith(".bak"):
+        continue
+
+    print("\nProcessing:", csv_path)
+
+    with open(csv_path, newline="") as f:
+        reader = csv.DictReader(f)
+        fieldnames = reader.fieldnames
+
+        if not fieldnames:
+            print("  → SKIPPED (empty CSV)")
+            continue
+
+        if "Code" not in fieldnames or "Description" not in fieldnames:
+            print("  → SKIPPED (missing Code / Description)")
+            continue
+
+        rows = list(reader)
+
+    codes = sorted({
+        row["Code"].strip()
+        for row in rows
+        if row.get("Code") and row["Code"].strip()
+    })
+
+    if not codes:
+        print("  → No codes found")
+        continue
+
+    print("  → Running fc_shell for {} codes".format(len(codes)))
+    man_db = run_fc_man(codes)
+
+    backup = csv_path.with_suffix(csv_path.suffix + ".bak")
+    shutil.copyfile(csv_path, backup)
+    print("  → Backup created:", backup)
+
+    with open(csv_path, "w", newline="") as f:
+        writer = csv.DictWriter(
+            f,
+            fieldnames=fieldnames,
+            quoting=csv.QUOTE_ALL
+        )
+        writer.writeheader()
+
+        for row in rows:
+            code = row["Code"].strip()
+            if code in man_db:
+                row["Description"] = man_db[code]
+            writer.writerow(row)
+
+    print("  → CSV updated:", csv_path)
+
+    write_html(csv_path, fieldnames, rows)
+
+print("\nDONE.")
+

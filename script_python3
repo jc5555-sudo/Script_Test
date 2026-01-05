@@ -1,0 +1,114 @@
+#!/usr/bin/env python3
+# Python 3.6 compatible
+# Generate WARNING / ERROR summary CSV + HTML (exclude INFO)
+
+import csv
+from pathlib import Path
+import html
+
+# ==================================================
+# CONFIG
+# ==================================================
+CSV_DIR = Path("logs_report")
+KEEP_SEVERITY = {"WARNING", "ERROR"}
+
+# ==================================================
+# HTML WRITER
+# ==================================================
+def write_summary_html(html_path, fieldnames, rows):
+    with open(html_path, "w") as f:
+        f.write("<html><head><meta charset='UTF-8'>\n")
+        f.write("<title>{}</title>\n".format(html.escape(html_path.name)))
+        f.write("<style>\n")
+        f.write("body { font-family: Arial, sans-serif; }\n")
+        f.write("table { border-collapse: collapse; width: 100%; }\n")
+        f.write("th, td { border: 1px solid #888; padding: 6px; vertical-align: top; }\n")
+        f.write("th { background-color: #f0f0f0; }\n")
+        f.write(".WARNING { background-color: #fff6cc; }\n")
+        f.write(".ERROR { background-color: #ffd6d6; }\n")
+        f.write("pre { white-space: pre-wrap; max-height: 320px; overflow-y: auto; }\n")
+        f.write("</style></head><body>\n")
+
+        f.write("<h2>{}</h2>\n".format(html.escape(html_path.name)))
+        f.write("<table>\n<tr>")
+
+        # Header
+        for h in fieldnames:
+            f.write("<th>{}</th>".format(html.escape(h)))
+        f.write("</tr>\n")
+
+        # Rows
+        for row in rows:
+            sev = row.get("Severity", "").upper()
+            f.write("<tr class='{}'>".format(sev))
+
+            for h in fieldnames:
+                val = row.get(h, "")
+                if h == "Description":
+                    f.write("<td><pre>{}</pre></td>".format(html.escape(val)))
+                else:
+                    f.write("<td>{}</td>".format(html.escape(val)))
+
+            f.write("</tr>\n")
+
+        f.write("</table></body></html>")
+
+# ==================================================
+# MAIN
+# ==================================================
+if not CSV_DIR.is_dir():
+    print("ERROR: logs_report directory not found")
+    exit(1)
+
+csv_files = sorted(CSV_DIR.glob("*.csv"))
+
+if not csv_files:
+    print("No CSV files found")
+    exit(0)
+
+for csv_path in csv_files:
+    if csv_path.name.endswith(".bak"):
+        continue
+    if csv_path.name.endswith("_summary.csv"):
+        continue
+
+    print("\nProcessing:", csv_path.name)
+
+    with open(csv_path, newline="") as f:
+        reader = csv.DictReader(f)
+        fieldnames = reader.fieldnames
+
+        if not fieldnames or "Severity" not in fieldnames:
+            print("  → SKIPPED (no Severity column)")
+            continue
+
+        rows = [
+            r for r in reader
+            if r.get("Severity", "").upper() in KEEP_SEVERITY
+        ]
+
+    if not rows:
+        print("  → No WARNING / ERROR found")
+        continue
+
+    # --------------------------------------------------
+    # Write summary CSV
+    # --------------------------------------------------
+    summary_csv = csv_path.with_name(csv_path.stem + "_summary.csv")
+    with open(summary_csv, "w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        for r in rows:
+            writer.writerow(r)
+
+    print("  → Summary CSV written:", summary_csv)
+
+    # --------------------------------------------------
+    # Write summary HTML
+    # --------------------------------------------------
+    summary_html = csv_path.with_name(csv_path.stem + "_summary.html")
+    write_summary_html(summary_html, fieldnames, rows)
+
+    print("  → Summary HTML written:", summary_html)
+
+print("\nDONE: CSV + HTML summary generated")

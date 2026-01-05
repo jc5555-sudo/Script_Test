@@ -1,0 +1,71 @@
+<html><head><meta charset='UTF-8'>
+<title>stage.csv</title>
+<style>
+body { font-family: Arial, sans-serif; }
+table { border-collapse: collapse; width: 100%; }
+th, td { border: 1px solid #888; padding: 6px; vertical-align: top; }
+th { background-color: #f0f0f0; }
+pre { white-space: pre-wrap; max-height: 320px; overflow-y: auto; }
+</style></head><body>
+<h2>stage.csv</h2>
+<table>
+<tr><th>Code</th><th>Severity</th><th>Description</th><th>User Severity</th><th>rpt msg</th><th>solution</th></tr>
+<tr><td>ATTR-11</td><td>Info</td><td><pre>NAME
+       ATTR-11 (information) The returned value for %s &#x27;%s&#x27; is the design spe-
+       cific attribute override defined within the current block &#x27;%s&#x27;.
+
+DESCRIPTION
+       This command returned the design specific attribute value from the cur-
+       rent  block,  instead  of the actual value from the library. Within the
+       block, the design specific attribute value overrides the library value.
+       It was set previously by the set_attribute command,
+         because library settings may not be overwritten. This override may
+         be removed by the remove_attributes command.</pre></td><td></td><td>Information: The returned value for lib_cell &#x27;saed32rvt_tt_v125c:NBUFFX8_RVT.timing&#x27; is the design specific attribute override defined within the current block &#x27;bit_coin&#x27;. (ATTR-11) (MSG-3032)</td><td></td></tr>
+<tr><td>CHF-011</td><td>Warning</td><td><pre>NAME
+       CHF-011 (Warning) filler ref cell %s not marked filler type.
+
+DESCRIPTION
+       You  received  this warning message because your filler ref cell is not
+       marked filler type.
+
+WHAT NEXT
+       Please check your filler ref cell type.</pre></td><td></td><td>Warning: filler ref cell DCAP_HVT not marked filler type. (CHF-011) (MSG-3032)</td><td></td></tr>
+<tr><td>CHF-014</td><td>Warning</td><td><pre>NAME
+       CHF-014 (Warning) option -continue_on_error turned on automatically.
+
+DESCRIPTION
+       You  receive  this  warning  message  because you did not specify -con-
+       tinue_on_error and  -rules  {  no_1x},  and  doesn&#x27;t  provide  size  1x
+       fillers.  Tool therefore turn on -continue_on_error automatically so it
+       will skip unfillable 1x gaps and continue to fill the  rest.  This  may
+       lead to unfillable gaps.
+
+WHAT NEXT
+       Please include fillers of all needed sizes</pre></td><td></td><td>Warning: option -continue_on_error turned on automatically. (CHF-014) (MSG-3032)</td><td></td></tr>
+<tr><td>CHF-073</td><td>Warning</td><td><pre>NAME
+       CHF-073 (Warning) Smallest filler provided is greater than specified in
+       option place.rules.min_vt_filler_size
+
+DESCRIPTION
+       The smallest fillers specified in  &quot;create_stdcell_fillers  -lib_cells&quot;
+       is     larger    than    what    is    specified    in    app    option
+       place.rules.min_vt_filler_size. This may cause unfillable gaps.
+
+WHAT NEXT
+       Please  include  missing   size   fillers   in   create_stdcell_fillers
+       -lib_cells.</pre></td><td></td><td>Warning: Smallest filler provided is greater than specified in option place.rules.min_vt_filler_size (CHF-073) (MSG-3032)</td><td></td></tr>
+<tr><td>ZRT-825</td><td>Warning</td><td><pre>NAME
+       ZRT-825  (Warning)  Pin or route connects to PG user_route (%.3f, %.3f,
+       %.3f, %.3f) on layer (%s) is considered  as  tied.  Would  not  further
+       check or build connectivity to tie to other PG pre-routes.
+
+DESCRIPTION
+       This  warning  is issued for possible incorrect usage of PG user_route.
+       In router, pins or routes connect to PG user_routes are treated as con-
+       nected  to  pre-routes. Router will not take them as opens or floatings
+       which need further tie off connections.
+
+WHAT NEXT
+       Set the user_route to other shape_use if necessary.</pre></td><td></td><td>Pin or route connects to PG user_route (%.3f, %.3f, %.3f, %.3f) on layer (%s) is considered as tied. Would not further check or build connectivity to tie to other PG pre-routes.\n (MSG-3032)</td><td></td></tr>
+</table>
+</body></html>

@@ -1,0 +1,6 @@
+Code,Severity,Description,User Severity,rpt msg,solution
+ATTR-11,Info,,,Information: The returned value for lib_cell 'saed32rvt_tt_v125c:NBUFFX8_RVT.timing' is the design specific attribute override defined within the current block 'bit_coin'. (ATTR-11) (MSG-3032),
+CHF-011,Warning,,,Warning: filler ref cell DCAP_HVT not marked filler type. (CHF-011) (MSG-3032),
+CHF-014,Warning,,,Warning: option -continue_on_error turned on automatically. (CHF-014) (MSG-3032),
+CHF-073,Warning,,,Warning: Smallest filler provided is greater than specified in option place.rules.min_vt_filler_size (CHF-073) (MSG-3032),
+ZRT-825,Warning,,,"Pin or route connects to PG user_route (%.3f, %.3f, %.3f, %.3f) on layer (%s) is considered as tied. Would not further check or build connectivity to tie to other PG pre-routes.\n (MSG-3032)",
