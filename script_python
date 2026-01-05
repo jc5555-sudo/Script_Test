@@ -1,108 +1,102 @@
 #!/usr/bin/env python3
+# Python 3.6 compatible
+# Enrich CSV Description using Fusion Compiler man pages
+# GLOBAL execution directory aware
 
-import os
 import csv
+import subprocess
 import re
-import glob
 import sys
+from pathlib import Path
+import html
 
 # ==================================================
-# CONFIGURATION
+# PATH RESOLUTION (GLOBAL TOOL BEHAVIOR)
 # ==================================================
-DEFAULT_LOG_PATTERN = '/home/inf25/work/fc_script/test4/logs_fc/*.log'
-
-# Allow user to override input path
-LOG_PATTERN = sys.argv[1] if len(sys.argv) > 1 else DEFAULT_LOG_PATTERN
-
-# Output is ALWAYS at execution path
-OUTPUT_DIR = os.path.join(os.getcwd(), 'logs_report')
-
-HEADER = ['Code', 'Severity', 'Description', 'User Severity', 'rpt msg', 'solution']
+BASE_DIR = Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else Path.cwd()
+CSV_DIR  = BASE_DIR / "logs_report"
+CSV_DIR.mkdir(parents=True, exist_ok=True)
 
 # ==================================================
-# SETUP
+# MAN PAGE CLEANER
 # ==================================================
-os.makedirs(OUTPUT_DIR, exist_ok=True)
+def clean_man_text(text):
+    lines = text.splitlines()
+    cleaned = []
+    recording = False
 
-log_files = sorted(glob.glob(LOG_PATTERN))
+    for line in lines:
+        line = line.rstrip()
 
-if not log_files:
-    print(f"ERROR: No .log files found for pattern:\n  {LOG_PATTERN}")
-    sys.exit(1)
+        if line.strip().startswith("fc_shell>"):
+            continue
+        if line.strip() == "NAME":
+            recording = True
+        if line.strip().startswith("Version "):
+            break
+        if recording:
+            cleaned.append(line)
 
-print(f"Found {len(log_files)} log file(s)")
-print(f"Writing reports to: {OUTPUT_DIR}")
+    return "\n".join(cleaned).strip()
 
-# ==================================================
-# PARSER
-# ==================================================
-def parse_log_file(log_file):
-    rows = []
+def run_fc_man(codes):
+    tcl = []
+    for c in codes:
+        tcl.append(f'puts "<<<CODE:{c}>>>"')
+        tcl.append(f'man {c}')
+        tcl.append('puts "<<<END>>>"')
+    tcl.append("exit")
 
     try:
-        with open(log_file, 'r', errors='ignore') as f:
-            for line in f:
-                line = line.strip()
-                if line.startswith("Information:"):
-                    m = re.search(r'(\w+-\d+)\s+(INFO|WARNING|ERROR)\s+(.*)', line)
-                    if m:
-                        rows.append([
-                            m.group(1),
-                            m.group(2).capitalize(),
-                            '',
-                            '',
-                            m.group(3).strip(),
-                            ''
-                        ])
-    except IOError as e:
-        print(f"WARNING: Failed to read {log_file}: {e}")
+        output = subprocess.check_output(
+            "echo '{}' | fc_shell -no_init -no_local_init".format(
+                "\n".join(tcl).replace("'", "'\\''")
+            ),
+            shell=True,
+            stderr=subprocess.STDOUT,
+            universal_newlines=True
+        )
+    except subprocess.CalledProcessError as e:
+        print("FC ERROR")
+        print(e.output)
+        return {}
 
-    return rows
+    man_db = {}
+    for code, body in re.findall(r'<<<CODE:(.*?)>>>(.*?)<<<END>>>', output, re.S):
+        man_db[code.strip()] = clean_man_text(body)
 
+    return man_db
 
 # ==================================================
-# WRITERS
+# HTML GENERATION
 # ==================================================
-def write_csv(path, rows):
-    with open(path, 'w', newline='') as f:
-        writer = csv.writer(f)
-        writer.writerow(HEADER)
-        writer.writerows(rows)
+def write_html(csv_path, fields, rows):
+    html_path = csv_path.with_suffix(".html")
+    with open(html_path, "w", encoding="utf-8") as f:
+        f.write("<html><body><table border='1'>\n<tr>")
+        for h in fields:
+            f.write(f"<th>{html.escape(h)}</th>")
+        f.write("</tr>\n")
 
-
-def write_html(path, rows, title):
-    with open(path, 'w') as f:
-        f.write('<html><head><meta charset="UTF-8">')
-        f.write(f'<title>{title}</title>')
-        f.write('</head><body>')
-        f.write(f'<h2>{title}</h2>')
-        f.write('<table border="1" cellpadding="4" cellspacing="0">')
-        f.write('<tr>' + ''.join(f'<th>{h}</th>' for h in HEADER) + '</tr>')
-
-        for row in rows:
-            f.write('<tr>' + ''.join(f'<td>{c}</td>' for c in row) + '</tr>')
-
-        f.write('</table></body></html>')
-
+        for r in rows:
+            f.write("<tr>")
+            for h in fields:
+                val = r.get(h, "")
+                if h == "Description":
+                    f.write(f"<td><pre>{html.escape(val)}</pre></td>")
+                else:
+                    f.write(f"<td>{html.escape(val)}</td>")
+            f.write("</tr>\n")
+        f.write("</table></body></html>")
 
 # ==================================================
 # MAIN
 # ==================================================
-for log_path in log_files:
-    filename = os.path.basename(log_path)
-    base = os.path.splitext(filename)[0]
+if not CSV_DIR.is_dir():
+    print("ERROR: logs_report not found in", BASE_DIR)
+    exit(1)
 
-    print(f"\nProcessing: {log_path}")
+for csv_path in CSV_DIR.glob("*.csv"):
+    with open(csv_path, newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
 
-    rows = parse_log_file(log_path)
-
-    csv_path = os.path.join(OUTPUT_DIR, base + '.csv')
-    html_path = os.path.join(OUTPUT_DIR, base + '.html')
-
-    write_csv(csv_path, rows)
-    write_html(html_path, rows, title=f"Log Report - {filename}")
-
-    print(f"  → {base}.csv ({len(rows)} rows)")
-    print(f"  → {base}.html")
-
-print("\n✔ All log files processed successfully")

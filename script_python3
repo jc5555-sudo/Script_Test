@@ -1,123 +1,79 @@
 #!/usr/bin/env python3
-# Python 3.6+
-# Generate WARNING / ERROR summary CSV + HTML
-# CSV is Windows Excel compatible with wrapped text
+# Python 3.6 compatible
+# Excel-compatible .xls (HTML-based)
+# HARD-CODE placeholders
+# GLOBAL execution directory aware
 
 import csv
+import sys
 from pathlib import Path
 import html
 
-# ==================================================
-# CONFIG
-# ==================================================
-CSV_DIR = Path("logs_report")
-KEEP_SEVERITY = {"WARNING", "ERROR"}
-WRAP_CHARS = 80  # Wrap text in Description column every 80 chars
+BASE_DIR = Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else Path.cwd()
+CSV_DIR  = BASE_DIR / "logs_report"
+CSV_DIR.mkdir(parents=True, exist_ok=True)
 
-# ==================================================
-# HTML WRITER
-# ==================================================
-def write_summary_html(html_path, fieldnames, rows):
-    with open(html_path, "w", encoding="utf-8") as f:
-        f.write("<html><head><meta charset='UTF-8'>\n")
-        f.write("<title>{}</title>\n".format(html.escape(html_path.name)))
-        f.write("<style>\n")
-        f.write("body { font-family: Arial, sans-serif; }\n")
-        f.write("table { border-collapse: collapse; width: 100%; }\n")
-        f.write("th, td { border: 1px solid #888; padding: 6px; vertical-align: top; }\n")
-        f.write("th { background-color: #f0f0f0; }\n")
-        f.write(".WARNING { background-color: #fff6cc; }\n")
-        f.write(".ERROR { background-color: #ffd6d6; }\n")
-        f.write("pre { white-space: pre-wrap; max-height: 320px; overflow-y: auto; }\n")
-        f.write("</style></head><body>\n")
+KEEP = {"WARNING", "ERROR"}
+USER_SEV = "[fill in severity]"
+SOLUTION = "[fill in solution]"
 
-        f.write("<h2>{}</h2>\n".format(html.escape(html_path.name)))
-        f.write("<table>\n<tr>")
-
-        # Header
-        for h in fieldnames:
-            f.write("<th>{}</th>".format(html.escape(h)))
+def write_xls(path, fields, rows):
+    with open(path, "w", encoding="utf-8") as f:
+        f.write("""<html><head><style>
+table { border-collapse: collapse; width: 100%; table-layout: fixed; }
+th, td { border: 1px solid black; padding: 6px; vertical-align: top; }
+th { background: #eee; }
+.ERROR { background: #ffd6d6; }
+.WARNING { background: #fff6cc; }
+</style></head><body><table><tr>
+""")
+        for h in fields:
+            f.write(f"<th>{html.escape(h)}</th>")
         f.write("</tr>\n")
 
-        # Rows
-        for row in rows:
-            sev = row.get("Severity", "").upper()
-            f.write("<tr class='{}'>".format(sev))
-            for h in fieldnames:
-                val = row.get(h, "")
+        for r in rows:
+            sev = r.get("Severity","").upper()
+            f.write(f"<tr class='{sev}'>")
+            for h in fields:
+                val = r.get(h,"")
                 if h == "Description":
-                    f.write("<td><pre>{}</pre></td>".format(html.escape(val)))
+                    f.write(f"<td><pre>{html.escape(val)}</pre></td>")
                 else:
-                    f.write("<td>{}</td>".format(html.escape(val)))
+                    f.write(f"<td>{html.escape(val)}</td>")
             f.write("</tr>\n")
 
         f.write("</table></body></html>")
 
-# ==================================================
-# CSV WRAPPER FUNCTION FOR WINDOWS EXCEL
-# ==================================================
-def wrap_text(text, width):
-    """Insert line breaks every `width` chars"""
-    if not text:
-        return ""
-    return "\n".join(text[i:i+width] for i in range(0, len(text), width))
-
-# ==================================================
-# MAIN
-# ==================================================
 if not CSV_DIR.is_dir():
-    print("ERROR: logs_report directory not found")
+    print("ERROR: logs_report not found in", BASE_DIR)
     exit(1)
 
-csv_files = sorted(CSV_DIR.glob("*.csv"))
-if not csv_files:
-    print("No CSV files found")
-    exit(0)
-
-for csv_path in csv_files:
-    if csv_path.name.endswith(".bak") or csv_path.name.endswith("_summary.csv"):
+for csv_path in CSV_DIR.glob("*.csv"):
+    if csv_path.name.endswith("_summary.csv"):
         continue
 
-    print("\nProcessing:", csv_path.name)
-
-    # Read CSV
     with open(csv_path, newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
-        fieldnames = reader.fieldnames
-        if not fieldnames or "Severity" not in fieldnames:
-            print("  → SKIPPED (no Severity column)")
+        fields = reader.fieldnames
+        if not fields or "Severity" not in fields:
             continue
-        rows = [
-            r for r in reader
-            if r.get("Severity", "").upper() in KEEP_SEVERITY
-        ]
+        rows = [r for r in reader if r.get("Severity","").upper() in KEEP]
 
     if not rows:
-        print("  → No WARNING / ERROR found")
         continue
 
-    # Wrap Description text
+    if "User Severity" not in fields:
+        fields.append("User Severity")
+    if "solution" not in fields:
+        fields.append("solution")
+
     for r in rows:
-        if "Description" in r:
-            r["Description"] = wrap_text(r["Description"], WRAP_CHARS)
+        r["User Severity"] = USER_SEV
+        r["solution"] = SOLUTION
 
-    # --------------------------------------------------
-    # Write summary CSV (Windows Excel compatible)
-    # --------------------------------------------------
-    summary_csv = csv_path.with_name(csv_path.stem + "_summary.csv")
-    with open(summary_csv, "w", newline="\r\n", encoding="utf-8-sig") as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
-        writer.writeheader()
-        for r in rows:
-            writer.writerow(r)
-    print("  → Summary CSV written:", summary_csv)
+    out = csv_path.with_name(csv_path.stem + "_summary.xls")
+    write_xls(out, fields, rows)
+    print("Generated:", out)
 
-    # --------------------------------------------------
-    # Write summary HTML
-    # --------------------------------------------------
-    summary_html = csv_path.with_name(csv_path.stem + "_summary.html")
-    write_summary_html(summary_html, fieldnames, rows)
-    print("  → Summary HTML written:", summary_html)
-
-print("\nDONE: CSV + HTML summary generated (Excel compatible)")
+print("DONE: Script 3 (XLS)")
 

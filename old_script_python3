@@ -1,0 +1,63 @@
+#!/usr/bin/env python3
+# Python 3.6 compatible
+# Generate WARNING / ERROR summary CSV + HTML
+# HARD-CODE User Severity and solution with placeholders
+
+import csv
+from pathlib import Path
+import html
+
+CSV_DIR = Path("logs_report")
+KEEP_SEVERITY = {"WARNING", "ERROR"}
+
+def write_html(html_path, fieldnames, rows):
+    with open(html_path, "w") as f:
+        f.write("<html><head><meta charset='UTF-8'></head><body>\n")
+        f.write("<table border='1'>\n<tr>")
+        for h in fieldnames:
+            f.write(f"<th>{html.escape(h)}</th>")
+        f.write("</tr>\n")
+
+        for r in rows:
+            f.write("<tr>")
+            for h in fieldnames:
+                val = r.get(h,"")
+                f.write(f"<td>{html.escape(val)}</td>")
+            f.write("</tr>\n")
+
+        f.write("</table></body></html>")
+
+for csv_path in CSV_DIR.glob("*.csv"):
+    if csv_path.name.endswith("_summary.csv"):
+        continue
+
+    with open(csv_path) as f:
+        reader = csv.DictReader(f)
+        fieldnames = reader.fieldnames
+        rows = [
+            r for r in reader
+            if r.get("Severity","").upper() in KEEP_SEVERITY
+        ]
+
+    if not rows:
+        continue
+
+    if "User Severity" not in fieldnames:
+        fieldnames.append("User Severity")
+    if "solution" not in fieldnames:
+        fieldnames.append("solution")
+
+    for r in rows:
+        r["User Severity"] = "[fill in severity]"
+        r["solution"] = "[fill in solution]"
+
+    out_csv = csv_path.with_name(csv_path.stem + "_summary.csv")
+    with open(out_csv,"w",newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(rows)
+
+    write_html(out_csv.with_suffix(".html"), fieldnames, rows)
+
+print("DONE: Hard-coded placeholders applied.")
+

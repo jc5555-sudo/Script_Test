@@ -1,0 +1,1581 @@
+Code,Severity,Description,User Severity,rpt msg,solution
+SQM-1046,Warning,"NAME
+       SQM-1046  (warning) Sequential element '%s' of module '%s' is mapped to
+       library cell '%s' or its equivalents, which don't  have  nextstate:data
+       defined  on  input  port.  This  may  result  in synchronous input nets
+       swapped.
+
+DESCRIPTION
+       This warning message is issued when instance is  mapped  to  a  libcell
+       where  there  is  no  nextstate_type attribute defined on its ports. In
+       this case, functional input pairs like D/SET, D/CLEAR  can  be  swapped
+       during net connection as they are logically equivalent. Tool can't tell
+       which port is the ""true"" data port.
+
+WHAT NEXT
+       User can ignore this warning if they don't care about  pin  connection.
+       Otherwise  choose  another  libcell  which  is  properly  defined  with
+       nextstate_type.  For example: get_attribute [get_lib_pins   -of_objects
+       [get_lib_cells   */DFPCRQX1HXP ] ] nextstate_type ~",[fill severity],Warning: Sequential element 'bit_secure_1/slice_0/hreset_syn... (MSG-3032),[fill solution]
+SQM-1040,Warning,"NAME
+       SQM-1040 (warning) No cell bus will be mapped to multibit because there
+       is no multibit cells in the cell libraries.
+
+DESCRIPTION
+       This warning message is issued when bus instance is to  be  mapped  but
+       library doesn't have multibit cells.
+
+WHAT NEXT
+       Check library to provide multibit cells for bus mapping.  ~",[fill severity],No cell bus will be mapped to multibit because there is no m... (MSG-3032),[fill solution]
+POW-034,Warning,"NAME
+       POW-034  (warning)  No  valid  clocks available in design '%s'. Setting
+       clock frequency to %s GHz.
+
+DESCRIPTION
+       The design does not have any valid clocks.  The  simulation  resolution
+       needed  to determine random vector generation during switching activity
+       propagation is based on the fastest clock.
+
+WHAT NEXT
+       Ensure there are valid clocks defined for the mode.
+
+SEE ALSO
+       set_switching_activity (2)
+       get_switching_activity (2)",[fill severity],Warning: No valid clocks available in design 'bit_coin'. Set... (MSG-3032),[fill solution]
+FLW-3502,Warning,,[fill severity],Warning: The app option 'compile.flow.high_effort_timing' wi... (MSG-3032),[fill solution]
+SQM-1046,Warning,"NAME
+       SQM-1046  (warning) Sequential element '%s' of module '%s' is mapped to
+       library cell '%s' or its equivalents, which don't  have  nextstate:data
+       defined  on  input  port.  This  may  result  in synchronous input nets
+       swapped.
+
+DESCRIPTION
+       This warning message is issued when instance is  mapped  to  a  libcell
+       where  there  is  no  nextstate_type attribute defined on its ports. In
+       this case, functional input pairs like D/SET, D/CLEAR  can  be  swapped
+       during net connection as they are logically equivalent. Tool can't tell
+       which port is the ""true"" data port.
+
+WHAT NEXT
+       User can ignore this warning if they don't care about  pin  connection.
+       Otherwise  choose  another  libcell  which  is  properly  defined  with
+       nextstate_type.  For example: get_attribute [get_lib_pins   -of_objects
+       [get_lib_cells   */DFPCRQX1HXP ] ] nextstate_type ~",[fill severity],Warning: Sequential element 'bit_secure_1/slice_0/hreset_syn... (MSG-3032),[fill solution]
+SQM-1040,Warning,"NAME
+       SQM-1040 (warning) No cell bus will be mapped to multibit because there
+       is no multibit cells in the cell libraries.
+
+DESCRIPTION
+       This warning message is issued when bus instance is to  be  mapped  but
+       library doesn't have multibit cells.
+
+WHAT NEXT
+       Check library to provide multibit cells for bus mapping.  ~",[fill severity],No cell bus will be mapped to multibit because there is no m... (MSG-3032),[fill solution]
+POW-034,Warning,"NAME
+       POW-034  (warning)  No  valid  clocks available in design '%s'. Setting
+       clock frequency to %s GHz.
+
+DESCRIPTION
+       The design does not have any valid clocks.  The  simulation  resolution
+       needed  to determine random vector generation during switching activity
+       propagation is based on the fastest clock.
+
+WHAT NEXT
+       Ensure there are valid clocks defined for the mode.
+
+SEE ALSO
+       set_switching_activity (2)
+       get_switching_activity (2)",[fill severity],Warning: No valid clocks available in design 'bit_coin'. Set... (MSG-3032),[fill solution]
+POW-116,Warning,"NAME
+       POW-116  (warning)  Net  '%s'  is already connected to pin '%s'. It may
+       cause loss of switching activity.
+
+DESCRIPTION
+       This message occurs when net is already connected to a pin and  another
+       driver  pin  is  trying  to connect with this net. It may cause loss of
+       switching activity.
+
+WHAT NEXT
+       Check if there exist multiple drivers for this net. Else this situation
+       may  occur  temporarily  due  to  connect  before disconnecting the old
+       driver.",[fill severity],Warning: Net 'hash_it/N15' is already connected to pin 'ctmi... (MSG-3032),[fill solution]
+FLW-3502,Warning,,[fill severity],Warning: The app option 'compile.flow.high_effort_timing' wi... (MSG-3032),[fill solution]
+POW-116,Warning,"NAME
+       POW-116  (warning)  Net  '%s'  is already connected to pin '%s'. It may
+       cause loss of switching activity.
+
+DESCRIPTION
+       This message occurs when net is already connected to a pin and  another
+       driver  pin  is  trying  to connect with this net. It may cause loss of
+       switching activity.
+
+WHAT NEXT
+       Check if there exist multiple drivers for this net. Else this situation
+       may  occur  temporarily  due  to  connect  before disconnecting the old
+       driver.",[fill severity],Warning: Net 'hash_it/N15' is already connected to pin 'ctmi... (MSG-3032),[fill solution]
+FLW-3502,Warning,,[fill severity],Warning: The app option 'compile.flow.high_effort_timing' wi... (MSG-3032),[fill solution]
+PDC-003,Warning,"NAME
+       PDC-003 (Warning) Routing direction of metal layer %s is neither ""hori-
+       zontal"" nor ""vertical"".  PDC checks  will  not  be  performed  on  this
+       layer.
+
+DESCRIPTION
+       This  warning  message indicates that no routing direction has been set
+       on the metal layer.  This may result in DRC violations due  to  illegal
+       placement.
+
+WHAT NEXT
+       set_attribute  [get_layer <layer>] routing_direction <horizontal/verti-
+       cal>",[fill severity],"Warning: Routing direction of metal layer PO is neither ""hor... (MSG-3032)",[fill solution]
+FLW-3502,Warning,,[fill severity],Warning: The app option 'compile.flow.high_effort_timing' wi... (MSG-3032),[fill solution]
+PDC-003,Warning,"NAME
+       PDC-003 (Warning) Routing direction of metal layer %s is neither ""hori-
+       zontal"" nor ""vertical"".  PDC checks  will  not  be  performed  on  this
+       layer.
+
+DESCRIPTION
+       This  warning  message indicates that no routing direction has been set
+       on the metal layer.  This may result in DRC violations due  to  illegal
+       placement.
+
+WHAT NEXT
+       set_attribute  [get_layer <layer>] routing_direction <horizontal/verti-
+       cal>",[fill severity],"Warning: Routing direction of metal layer PO is neither ""hor... (MSG-3032)",[fill solution]
+DFT-1991,Warning,"NAME
+       DFT-1991  (warning)  SCANDEF  based  Optimization  skipped:  No SCANDEF
+       chains found.
+
+DESCRIPTION
+       This message is issued when  SCANDEF  based  Optimization  (like  opti-
+       mize_dft  or  similar commands) was attempted but no SCANDEF chain data
+       was found. The SCANDEF chain data is basic for performing this kind  of
+       optimizations.
+
+WHAT NEXT
+       Check  if  SCANDEF  data should be available, for example if insert_dft
+       was previously executed succesfully, or if SCANDEF data has been loaded
+       from setup using read_def command.
+
+SEE ALSO
+       insert_dft(2) optimize_dft(2) read_def(2)",[fill severity],Warning: SCANDEF based Optimization skipped: No ScanDEF chai... (MSG-3032),[fill solution]
+FLW-2892,Warning,,[fill severity],Warning: Restoring scoped app option 'ropt.lr_estimation_com... (MSG-3032),[fill solution]
+ZRT-511,Warning,"NAME
+       ZRT-511 (Warning) Cell contains tie connections which are not connected
+       to real PG.
+
+DESCRIPTION
+       Cell contains some tie nets (tie_low or tie_high) which  are  not  con-
+       nected to real PG. These nets will not contain route information unless
+       they are realized with PG rail. To connect to PG rail,  users  need  to
+       call ""connect_pg_net"" command.
+
+       An example for query such a net is
+        get_nets -hierarchical -filter net_type=~tie_low
+
+WHAT NEXT
+       Run ""connect_pg_net"".",[fill severity],Warning: Cell contains tie connections which are not connect... (MSG-3032),[fill solution]
+ZRT-022,Warning,"NAME
+       ZRT-022 (warn) Cannot find a default contact code for layer %s.
+
+DESCRIPTION
+       This  warning  message  indicates  that  a default contact code was not
+       found for the specified layer. This is most likely  due  to  a  missing
+       default contact code definition in the technology file.
+
+WHAT NEXT
+       Add  a  default  contact code definition to the technology file. If the
+       specified layer is a nonrouting layer, such as V0, you can ignore  this
+       message.",[fill severity],Warning: Cannot find a default contact code for layer CO. (Z... (MSG-3032),[fill solution]
+ZRT-740,Warning,"NAME
+       ZRT-740 (warning)  %s is unplaced.  This may impact routing result.
+
+DESCRIPTION
+       A port is unplaced.  This is atypical and may impact routing result.
+
+WHAT NEXT
+       If this is not expected, please fix the issue.",[fill severity],Warning: Port sipo_sw_out of cell bit_coin is unplaced.  Thi... (MSG-3032),[fill solution]
+PVT-034,Warning,"NAME
+       PVT-034  (warning)   %d  port  driving_cells affected for early, %d for
+       late.
+
+DESCRIPTION
+       This message is issued when there are mismatches between the  specified
+       and  effective values of the process number, process label, voltage, or
+       temperature operating conditions of a particular corner.  It  describes
+       the number of port driving_cells affected by the mismatched PVT values.
+       It will be preceded by a PVT-030 warning, which  lists  the  number  of
+       mismatches.
+
+WHAT NEXT
+       Review  the  P/V/T  operating conditions supported by the relevant cell
+       libraries.  Review the constraints for missing or  incorrect  set_volt-
+       age,   set_temperature,   set_process_number,   set_process_label,   or
+       set_operating_conditions commands applied to the port or the top  level
+       of the design.  The report_pvt command will give more information about
+       this situation for a particular port.",[fill severity],"Warning: 0 port driving_cells affected for early, 0 for late... (MSG-3032)",[fill solution]
+PVT-031,Warning,"NAME
+       PVT-031 (warning)  %d cells affected for early, %d for late.
+
+DESCRIPTION
+       This  message is issued when there are mismatches between the specified
+       and effective values of the process number, process label, voltage,  or
+       temperature  operating conditions of a particular corner.  It describes
+       the number of cells affected by the mismatched PVT values.  It will  be
+       preceded by a PVT-030 warning, which lists the number of mismatches.
+
+WHAT NEXT
+       Review  the  P/V/T  operating conditions supported by the relevant cell
+       libraries.  Review the constraints for missing or  incorrect  set_volt-
+       age,   set_temperature,   set_process_number,   set_process_label,   or
+       set_operating_conditions commands.  Review the UPF data for  an  incor-
+       rect  or  incomplete  supply net configuration.  The report_pvt command
+       will give more information about this situation.",[fill severity],"Warning: 92091 cells affected for early, 92091 for late. (PV... (MSG-3032)",[fill solution]
+PVT-030,Warning,"NAME
+       PVT-030  (warning)  Corner %s:  %d process number, %d process label, %d
+       voltage, and %d temperature mismatches.
+
+DESCRIPTION
+       This message is issued when there are mismatches between the  specified
+       and  effective values of the process number, process label, voltage, or
+       temperature  operating  conditions  of  a   particular   corner.    The
+       report_pvt  command will print information and warnings identifying the
+       mismatched values, the relevant cell libraries, the number of  affected
+       cells, and the operating conditions that will actually be used for tim-
+       ing analysis.
+
+WHAT NEXT
+       Review the P/V/T operating conditions supported by  the  relevant  cell
+       libraries.   Review  whether  specified  P/V/T  is missing some library
+       cells.  Review the constraints for missing  or  incorrect  set_voltage,
+       set_temperature,  set_process_number, set_process_label, or set_operat-
+       ing_conditions commands.  Review the  UPF  data  for  an  incorrect  or
+       incomplete  supply net configuration.  The report_pvt command will give
+       more information about this situation.",[fill severity],"Warning: Corner FUNC_0.85V_HOLD:  4 process number, 0 proces... (MSG-3032)",[fill solution]
+OPT-069,Warning,"NAME
+       OPT-069 (warning) Skipping pin %s. Reason - %s.
+
+DESCRIPTION
+       Tie-cell insertion is skipped for a pin due to specified reason.
+
+WHAT NEXT
+       User can check whether the reason mentioned is reasonable.
+
+       ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~",[fill severity],Warning: Skipping pin piso_secure_0/headerfooter_snps_PD_PIS... (MSG-3032),[fill solution]
+ZRT-763,Warning,"NAME
+       ZRT-763  (warning)  Cell  %s  is placed overlapping with other cells at
+       {{%.3f %.3f} {%.3f %.3f}}.
+
+DESCRIPTION
+       This warning message indicates that there are other  cells  overlapping
+       with  this  cell.  This  is  a  roughly check for overlapped cell.  For
+       detailed information, please run ""check_legality"".
+
+WHAT NEXT
+       Please make sure all the cells are placed legally  before  running  the
+       router and run check_legality before running check_routability.",[fill severity],Warning: Cell bit_secure_6/slice_25/sync_datafrommem/dut_syn... (MSG-3032),[fill solution]
+ZRT-027,Warning,"NAME
+       ZRT-027 (warn) Ignore %d top cell ports with no pins.
+
+DESCRIPTION
+       This  warning  message indicates that the design's top cell has logical
+       ports which have no physical shapes attached to them.  The router  will
+       ignore such ports.
+
+WHAT NEXT
+       Please check the top cell and create physical shapes for those ports if
+       needed.",[fill severity],Warning: Ignore 2 top cell ports with no pins. (ZRT-027)        (MSG-3032),[fill solution]
+OPT-035,Warning,"NAME
+       OPT-035  (warning)  Power  app  option  %s  has been deprecated. Please
+       remove it from your script.
+
+DESCRIPTION
+       App options opt.power.mode and opt.power.effort have  been  deprecated.
+       Please remove them from your script.
+
+WHAT NEXT
+       Switch  to  compile.flow.enable_power,  place_opt.flow.enable_power and
+       clock_opt.flow.enable_power.
+
+SEE ALSO
+       set_qor_strategy(2)
+       compile.flow.enable_power(3)
+       place_opt.flow.enable_power(3)
+       clock_opt.flow.enable_power(3)",[fill severity],Warning: Power app option opt.power.effort has been deprecat... (MSG-3032),[fill solution]
+OPT-202,Warning,"NAME
+       OPT-202 (warning) No legal tie cell is available to drive '%s' pin.
+
+DESCRIPTION
+       There  is  no  tie  cell  in the library that is available for constant
+       (1'b0 / 1'b1) fixing, given the constraints for the reported pin.  This
+       could  be because of target library subset selection, power constraints
+       etc.
+
+WHAT NEXT
+       Check and update power constraints or targer library subset constraints
+       or provide the library with additional cells.",[fill severity],Warning: No legal tie cell is available to drive 'piso_secur... (MSG-3032),[fill solution]
+FLW-3502,Warning,,[fill severity],Warning: The app option 'compile.flow.high_effort_timing' wi... (MSG-3032),[fill solution]
+DFT-1991,Warning,"NAME
+       DFT-1991  (warning)  SCANDEF  based  Optimization  skipped:  No SCANDEF
+       chains found.
+
+DESCRIPTION
+       This message is issued when  SCANDEF  based  Optimization  (like  opti-
+       mize_dft  or  similar commands) was attempted but no SCANDEF chain data
+       was found. The SCANDEF chain data is basic for performing this kind  of
+       optimizations.
+
+WHAT NEXT
+       Check  if  SCANDEF  data should be available, for example if insert_dft
+       was previously executed succesfully, or if SCANDEF data has been loaded
+       from setup using read_def command.
+
+SEE ALSO
+       insert_dft(2) optimize_dft(2) read_def(2)",[fill severity],Warning: SCANDEF based Optimization skipped: No ScanDEF chai... (MSG-3032),[fill solution]
+FLW-2892,Warning,,[fill severity],Warning: Restoring scoped app option 'ropt.lr_estimation_com... (MSG-3032),[fill solution]
+ZRT-511,Warning,"NAME
+       ZRT-511 (Warning) Cell contains tie connections which are not connected
+       to real PG.
+
+DESCRIPTION
+       Cell contains some tie nets (tie_low or tie_high) which  are  not  con-
+       nected to real PG. These nets will not contain route information unless
+       they are realized with PG rail. To connect to PG rail,  users  need  to
+       call ""connect_pg_net"" command.
+
+       An example for query such a net is
+        get_nets -hierarchical -filter net_type=~tie_low
+
+WHAT NEXT
+       Run ""connect_pg_net"".",[fill severity],Warning: Cell contains tie connections which are not connect... (MSG-3032),[fill solution]
+ZRT-022,Warning,"NAME
+       ZRT-022 (warn) Cannot find a default contact code for layer %s.
+
+DESCRIPTION
+       This  warning  message  indicates  that  a default contact code was not
+       found for the specified layer. This is most likely  due  to  a  missing
+       default contact code definition in the technology file.
+
+WHAT NEXT
+       Add  a  default  contact code definition to the technology file. If the
+       specified layer is a nonrouting layer, such as V0, you can ignore  this
+       message.",[fill severity],Warning: Cannot find a default contact code for layer CO. (Z... (MSG-3032),[fill solution]
+ZRT-740,Warning,"NAME
+       ZRT-740 (warning)  %s is unplaced.  This may impact routing result.
+
+DESCRIPTION
+       A port is unplaced.  This is atypical and may impact routing result.
+
+WHAT NEXT
+       If this is not expected, please fix the issue.",[fill severity],Warning: Port sipo_sw_out of cell bit_coin is unplaced.  Thi... (MSG-3032),[fill solution]
+PVT-034,Warning,"NAME
+       PVT-034  (warning)   %d  port  driving_cells affected for early, %d for
+       late.
+
+DESCRIPTION
+       This message is issued when there are mismatches between the  specified
+       and  effective values of the process number, process label, voltage, or
+       temperature operating conditions of a particular corner.  It  describes
+       the number of port driving_cells affected by the mismatched PVT values.
+       It will be preceded by a PVT-030 warning, which  lists  the  number  of
+       mismatches.
+
+WHAT NEXT
+       Review  the  P/V/T  operating conditions supported by the relevant cell
+       libraries.  Review the constraints for missing or  incorrect  set_volt-
+       age,   set_temperature,   set_process_number,   set_process_label,   or
+       set_operating_conditions commands applied to the port or the top  level
+       of the design.  The report_pvt command will give more information about
+       this situation for a particular port.",[fill severity],"Warning: 0 port driving_cells affected for early, 0 for late... (MSG-3032)",[fill solution]
+PVT-031,Warning,"NAME
+       PVT-031 (warning)  %d cells affected for early, %d for late.
+
+DESCRIPTION
+       This  message is issued when there are mismatches between the specified
+       and effective values of the process number, process label, voltage,  or
+       temperature  operating conditions of a particular corner.  It describes
+       the number of cells affected by the mismatched PVT values.  It will  be
+       preceded by a PVT-030 warning, which lists the number of mismatches.
+
+WHAT NEXT
+       Review  the  P/V/T  operating conditions supported by the relevant cell
+       libraries.  Review the constraints for missing or  incorrect  set_volt-
+       age,   set_temperature,   set_process_number,   set_process_label,   or
+       set_operating_conditions commands.  Review the UPF data for  an  incor-
+       rect  or  incomplete  supply net configuration.  The report_pvt command
+       will give more information about this situation.",[fill severity],"Warning: 92091 cells affected for early, 92091 for late. (PV... (MSG-3032)",[fill solution]
+PVT-030,Warning,"NAME
+       PVT-030  (warning)  Corner %s:  %d process number, %d process label, %d
+       voltage, and %d temperature mismatches.
+
+DESCRIPTION
+       This message is issued when there are mismatches between the  specified
+       and  effective values of the process number, process label, voltage, or
+       temperature  operating  conditions  of  a   particular   corner.    The
+       report_pvt  command will print information and warnings identifying the
+       mismatched values, the relevant cell libraries, the number of  affected
+       cells, and the operating conditions that will actually be used for tim-
+       ing analysis.
+
+WHAT NEXT
+       Review the P/V/T operating conditions supported by  the  relevant  cell
+       libraries.   Review  whether  specified  P/V/T  is missing some library
+       cells.  Review the constraints for missing  or  incorrect  set_voltage,
+       set_temperature,  set_process_number, set_process_label, or set_operat-
+       ing_conditions commands.  Review the  UPF  data  for  an  incorrect  or
+       incomplete  supply net configuration.  The report_pvt command will give
+       more information about this situation.",[fill severity],"Warning: Corner FUNC_0.85V_HOLD:  4 process number, 0 proces... (MSG-3032)",[fill solution]
+OPT-069,Warning,"NAME
+       OPT-069 (warning) Skipping pin %s. Reason - %s.
+
+DESCRIPTION
+       Tie-cell insertion is skipped for a pin due to specified reason.
+
+WHAT NEXT
+       User can check whether the reason mentioned is reasonable.
+
+       ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~",[fill severity],Warning: Skipping pin piso_secure_0/headerfooter_snps_PD_PIS... (MSG-3032),[fill solution]
+ZRT-763,Warning,"NAME
+       ZRT-763  (warning)  Cell  %s  is placed overlapping with other cells at
+       {{%.3f %.3f} {%.3f %.3f}}.
+
+DESCRIPTION
+       This warning message indicates that there are other  cells  overlapping
+       with  this  cell.  This  is  a  roughly check for overlapped cell.  For
+       detailed information, please run ""check_legality"".
+
+WHAT NEXT
+       Please make sure all the cells are placed legally  before  running  the
+       router and run check_legality before running check_routability.",[fill severity],Warning: Cell bit_secure_6/slice_25/sync_datafrommem/dut_syn... (MSG-3032),[fill solution]
+ZRT-027,Warning,"NAME
+       ZRT-027 (warn) Ignore %d top cell ports with no pins.
+
+DESCRIPTION
+       This  warning  message indicates that the design's top cell has logical
+       ports which have no physical shapes attached to them.  The router  will
+       ignore such ports.
+
+WHAT NEXT
+       Please check the top cell and create physical shapes for those ports if
+       needed.",[fill severity],Warning: Ignore 2 top cell ports with no pins. (ZRT-027)        (MSG-3032),[fill solution]
+OPT-035,Warning,"NAME
+       OPT-035  (warning)  Power  app  option  %s  has been deprecated. Please
+       remove it from your script.
+
+DESCRIPTION
+       App options opt.power.mode and opt.power.effort have  been  deprecated.
+       Please remove them from your script.
+
+WHAT NEXT
+       Switch  to  compile.flow.enable_power,  place_opt.flow.enable_power and
+       clock_opt.flow.enable_power.
+
+SEE ALSO
+       set_qor_strategy(2)
+       compile.flow.enable_power(3)
+       place_opt.flow.enable_power(3)
+       clock_opt.flow.enable_power(3)",[fill severity],Warning: Power app option opt.power.effort has been deprecat... (MSG-3032),[fill solution]
+OPT-202,Warning,"NAME
+       OPT-202 (warning) No legal tie cell is available to drive '%s' pin.
+
+DESCRIPTION
+       There  is  no  tie  cell  in the library that is available for constant
+       (1'b0 / 1'b1) fixing, given the constraints for the reported pin.  This
+       could  be because of target library subset selection, power constraints
+       etc.
+
+WHAT NEXT
+       Check and update power constraints or targer library subset constraints
+       or provide the library with additional cells.",[fill severity],Warning: No legal tie cell is available to drive 'piso_secur... (MSG-3032),[fill solution]
+ZRT-511,Warning,"NAME
+       ZRT-511 (Warning) Cell contains tie connections which are not connected
+       to real PG.
+
+DESCRIPTION
+       Cell contains some tie nets (tie_low or tie_high) which  are  not  con-
+       nected to real PG. These nets will not contain route information unless
+       they are realized with PG rail. To connect to PG rail,  users  need  to
+       call ""connect_pg_net"" command.
+
+       An example for query such a net is
+        get_nets -hierarchical -filter net_type=~tie_low
+
+WHAT NEXT
+       Run ""connect_pg_net"".",[fill severity],Warning: Cell contains tie connections which are not connect... (MSG-3032),[fill solution]
+ZRT-022,Warning,"NAME
+       ZRT-022 (warn) Cannot find a default contact code for layer %s.
+
+DESCRIPTION
+       This  warning  message  indicates  that  a default contact code was not
+       found for the specified layer. This is most likely  due  to  a  missing
+       default contact code definition in the technology file.
+
+WHAT NEXT
+       Add  a  default  contact code definition to the technology file. If the
+       specified layer is a nonrouting layer, such as V0, you can ignore  this
+       message.",[fill severity],Warning: Cannot find a default contact code for layer CO. (Z... (MSG-3032),[fill solution]
+ZRT-740,Warning,"NAME
+       ZRT-740 (warning)  %s is unplaced.  This may impact routing result.
+
+DESCRIPTION
+       A port is unplaced.  This is atypical and may impact routing result.
+
+WHAT NEXT
+       If this is not expected, please fix the issue.",[fill severity],Warning: Port sipo_sw_out of cell bit_coin is unplaced.  Thi... (MSG-3032),[fill solution]
+ZRT-763,Warning,"NAME
+       ZRT-763  (warning)  Cell  %s  is placed overlapping with other cells at
+       {{%.3f %.3f} {%.3f %.3f}}.
+
+DESCRIPTION
+       This warning message indicates that there are other  cells  overlapping
+       with  this  cell.  This  is  a  roughly check for overlapped cell.  For
+       detailed information, please run ""check_legality"".
+
+WHAT NEXT
+       Please make sure all the cells are placed legally  before  running  the
+       router and run check_legality before running check_routability.",[fill severity],Warning: Cell compile_ZBUF_4_inst_194305 is placed overlappi... (MSG-3032),[fill solution]
+PDC-003,Warning,"NAME
+       PDC-003 (Warning) Routing direction of metal layer %s is neither ""hori-
+       zontal"" nor ""vertical"".  PDC checks  will  not  be  performed  on  this
+       layer.
+
+DESCRIPTION
+       This  warning  message indicates that no routing direction has been set
+       on the metal layer.  This may result in DRC violations due  to  illegal
+       placement.
+
+WHAT NEXT
+       set_attribute  [get_layer <layer>] routing_direction <horizontal/verti-
+       cal>",[fill severity],"Warning: Routing direction of metal layer PO is neither ""hor... (MSG-3032)",[fill solution]
+ZRT-027,Warning,"NAME
+       ZRT-027 (warn) Ignore %d top cell ports with no pins.
+
+DESCRIPTION
+       This  warning  message indicates that the design's top cell has logical
+       ports which have no physical shapes attached to them.  The router  will
+       ignore such ports.
+
+WHAT NEXT
+       Please check the top cell and create physical shapes for those ports if
+       needed.",[fill severity],Warning: Ignore 2 top cell ports with no pins. (ZRT-027)        (MSG-3032),[fill solution]
+OPT-202,Warning,"NAME
+       OPT-202 (warning) No legal tie cell is available to drive '%s' pin.
+
+DESCRIPTION
+       There  is  no  tie  cell  in the library that is available for constant
+       (1'b0 / 1'b1) fixing, given the constraints for the reported pin.  This
+       could  be because of target library subset selection, power constraints
+       etc.
+
+WHAT NEXT
+       Check and update power constraints or targer library subset constraints
+       or provide the library with additional cells.",[fill severity],Warning: No legal tie cell is available to drive 'piso_secur... (MSG-3032),[fill solution]
+FLW-3502,Warning,,[fill severity],Warning: The app option 'compile.flow.high_effort_timing' wi... (MSG-3032),[fill solution]
+ZRT-511,Warning,"NAME
+       ZRT-511 (Warning) Cell contains tie connections which are not connected
+       to real PG.
+
+DESCRIPTION
+       Cell contains some tie nets (tie_low or tie_high) which  are  not  con-
+       nected to real PG. These nets will not contain route information unless
+       they are realized with PG rail. To connect to PG rail,  users  need  to
+       call ""connect_pg_net"" command.
+
+       An example for query such a net is
+        get_nets -hierarchical -filter net_type=~tie_low
+
+WHAT NEXT
+       Run ""connect_pg_net"".",[fill severity],Warning: Cell contains tie connections which are not connect... (MSG-3032),[fill solution]
+ZRT-022,Warning,"NAME
+       ZRT-022 (warn) Cannot find a default contact code for layer %s.
+
+DESCRIPTION
+       This  warning  message  indicates  that  a default contact code was not
+       found for the specified layer. This is most likely  due  to  a  missing
+       default contact code definition in the technology file.
+
+WHAT NEXT
+       Add  a  default  contact code definition to the technology file. If the
+       specified layer is a nonrouting layer, such as V0, you can ignore  this
+       message.",[fill severity],Warning: Cannot find a default contact code for layer CO. (Z... (MSG-3032),[fill solution]
+TIM-207,Warning,"NAME
+       TIM-207  (Warning)  Libraries  do not have CCS noise model for accurate
+       waveform analysis in advanced waveform propagation mode.
+
+DESCRIPTION
+       When advanced waveform propagation analysis is enabled, it is  required
+       that  the  stage driver cell has CCS noise model(s) for its timing arcs
+       in  terms of  either  arc-based  or   pin-based   CCS  noise  model(s).
+       When  such CCS noise model(s) are not present in the library,  analysis
+       with  desired accuracy cannot be performed.
+
+WHAT NEXT
+       Fix the library to ensure that all library cell timing arcs have either
+       arc-based or pin-based CCS noise models.
+
+SEE ALSO
+       time.delay_calc_waveform_analysis_mode (3)
+       time.awp_compatibility_mode (3)",[fill severity],Warning: Libraries do not have CCS noise model for accurate ... (MSG-3032),[fill solution]
+ZRT-740,Warning,"NAME
+       ZRT-740 (warning)  %s is unplaced.  This may impact routing result.
+
+DESCRIPTION
+       A port is unplaced.  This is atypical and may impact routing result.
+
+WHAT NEXT
+       If this is not expected, please fix the issue.",[fill severity],Warning: Port sipo_sw_out of cell bit_coin is unplaced.  Thi... (MSG-3032),[fill solution]
+ZRT-763,Warning,"NAME
+       ZRT-763  (warning)  Cell  %s  is placed overlapping with other cells at
+       {{%.3f %.3f} {%.3f %.3f}}.
+
+DESCRIPTION
+       This warning message indicates that there are other  cells  overlapping
+       with  this  cell.  This  is  a  roughly check for overlapped cell.  For
+       detailed information, please run ""check_legality"".
+
+WHAT NEXT
+       Please make sure all the cells are placed legally  before  running  the
+       router and run check_legality before running check_routability.",[fill severity],Warning: Cell compile_ZBUF_4_inst_194305 is placed overlappi... (MSG-3032),[fill solution]
+PDC-003,Warning,"NAME
+       PDC-003 (Warning) Routing direction of metal layer %s is neither ""hori-
+       zontal"" nor ""vertical"".  PDC checks  will  not  be  performed  on  this
+       layer.
+
+DESCRIPTION
+       This  warning  message indicates that no routing direction has been set
+       on the metal layer.  This may result in DRC violations due  to  illegal
+       placement.
+
+WHAT NEXT
+       set_attribute  [get_layer <layer>] routing_direction <horizontal/verti-
+       cal>",[fill severity],"Warning: Routing direction of metal layer PO is neither ""hor... (MSG-3032)",[fill solution]
+ZRT-027,Warning,"NAME
+       ZRT-027 (warn) Ignore %d top cell ports with no pins.
+
+DESCRIPTION
+       This  warning  message indicates that the design's top cell has logical
+       ports which have no physical shapes attached to them.  The router  will
+       ignore such ports.
+
+WHAT NEXT
+       Please check the top cell and create physical shapes for those ports if
+       needed.",[fill severity],Warning: Ignore 2 top cell ports with no pins. (ZRT-027)        (MSG-3032),[fill solution]
+OPT-035,Warning,"NAME
+       OPT-035  (warning)  Power  app  option  %s  has been deprecated. Please
+       remove it from your script.
+
+DESCRIPTION
+       App options opt.power.mode and opt.power.effort have  been  deprecated.
+       Please remove them from your script.
+
+WHAT NEXT
+       Switch  to  compile.flow.enable_power,  place_opt.flow.enable_power and
+       clock_opt.flow.enable_power.
+
+SEE ALSO
+       set_qor_strategy(2)
+       compile.flow.enable_power(3)
+       place_opt.flow.enable_power(3)
+       clock_opt.flow.enable_power(3)",[fill severity],Warning: Power app option opt.power.effort has been deprecat... (MSG-3032),[fill solution]
+OPT-202,Warning,"NAME
+       OPT-202 (warning) No legal tie cell is available to drive '%s' pin.
+
+DESCRIPTION
+       There  is  no  tie  cell  in the library that is available for constant
+       (1'b0 / 1'b1) fixing, given the constraints for the reported pin.  This
+       could  be because of target library subset selection, power constraints
+       etc.
+
+WHAT NEXT
+       Check and update power constraints or targer library subset constraints
+       or provide the library with additional cells.",[fill severity],Warning: No legal tie cell is available to drive 'piso_secur... (MSG-3032),[fill solution]
+PDC-003,Warning,"NAME
+       PDC-003 (Warning) Routing direction of metal layer %s is neither ""hori-
+       zontal"" nor ""vertical"".  PDC checks  will  not  be  performed  on  this
+       layer.
+
+DESCRIPTION
+       This  warning  message indicates that no routing direction has been set
+       on the metal layer.  This may result in DRC violations due  to  illegal
+       placement.
+
+WHAT NEXT
+       set_attribute  [get_layer <layer>] routing_direction <horizontal/verti-
+       cal>",[fill severity],"Warning: Routing direction of metal layer PO is neither ""hor... (MSG-3032)",[fill solution]
+OPT-202,Warning,"NAME
+       OPT-202 (warning) No legal tie cell is available to drive '%s' pin.
+
+DESCRIPTION
+       There  is  no  tie  cell  in the library that is available for constant
+       (1'b0 / 1'b1) fixing, given the constraints for the reported pin.  This
+       could  be because of target library subset selection, power constraints
+       etc.
+
+WHAT NEXT
+       Check and update power constraints or targer library subset constraints
+       or provide the library with additional cells.",[fill severity],Warning: No legal tie cell is available to drive 'piso_secur... (MSG-3032),[fill solution]
+FLW-3502,Warning,,[fill severity],Warning: The app option 'compile.flow.high_effort_timing' wi... (MSG-3032),[fill solution]
+PDC-003,Warning,"NAME
+       PDC-003 (Warning) Routing direction of metal layer %s is neither ""hori-
+       zontal"" nor ""vertical"".  PDC checks  will  not  be  performed  on  this
+       layer.
+
+DESCRIPTION
+       This  warning  message indicates that no routing direction has been set
+       on the metal layer.  This may result in DRC violations due  to  illegal
+       placement.
+
+WHAT NEXT
+       set_attribute  [get_layer <layer>] routing_direction <horizontal/verti-
+       cal>",[fill severity],"Warning: Routing direction of metal layer PO is neither ""hor... (MSG-3032)",[fill solution]
+OPT-035,Warning,"NAME
+       OPT-035  (warning)  Power  app  option  %s  has been deprecated. Please
+       remove it from your script.
+
+DESCRIPTION
+       App options opt.power.mode and opt.power.effort have  been  deprecated.
+       Please remove them from your script.
+
+WHAT NEXT
+       Switch  to  compile.flow.enable_power,  place_opt.flow.enable_power and
+       clock_opt.flow.enable_power.
+
+SEE ALSO
+       set_qor_strategy(2)
+       compile.flow.enable_power(3)
+       place_opt.flow.enable_power(3)
+       clock_opt.flow.enable_power(3)",[fill severity],Warning: Power app option opt.power.effort has been deprecat... (MSG-3032),[fill solution]
+OPT-202,Warning,"NAME
+       OPT-202 (warning) No legal tie cell is available to drive '%s' pin.
+
+DESCRIPTION
+       There  is  no  tie  cell  in the library that is available for constant
+       (1'b0 / 1'b1) fixing, given the constraints for the reported pin.  This
+       could  be because of target library subset selection, power constraints
+       etc.
+
+WHAT NEXT
+       Check and update power constraints or targer library subset constraints
+       or provide the library with additional cells.",[fill severity],Warning: No legal tie cell is available to drive 'piso_secur... (MSG-3032),[fill solution]
+ATR-012,Warning,"NAME
+       ATR-012 (warning) Attribute '%s' is already defined in class '%s'
+
+DESCRIPTION
+       While  defining  a  new user attribute, you specified an attribute name
+       that is already defined.  There is no mechanism to change an  attribute
+       definition.
+
+WHAT NEXT
+       Make  use  of  the  existing  attribute or use another name for the new
+       attribute.",[fill severity],Warning: Attribute 'sqs_step' is already defined in class 'lib_cell' (ATR-012) (MSG-3032),[fill solution]
+CMD-030,Warning,"NAME
+       CMD-030 (warning) File '%s' was not found in search path.
+
+DESCRIPTION
+       The 'which' command evaluated an filename argument and the file was not
+       found.
+
+WHAT NEXT
+       No adverse effect on the result of the  command,  but  check  spelling,
+       etc.",[fill severity],Warning: File 'config_setup.tcl' was not found in search path. (CMD-030) (MSG-3032),[fill solution]
+CMD-110,Warning,"NAME
+       CMD-110  (warning)  Option '%s' for command '%s' is deprecated. See the
+       command's man page for alternatives.
+
+DESCRIPTION
+       This option is deprecated, you should use a different option  for  this
+       command feature.
+
+WHAT NEXT
+       Update your script to use the new option.",[fill severity],Warning: Option '-essential' for command 'saif_map' is deprecated. See the command's man page for alternatives. (CMD-110) (MSG-3032),[fill solution]
+CTS-012,Warning,"NAME
+       CTS-012  (Warning)  Nets  in  the  clock network have a dont_touch con-
+       straint
+
+DESCRIPTION
+       Nets in the clock network have been marked with a dont_touch attribute.
+       dont_touch  on  a net prevents sizing, optimization, and replacement of
+       all attached cells.  It also prevents buffering on the net.  dont_touch
+       can  limit  CTS  optimization,  which can cause worse latency, skew, or
+       area in the clock network.
+
+WHAT NEXT
+       Examine the reported nets to ensure that the dont_touch attributes have
+       been  applied  with  good  reason.   In particular, dont_touch on high-
+       fanout or other large nets can cause latency  problems  after  CTS,  as
+       that  large  net  will  not  be buffered.  dont_touch attributes can be
+       removed   with   the   set_dont_touch,    set_dont_touch_network,    or
+       mark_clock_tree  commands.  set_dont_touch is normally used for setting
+       and  clearing  dont_touch  on  individual  nets  or   cell   instances.
+       set_dont_touch_network  is used to apply dont_touch to an entire fanout
+       from a clock or pin.  Note that set_dont_touch_network will  not  trace
+       from  a master clock through to a generated clock.  mark_clock_tree can
+       be used also to apply or clear dont_touch.  Unlike  set_dont_touch_net-
+       work, mark_clock_tree will trace through generated clocks.
+
+SEE ALSO
+       set_dont_touch(2)
+       set_dont_touch_network(2)
+       mark_clock_tree(2)",[fill severity],Nets in the clock network have a dont_touch constraint (MSG-3032),[fill solution]
+CTS-903,Warning,"NAME
+       CTS-903  (Warning)  Cells  instantiated in the clock network are not in
+       the clock reference list
+
+DESCRIPTION
+       CTS can only size to lib_cells that are specified in the  clock  refer-
+       ence   list,   constrained  using  'set_lib_cell_purpose  -include  cts
+       $lib_cell_list'.  This message indicates that some  cells  instantiated
+       in the clock network have reference lib_cells that are not in the clock
+       reference list.  If there are logically  equivalent  lib_cells  in  the
+       reference list, then these instances can still be resized to those log-
+       ically equivalent lib_cells, if necessary.  There is no guarantee  that
+       the  cell  will be resized, and once resized it cannot be sized back to
+       the original lib_cell that was not in the reference list.
+
+       If there are no logically equivalent cells in the reference list,  then
+       this  cell  will not be resized by CTS, and a CTS-904 message will also
+       be issued by check_clock_trees, indicating that no logically equivalent
+       cells are available.
+
+WHAT NEXT
+       No  action  is  necessary  if the behavior described above is okay.  If
+       resizing of the cell  is  desired,  ensure  that  logically  equivalent
+       lib_cells  are  available  using the 'set_lib_cell_purpose -include cts
+       $lib_cell_list' command.  Note that there is no guarantee that the cell
+       will  be  resized,  and  so it may remain in the clock network with its
+       original reference cell which was not supplied in the  clock  reference
+       list.  If you want to guarantee that this reference cell does not exist
+       in the clock network after CTS completes, then you must manually  asso-
+       ciate it to a new lib_cell using the change_link command before running
+       CTS.
+
+SEE ALSO
+       set_lib_cell_purpose(2)
+       change_link(2)",[fill severity],Cells instantiated in the clock network are not in the clock reference list (MSG-3032),[fill solution]
+CTS-904,Warning,"NAME
+       CTS-904 (Warning) Some clock reference cells have no LEQ cell specified
+       for resizing
+
+DESCRIPTION
+       CTS cannot resize a cell in the clock network unless  there  are  logi-
+       cally equivalent lib_cells specified in the clock reference list.  This
+       message indicates that there are cells instantiated in the  clock  net-
+       work that have no logically equivalent lib_cells in the reference list,
+       so no sizing can be done.
+
+WHAT NEXT
+       If the cell does not need to be sized, or has optimization  constraints
+       like dont_touch that prevent sizing, then no action is necessary.  Oth-
+       erwise, use 'set_lib_cell_purpose -include cts  $lib_cell_list',  where
+       $lib_cell_list  includes  logically  equivalent  lib_cells  to the ones
+       reported by this check.  This will ensure that the cell can be  resized
+       during CTS.
+
+SEE ALSO
+       set_lib_cell_purpose(2)",[fill severity],Some clock reference cells have no LEQ cell specified for resizing (MSG-3032),[fill solution]
+DCHK-004,Warning,"NAME
+       DCHK-004  (warning) In design '%s', input pin '%s' of hierarchical cell
+       '%s' has no internal loads and is not being driven.
+
+DESCRIPTION
+       This message appears when hierarchical cell input pin has  no  internal
+       load and no driver.",[fill severity],"Warning: In design 'bit_secure_15', input pin 'bit_secure_15/slice_31/lv_scan_in' of hierarchical cell 'bit_secure_15/slice_31' has no internal loads and is not being driven. (DCHK-004) (MSG-3032)",[fill solution]
+DCHK-008,Warning,"NAME
+       DCHK-008 (warning) In design '%s', cell '%s' does not drive any nets.
+
+DESCRIPTION
+       This  warning  alerts you that the output(s) of a cell is not connected
+       to any load nets. This usually indicates that a  design  has  not  been
+       correctly specified.",[fill severity],"Warning: In design 'bit_secure_15/slice_31/sipo_bit', cell 'bit_secure_15/slice_31/sipo_bit/C248' does not drive any nets. (DCHK-008) (MSG-3032)",[fill solution]
+DCHK-009,Warning,"NAME
+       DCHK-009  (warning) In design '%s', '%s' net '%s' driven by %s '%s' has
+       no loads.
+
+DESCRIPTION
+       This warning message occurs when a net is driven by an output  pin  (or
+       pins) but has no load pins connected to it. This usually indicates that
+       a design is not correctly specified.",[fill severity],"Warning: In design 'bit_secure_0/slice_0', 'hierarchical' net 'bit_secure_0/slice_0/VDDL' driven by inside hier pin 'bit_secure_0/slice_0/VDDL' has no loads. (DCHK-009) (MSG-3032)",[fill solution]
+DCHK-010,Warning,"NAME
+       DCHK-010 (warning) In design '%s', '%s' net '%s' has no drivers.
+
+DESCRIPTION
+       This  warning  message occurs when there is a net that is not driven by
+       any source pins.",[fill severity],"Warning: In design 'bit_secure_15', 'hierarchical' net 'bit_secure_15/lv_scan_in31' has no drivers. (DCHK-010) (MSG-3032)",[fill solution]
+DCHK-014,Warning,"NAME
+       DCHK-014 (warning) In design '%s', '%s' net '%s' has a single tri-state
+       driver '%s'.
+
+DESCRIPTION
+       This warning message is printed when the check_netlist command  detects
+       that a net is driven by a single tri-state driver.",[fill severity],"Warning: In design 'bit_secure_15/slice_31', 'flat' net 'bit_secure_15/slice_31/t_din2piso[0]' has a single tri-state driver 'bit_secure_15/slice_31/nibble_0/O1[0]'. (DCHK-014) (MSG-3032)",[fill solution]
+DCHK-016,Warning,"NAME
+       DCHK-016  (warning)  In  design '%s', port '%s' is not connected to any
+       nets.
+
+DESCRIPTION
+       This warning alerts you that a port in a design is not connected to any
+       nets. This usually indicates that a design has not been correctly spec-
+       ified.",[fill severity],"Warning: In design 'bit_secure_15/piso_slice_last', port 'bit_secure_15/piso_slice_last/isolation_signals' is not connected to any nets. (DCHK-016) (MSG-3032)",[fill solution]
+DCHK-027,Warning,"NAME
+       DCHK-027  (warning)  In design '%s', port '%s' is connected to net '%s'
+       which does not have same name. However a net '%s'  with  same  name  as
+       port exists in design.
+
+DESCRIPTION
+       This  messages  indicates that the specified port is connected to a net
+       with a different name. However a net with same name as  the  port  also
+       exists  in  the design. Hence, you may want to check the connections of
+       the port as this is in violation of verilog naming rules.",[fill severity],"Warning: In design 'bit_secure_15/slice_31', port 'bit_secure_15/slice_31/lclk' is connected to net 'bit_secure_15/slice_31/pmd22479' which does not have same name. However a net 'bit_secure_15/slice_31/lclk' with same name as port exists in design. (DCHK-027) (MSG-3032)",[fill solution]
+DEFW-014,Warning,"NAME
+       DEFW-014  (warning)  'routing_rules'  is  not  in  the include_list for
+       option -include.
+
+DESCRIPTION
+       There are non-default-routing rules are used in the NETS  section,  but
+       the NONDEFAULTRULES section are not output. When reading the output DEF
+       file, the width of net shapes might be changed.
+
+WHAT NEXT
+       Please check if the non-default-routing rules are  needed  in  the  DEF
+       file, if so, please add 'routing_rules' to the include_list.",[fill severity],'routing_rules' is not in the include_list for option -include. (MSG-3032),[fill solution]
+DFT-1991,Warning,"NAME
+       DFT-1991  (warning)  SCANDEF  based  Optimization  skipped:  No SCANDEF
+       chains found.
+
+DESCRIPTION
+       This message is issued when  SCANDEF  based  Optimization  (like  opti-
+       mize_dft  or  similar commands) was attempted but no SCANDEF chain data
+       was found. The SCANDEF chain data is basic for performing this kind  of
+       optimizations.
+
+WHAT NEXT
+       Check  if  SCANDEF  data should be available, for example if insert_dft
+       was previously executed succesfully, or if SCANDEF data has been loaded
+       from setup using read_def command.
+
+SEE ALSO
+       insert_dft(2) optimize_dft(2) read_def(2)",[fill severity],Warning: SCANDEF based Optimization skipped: No ScanDEF chains found. (DFT-1991) (MSG-3032),[fill solution]
+DPPA-268,Warning,"NAME
+       DPPA-268 (Warning) Didn't find any enabled planning block for %s.
+
+DESCRIPTION
+       The  tool  couldn't find an enabled block to run the specified command.
+       This could happen if user uses set_editability to disable all the phys-
+       ical  blocks  from  design  planning or user forgets to define physical
+       block in the design. This could also happen if  there  is  no  writable
+       physical blocks (blocks are read only)
+
+WHAT NEXT
+       Check  that  set_editability are set correctly and/or check if there is
+       any physical block in the  design  or  check  if  all  the  blocks  are
+       writable.",[fill severity],Warning: Didn't find any enabled planning block for bit_coin. (DPPA-268) (MSG-3032),[fill solution]
+EMS-040,Warning,"NAME
+       EMS-040 (Warning) EMS database ""%s"" already exists, over-writing it.
+
+DESCRIPTION
+       The  command executed creates an EMS database even if one exists by the
+       same name(over-writes the existing EMS database).
+
+WHAT NEXT
+       Use ""-ems_database"" to provide a new EMS database name if  you  do  not
+       want to overwrite the existing EMS database.
+
+SEE ALSO
+       check_design",[fill severity],"Warning: EMS database ""check_design.pre_clock_tree_stage.ems"" already exists, over-writing it. (EMS-040) (MSG-3032)",[fill solution]
+FLW-2892,Warning,,[fill severity],"Warning: Restoring scoped app option 'ropt.lr_estimation_composite_factor_area_leakage' to original value 'unset' (from current value '1', which is different from the scoped value '1.0'). (FLW-2892) (MSG-3032)",[fill solution]
+FLW-3502,Warning,,[fill severity],"Warning: The app option 'compile.flow.high_effort_timing' will be changed to Boolean type in the future.  To ensure compatibility, this app option should only be set to a value of 0 or 1 for now (FLW-3502) (MSG-3032)",[fill solution]
+FRAM-054,Warning,"NAME
+       FRAM-054  (warning)  Technology  used  to create frame-view and current
+       technology have inconsistency: %s.
+
+DESCRIPTION
+       The reported part of the technology are inconsistent between the refer-
+       ence library and the design library.
+
+WHAT NEXT
+       Update the library with consistent technology and try again.
+
+SEE ALSO
+       create_lib(2)
+       open_lib(2)
+       read_tech_file(2)",[fill severity],Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054) (MSG-3032),[fill solution]
+LGL-031,Warning,"NAME
+       LGL-031  (warning) Site master ""%s"" has neither X-Symmetry nor Y-Symme-
+       try. The ""legal orientations"" for the standard cells will be limited.
+
+DESCRIPTION
+       This message is indicating that the legalization has detected that  the
+       above  site master has neither X-Symmetry nor Y-Symmetry.  For a normal
+       design, usually, the site master may have either  ""X-Symmetry""  or  ""Y-
+       Symmetry"".
+
+       If a site master does not have either of ""X-Symmetry"" and ""Y-Symmetry"",
+       the standard cells will have limited  legal  orientations  because  the
+       standard cells will not be allowed to flip within the site rows.
+
+WHAT NEXT
+       Please  double-check  the  design and library setting and make sure the
+       setting is correct.",[fill severity],"Warning: Site master ""unit"" has neither X-Symmetry nor Y-Symmetry. The ""legal orientations"" for the standard cells will be limited. (LGL-031) (MSG-3032)",[fill solution]
+MV-030,Warning,"NAME
+       MV-030 (warning) Skipping cell %s, %s.
+
+DESCRIPTION
+       This warning message occurs if a given cell:
+
+       0    is not a switch cell.
+
+       0    is same as the cell of the source pin.
+
+       0    has multiple sleep/ack pins but none defined using -lib_pin.
+
+       0    has no valid sleep/ack pins.
+
+       0    has sleep/ack pins already connected to some other nets.
+
+WHAT NEXT
+       Please  check  the  cell for the above conditions and re-issue the com-
+       mand.
+
+SEE ALSO
+       connect_power_switch(2)",[fill severity],"Warning: Skipping cell piso_secure_0/headerfooter_snps_PD_PISO_SECURE__SW_PISO_SECURE_snps_HEAD2X16_HVT_R0_C0_0, Ack pin piso_secure_0/headerfooter_snps_PD_PISO_SECURE__SW_PISO_SECURE_snps_HEAD2X16_HVT_R0_C0_0/SLEEPOUT is already connected to net piso_secure_0/power_ack_signals[20]0. (MV-030) (MSG-3032)",[fill solution]
+MV-051,Warning,"NAME
+       MV-051  (warning)  '%s'  is  already connected to net '%s'. It might be
+       disconnected.
+
+DESCRIPTION
+       This message is printed when a port or pin specified for sleep  or  ack
+       out is already connected to a net. In this case, the tool might discon-
+       nect the original net and reconnect the port or the pin to the new net.
+
+WHAT NEXT
+       Typically this message occurs in relation to ack ports which  are  usu-
+       ally  hierarchical.  When  connecting these ack ports/nets they can get
+       disconnected or reused in some cases. Please check the  connections  of
+       the specified port or pin in this case.
+
+SEE ALSO
+       connect_power_switch(2)",[fill severity],Warning: 'power_ack_signals[20]' is already connected to net 'power_ack_signals[20]'. It might be disconnected. (MV-051) (MSG-3032),[fill solution]
+MV-074,Warning,"NAME
+       MV-074  (warning) The power switch cell '%s' is not associated with any
+       power switch strategies.
+
+DESCRIPTION
+       This message is printed when the specified power  switch  cell  is  not
+       associated with any power switch strategies.
+
+       The  tool cannot associate power switch cells with power switch strate-
+       gies if there are any discrepancies between them. In such a case,  sup-
+       ply  net  connections of the power switch cells cannot be automatically
+       derived by the tool. While it is sufficient to continue the implementa-
+       tion  flow if supply net connections are explicitly specified, the tool
+       will not be able to check and ensure that the power  switch  cells  are
+       properly  inserted  and  consistent  with  the  power switch strategies
+       intended for the cells.
+
+WHAT NEXT
+       Check the related power switch strategy  and  the  association  of  the
+       power switch cell.
+
+SEE ALSO
+       associate_mv_cells(2)
+       report_power_domains(2)
+       report_cell(2)",[fill severity],Warning: The power switch cell 'piso_secure_0/headerfooter_snps_PD_PISO_SECURE__SW_PISO_SECURE_snps_HEAD2X16_HVT_R887_C0_28' is not associated with any power switch strategies. (MV-074) (MSG-3032),[fill solution]
+MV-234,Warning,"NAME
+       MV-234 (warning)  Caution with argument '%s'. '%s'.
+
+DESCRIPTION
+       This is a warning message for connect_power_switch command. Among other
+       cases, it may be issued if certain options  that  are  unnecessary  for
+       certain modes are entered but being ignored.
+
+WHAT NEXT
+       Review  the  specific information given by the MV-234 error message and
+       refer to the connect_power_switch man  page  for  complete  information
+       about using the command.
+
+SEE ALSO
+       connect_power_switch(2)",[fill severity],Warning: Caution with argument '-direction'. '-direction should not be specified with -ring_direction and will be ignored.'. (MV-234) (MSG-3032),[fill solution]
+MV-282,Warning,"NAME
+       MV-282  (Warning)  The  switch cell '%s' is skipped for ring connection
+       when it's specified by option '%s'.
+
+DESCRIPTION
+       This warning message is reported only when the switch cell is specified
+       in -object_list/-voltage_area and power switch ring connection skips it
+       because it's not closest to the voltage  area  edge  or  other  reasons
+       which  have  been reported - source pin is same as ack pin or sleep pin
+       is same as ack out.
+
+       We only report at most 5 switch cells to avoid bogus message.
+
+SEE ALSO
+       connect_power_switch(2)
+       MV-030(n)",[fill severity],Warning: The switch cell 'piso_secure_0/headerfooter_snps_PD_PISO_SECURE__SW_PISO_SECURE_snps_HEAD2X16_HVT_R11_C0_8' is skipped for ring connection when it's specified by option '-voltage_area'. (MV-282) (MSG-3032),[fill solution]
+NDM-102,Warning,"NAME
+       NDM-102  (warning)  Technology  '%s'  used  for  frame-view creation in
+       library '%s', is inconsistent  with  the  current  technology  '%s'  of
+       library  '%s'.  Please  run derive_design_level_via_regions to generate
+       up-do-date via region in the design library.
+
+DESCRIPTION
+       The technology of the reference library is inconsistent with technology
+       of  the  design library. Need to run derive_design_level_via_regions to
+       generate up-do-date via region in the design library.
+
+WHAT NEXT
+       Update the library with consistent technology and  try  again.  Or  run
+       derive_design_level_via_regions  to  generate  up-do-date via region in
+       the design library.
+
+SEE ALSO
+       create_lib(2)
+       open_lib(2)
+       read_tech_file(2)
+       derive_design_level_via_regions(2)",[fill severity],"Warning: Technology 'saed32nm_1p9m_mw.tf' used for frame-view creation in library 'sram2rw16x4_tt1p_v125c', is inconsistent with the current technology 'saed32nm_1p9m_mw.tf' of library 'bit_coin.nlib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102) (MSG-3032)",[fill solution]
+NDMUI-669,Warning,"NAME
+       NDMUI-669  (warning)  All  user-defined  attributes  are  persistent by
+       default from 2018.06 release. Please use the '-non_persistent' if  non-
+       persistent user attribute is preferred.
+
+DESCRIPTION
+       Earlier  user-defined  attributes  were non-persistent by default, user
+       had to specify -persistent option to make them  persistent.   But  from
+       2018.06 release, all user-defined attributes are persistent by default.
+
+WHAT NEXT
+       New  option  '-non_persistent'  has been added in next 2018.06 release.
+       The user script should be modified if user-defined attribute has to  be
+       non-persistent only.",[fill severity],Warning: All user-defined attributes are persistent by default from 2018.06 release. Please use the '-non_persistent' if non-persistent user attribute is preferred. (NDMUI-669) (MSG-3032),[fill solution]
+OPT-035,Warning,"NAME
+       OPT-035  (warning)  Power  app  option  %s  has been deprecated. Please
+       remove it from your script.
+
+DESCRIPTION
+       App options opt.power.mode and opt.power.effort have  been  deprecated.
+       Please remove them from your script.
+
+WHAT NEXT
+       Switch  to  compile.flow.enable_power,  place_opt.flow.enable_power and
+       clock_opt.flow.enable_power.
+
+SEE ALSO
+       set_qor_strategy(2)
+       compile.flow.enable_power(3)
+       place_opt.flow.enable_power(3)
+       clock_opt.flow.enable_power(3)",[fill severity],Warning: Power app option opt.power.effort has been deprecated. Please remove it from your script. (OPT-035) (MSG-3032),[fill solution]
+OPT-069,Warning,"NAME
+       OPT-069 (warning) Skipping pin %s. Reason - %s.
+
+DESCRIPTION
+       Tie-cell insertion is skipped for a pin due to specified reason.
+
+WHAT NEXT
+       User can check whether the reason mentioned is reasonable.
+
+       ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~",[fill severity],Warning: Skipping pin piso_secure_0/headerfooter_snps_PD_PISO_SECURE__SW_PISO_SECURE_snps_HEAD2X16_HVT_R893_C92_2975/SLEEP. Reason - No matching lib-cells found for hierarchy bit_secure_0/sipo_slice_first. (OPT-069) (MSG-3032),[fill solution]
+OPT-202,Warning,"NAME
+       OPT-202 (warning) No legal tie cell is available to drive '%s' pin.
+
+DESCRIPTION
+       There  is  no  tie  cell  in the library that is available for constant
+       (1'b0 / 1'b1) fixing, given the constraints for the reported pin.  This
+       could  be because of target library subset selection, power constraints
+       etc.
+
+WHAT NEXT
+       Check and update power constraints or targer library subset constraints
+       or provide the library with additional cells.",[fill severity],Warning: No legal tie cell is available to drive 'piso_secure_0/headerfooter_snps_PD_PISO_SECURE__SW_PISO_SECURE_snps_HEAD2X16_HVT_R3_C0_4/SLEEP' pin. (OPT-202) (MSG-3032),[fill solution]
+PDC-003,Warning,"NAME
+       PDC-003 (Warning) Routing direction of metal layer %s is neither ""hori-
+       zontal"" nor ""vertical"".  PDC checks  will  not  be  performed  on  this
+       layer.
+
+DESCRIPTION
+       This  warning  message indicates that no routing direction has been set
+       on the metal layer.  This may result in DRC violations due  to  illegal
+       placement.
+
+WHAT NEXT
+       set_attribute  [get_layer <layer>] routing_direction <horizontal/verti-
+       cal>",[fill severity],"Warning: Routing direction of metal layer PO is neither ""horizontal"" nor ""vertical"".  PDC checks will not be performed on this layer. (PDC-003) (MSG-3032)",[fill solution]
+PGR-091,Warning,"NAME
+       PGR-091 (warn) %s
+
+DESCRIPTION
+       This  message  reports a failed attempt to create wire or via using the
+       compile_pg command. The reason for failure can be either wrong  parame-
+       ters in the compile_pg command or DRC violations. Perform the following
+       steps to ascertain the actual cause of failure.  1) Check  for  invalid
+       parameter  in the compile_pg command using <-ignore_drc> option. If the
+       compile_pg  command  fails  to  create  wires  and/or  vias  with   the
+       <-ignore_drc>  option,  it  means  that some invalid parameter has been
+       provided to the compile_pg command. Use the  details  provided  in  the
+       compile_pg  command  page  to know more about valid parameters that you
+       can use with this command. Try running the command again  with  correct
+       parameters. If the command succeeds in creating wires and vias, proceed
+       to  the  next  step.   2)  Run  the  compile_pg  command  without   the
+       <-ignore_drc> option but add the <-show_phantom> option. If the command
+       fails to create some wires and  vias  then  some  DRC  violations  have
+       occurred.  To  view  the details of the DRC violations, use View->Error
+       Browser in the tool GUI.
+
+WHAT NEXT
+       On finding any DRC rule violation you can look at the relevant DRC man-
+       uals  to  rectify any related issues in the design. The DRC manuals can
+       be found in Solvnetplus.",[fill severity],Warning: There is no wire or via being created. The reason for failure can be either wrong parameters for the strategies or DRC violations. Use <-ignore_drc> or <-show_phantom> with compile_pg for more information. (PGR-091) (MSG-3032),[fill solution]
+PGR-093,Warning,"NAME
+       PGR-093  (warning)  Recommend to turn on the advanced legalizer if cell
+       spacing is expected to be checked.
+
+DESCRIPTION
+       The cell spacing rule defined by set_placement_spacing_rules is  mainly
+       supported by the advanced legalizer.  If the cell spacing rule has been
+       set, we  recommend  to  turn  on  the  advanced  legalizer  by  setting
+       place.legalize.enable_advanced_legalizer  be true to make sure the cor-
+       rect behavior of power switch array creation.
+
+WHAT NEXT
+       Please check if the setting is intended.",[fill severity],Warning: Recommend to turn on the advanced legalizer if cell spacing is expected to be checked. (PGR-093) (MSG-3032),[fill solution]
+PGR-095,Warning,"NAME
+       PGR-095 (warning) Strategy via rule is not defined. Add appropriate via
+       rule to get expected results and avoid runtime penalties.
+
+DESCRIPTION
+       Strategy via rule is not defined,  causing  via  rule  to  fallback  to
+       default  behavior.   This implies trying to connect all possible inter-
+       sections with any possible via. Often this does not yield the  expected
+       result  and in most cases will incur a runtime penalty. Consider if the
+       default via rule behavior is the expected result.
+
+WHAT NEXT
+       Please add appropriate via rule setting.",[fill severity],Warning: Strategy via rule is not defined. Add appropriate via rule to get expected results and avoid runtime penalties. (PGR-095) (MSG-3032),[fill solution]
+PGR-599,Warning,"NAME
+       PGR-599 (warning) %s
+
+DESCRIPTION
+       General warning message.
+
+WHAT NEXT
+       Follow the warning message instruction.",[fill severity],Warning: Failed to connect instance bit_secure_15/slice_31/nibble_1 pin VSS pin bbox (6445.072 245.628)(6445.372 245.928) pin layer ID 19 net VSS due to: Connection wire DRCs. (PGR-599) (MSG-3032),[fill solution]
+POW-009,Warning,"NAME
+       POW-009 (warning) Power analysis is disabled %s as leakage/swcap/inter-
+       nal   mode   power   app   options   can   be    off    and/or    leak-
+       age_power/dynamic_power scenario flags are set to false.
+
+DESCRIPTION
+       This  message  occurs  when  the  scenario power flags are false and/or
+       leakage/swcap/internal app options are 'off'.
+
+WHAT NEXT
+       Set the required power analysis app option to 'on' and enable the  sce-
+       nario power flags.
+
+SEE ALSO
+       report_power(2)
+       report_scenarios(2)
+       power.leakage_mode(3)
+       power.swcap_mode(3)
+       power.internal_mode(3)",[fill severity],Warning: Power analysis is disabled for scenario 'FUNC_0.85V_HOLD' as leakage/swcap/internal mode power app options can be off and/or leakage_power/dynamic_power scenario flags are set to false. (POW-009) (MSG-3032),[fill solution]
+POW-034,Warning,"NAME
+       POW-034  (warning)  No  valid  clocks available in design '%s'. Setting
+       clock frequency to %s GHz.
+
+DESCRIPTION
+       The design does not have any valid clocks.  The  simulation  resolution
+       needed  to determine random vector generation during switching activity
+       propagation is based on the fastest clock.
+
+WHAT NEXT
+       Ensure there are valid clocks defined for the mode.
+
+SEE ALSO
+       set_switching_activity (2)
+       get_switching_activity (2)",[fill severity],Warning: No valid clocks available in design 'bit_coin'. Setting clock frequency to 1 GHz. (POW-034) (MSG-3032),[fill solution]
+POW-046,Warning,"NAME
+       POW-046 (warning) Power table extrapolation (%s mode) for port %s on %s
+       for parameter %s. Lowest table value = %f, highest table  value  =  %f,
+       value = %f
+
+DESCRIPTION
+       This  message  is  given  when a parameter during power table access is
+       outside of the table range. Based on the mode, it will be  extrapolated
+       or clipped to the range.
+
+WHAT NEXT
+       The  extrapolation mode can be set by app option power.table_extrapola-
+       tion
+
+SEE ALSO
+       report_power(2)",[fill severity],"Warning: Power table extrapolation (extrapolation mode) for port QN on cell lreset_sync/reset_sync_reg for parameter Cout. Lowest table value = 0.000100, highest table value = 0.008000, value = 0.000000 (POW-046) (MSG-3032)",[fill solution]
+POW-116,Warning,"NAME
+       POW-116  (warning)  Net  '%s'  is already connected to pin '%s'. It may
+       cause loss of switching activity.
+
+DESCRIPTION
+       This message occurs when net is already connected to a pin and  another
+       driver  pin  is  trying  to connect with this net. It may cause loss of
+       switching activity.
+
+WHAT NEXT
+       Check if there exist multiple drivers for this net. Else this situation
+       may  occur  temporarily  due  to  connect  before disconnecting the old
+       driver.",[fill severity],Warning: Net 'hash_it/N15' is already connected to pin 'ctmi_57871/Y'. It may cause loss of switching activity. (POW-116) (MSG-3032),[fill solution]
+POW-120,Warning,"NAME
+       POW-120 (warning) '-essential' option should not be specified as it has
+       been deprecated and is enabled by default.
+
+DESCRIPTION
+       The command saif_map -write_map -type [ptpx/verdi] will write  mappings
+       for the essential points.
+
+WHAT NEXT
+        Do not specify '-essential' option.",[fill severity],Warning: '-essential' option should not be specified as it has been deprecated and is enabled by default. (POW-120) (MSG-3032),[fill solution]
+PVT-030,Warning,"NAME
+       PVT-030  (warning)  Corner %s:  %d process number, %d process label, %d
+       voltage, and %d temperature mismatches.
+
+DESCRIPTION
+       This message is issued when there are mismatches between the  specified
+       and  effective values of the process number, process label, voltage, or
+       temperature  operating  conditions  of  a   particular   corner.    The
+       report_pvt  command will print information and warnings identifying the
+       mismatched values, the relevant cell libraries, the number of  affected
+       cells, and the operating conditions that will actually be used for tim-
+       ing analysis.
+
+WHAT NEXT
+       Review the P/V/T operating conditions supported by  the  relevant  cell
+       libraries.   Review  whether  specified  P/V/T  is missing some library
+       cells.  Review the constraints for missing  or  incorrect  set_voltage,
+       set_temperature,  set_process_number, set_process_label, or set_operat-
+       ing_conditions commands.  Review the  UPF  data  for  an  incorrect  or
+       incomplete  supply net configuration.  The report_pvt command will give
+       more information about this situation.",[fill severity],"Warning: Corner FUNC_0.85V_HOLD:  4 process number, 0 process label, 7 voltage, and 0 temperature mismatches. (PVT-030) (MSG-3032)",[fill solution]
+PVT-031,Warning,"NAME
+       PVT-031 (warning)  %d cells affected for early, %d for late.
+
+DESCRIPTION
+       This  message is issued when there are mismatches between the specified
+       and effective values of the process number, process label, voltage,  or
+       temperature  operating conditions of a particular corner.  It describes
+       the number of cells affected by the mismatched PVT values.  It will  be
+       preceded by a PVT-030 warning, which lists the number of mismatches.
+
+WHAT NEXT
+       Review  the  P/V/T  operating conditions supported by the relevant cell
+       libraries.  Review the constraints for missing or  incorrect  set_volt-
+       age,   set_temperature,   set_process_number,   set_process_label,   or
+       set_operating_conditions commands.  Review the UPF data for  an  incor-
+       rect  or  incomplete  supply net configuration.  The report_pvt command
+       will give more information about this situation.",[fill severity],"Warning: 92091 cells affected for early, 92091 for late. (PVT-031) (MSG-3032)",[fill solution]
+PVT-034,Warning,"NAME
+       PVT-034  (warning)   %d  port  driving_cells affected for early, %d for
+       late.
+
+DESCRIPTION
+       This message is issued when there are mismatches between the  specified
+       and  effective values of the process number, process label, voltage, or
+       temperature operating conditions of a particular corner.  It  describes
+       the number of port driving_cells affected by the mismatched PVT values.
+       It will be preceded by a PVT-030 warning, which  lists  the  number  of
+       mismatches.
+
+WHAT NEXT
+       Review  the  P/V/T  operating conditions supported by the relevant cell
+       libraries.  Review the constraints for missing or  incorrect  set_volt-
+       age,   set_temperature,   set_process_number,   set_process_label,   or
+       set_operating_conditions commands applied to the port or the top  level
+       of the design.  The report_pvt command will give more information about
+       this situation for a particular port.",[fill severity],"Warning: 0 port driving_cells affected for early, 0 for late. (PVT-034) (MSG-3032)",[fill solution]
+SQM-1040,Warning,"NAME
+       SQM-1040 (warning) No cell bus will be mapped to multibit because there
+       is no multibit cells in the cell libraries.
+
+DESCRIPTION
+       This warning message is issued when bus instance is to  be  mapped  but
+       library doesn't have multibit cells.
+
+WHAT NEXT
+       Check library to provide multibit cells for bus mapping.  ~",[fill severity],No cell bus will be mapped to multibit because there is no multibit cells in the cell libraries. (MSG-3032),[fill solution]
+SQM-1046,Warning,"NAME
+       SQM-1046  (warning) Sequential element '%s' of module '%s' is mapped to
+       library cell '%s' or its equivalents, which don't  have  nextstate:data
+       defined  on  input  port.  This  may  result  in synchronous input nets
+       swapped.
+
+DESCRIPTION
+       This warning message is issued when instance is  mapped  to  a  libcell
+       where  there  is  no  nextstate_type attribute defined on its ports. In
+       this case, functional input pairs like D/SET, D/CLEAR  can  be  swapped
+       during net connection as they are logically equivalent. Tool can't tell
+       which port is the ""true"" data port.
+
+WHAT NEXT
+       User can ignore this warning if they don't care about  pin  connection.
+       Otherwise  choose  another  libcell  which  is  properly  defined  with
+       nextstate_type.  For example: get_attribute [get_lib_pins   -of_objects
+       [get_lib_cells   */DFPCRQX1HXP ] ] nextstate_type ~",[fill severity],"Warning: Sequential element 'bit_secure_1/slice_0/hreset_sync/t_reset_sync_reg' of module 'bit_coin' is mapped to library cell 'SDFFARX1_RVT' or its equivalents, which don't have nextstate:data defined on input port. This may result in synchronous input nets swapped. (SQM-1046) (MSG-3032)",[fill solution]
+TCK-001,Warning,"NAME
+       TCK-001  (Warning) The reported endpoint '%s' is unconstrained. Reason:
+       %s.
+
+DESCRIPTION
+       The error message occurs when there are unconstrained endpoints in  the
+       design.  The design is not fully constrained. There are several reasons
+       for the unconstrained endpoints: false path, no check, unclocked,  dis-
+       abeld check, case constant, or no arrival path.
+
+WHAT NEXT
+       The  violation  message  identifies  the unconstrained endpoint and the
+       reason. You could check whether it is a expected behavior.",[fill severity],The reported endpoint '%s' is unconstrained. Reason: %s. (MSG-3032),[fill solution]
+TCK-012,Warning,"NAME
+       TCK-012 (Warning) The input port '%s' has no clock_relative delay spec-
+       ified.
+
+DESCRIPTION
+       The reported input port is not a clock source. The port does  not  have
+       an  input delay value, and it also has paths from it which are not dis-
+       abled or false paths. In order to enable proper constraining  of  paths
+       from  the  port,  a  realistic input delay needs to be provided for all
+       data input ports.
+
+WHAT NEXT
+       The violation message will give you the input port which has  no  input
+       delay  specified.   To  resolve  this  issue, consider specifying input
+       delay for each non-clock source input port.  This  input  delay  should
+       also be relative to a clock in the design.",[fill severity],The input port '%s' has no clock_relative delay specified. (MSG-3032),[fill solution]
+TIM-207,Warning,"NAME
+       TIM-207  (Warning)  Libraries  do not have CCS noise model for accurate
+       waveform analysis in advanced waveform propagation mode.
+
+DESCRIPTION
+       When advanced waveform propagation analysis is enabled, it is  required
+       that  the  stage driver cell has CCS noise model(s) for its timing arcs
+       in  terms of  either  arc-based  or   pin-based   CCS  noise  model(s).
+       When  such CCS noise model(s) are not present in the library,  analysis
+       with  desired accuracy cannot be performed.
+
+WHAT NEXT
+       Fix the library to ensure that all library cell timing arcs have either
+       arc-based or pin-based CCS noise models.
+
+SEE ALSO
+       time.delay_calc_waveform_analysis_mode (3)
+       time.awp_compatibility_mode (3)",[fill severity],Warning: Libraries do not have CCS noise model for accurate waveform analysis in advanced waveform propagation mode. (TIM-207) (MSG-3032),[fill solution]
+UIC-058,Warning,"NAME
+       UIC-058  (warning) Scenario %s is not configured for %s analysis: skip-
+       ping.
+
+DESCRIPTION
+       The specified scenario has not been activated for setup or hold  analy-
+       sis.   Because  of this, no setup or hold timing paths can be found for
+       it.
+
+WHAT NEXT
+       If setup or hold analysis is deliberately being skipped for  this  sce-
+       nario,  this  warning  can  be  ignored.   Otherwise,  use the set_sce-
+       nario_status command to activate this scenario for setup or hold analy-
+       sis.",[fill severity],Warning: Scenario FUNC_0.85V_HOLD is not configured for setup analysis: skipping. (UIC-058) (MSG-3032),[fill solution]
+ZRT-022,Warning,"NAME
+       ZRT-022 (warn) Cannot find a default contact code for layer %s.
+
+DESCRIPTION
+       This  warning  message  indicates  that  a default contact code was not
+       found for the specified layer. This is most likely  due  to  a  missing
+       default contact code definition in the technology file.
+
+WHAT NEXT
+       Add  a  default  contact code definition to the technology file. If the
+       specified layer is a nonrouting layer, such as V0, you can ignore  this
+       message.",[fill severity],Warning: Cannot find a default contact code for layer CO. (ZRT-022) (MSG-3032),[fill solution]
+ZRT-027,Warning,"NAME
+       ZRT-027 (warn) Ignore %d top cell ports with no pins.
+
+DESCRIPTION
+       This  warning  message indicates that the design's top cell has logical
+       ports which have no physical shapes attached to them.  The router  will
+       ignore such ports.
+
+WHAT NEXT
+       Please check the top cell and create physical shapes for those ports if
+       needed.",[fill severity],Warning: Ignore 2 top cell ports with no pins. (ZRT-027) (MSG-3032),[fill solution]
+ZRT-044,Warning,"NAME
+       ZRT-044 (warn) Standard cell pin %s/%s has no valid via regions.
+
+DESCRIPTION
+       Via  regions  are  useful  in  avoiding  DRCs  in accessing pins and in
+       accessing pins off the routing grid. It is defined  with  the  matching
+       via specified by the contact code number.
+
+WHAT NEXT
+       Please  check  for  DRCs  in  accessing this pin, and check ZRT-038 for
+       error in contact code number, and generate the via  regions  if  neces-
+       sary.",[fill severity],Standard cell pin %s/%s has no valid via regions. (MSG-3032),[fill solution]
+ZRT-101,Warning,"NAME
+       ZRT-101 (warning) Power net %s has no power preroutes, skip tie-off.
+
+DESCRIPTION
+       Power  net  has no power preroutes. Tie-off will be turned off for this
+       net.
+
+WHAT NEXT
+       Please add power preroutes.",[fill severity],"Power net %s has no power preroutes, skip tie-off. (MSG-3032)",[fill solution]
+ZRT-143,Warning,"NAME
+       ZRT-143  (warning)  Secondary  PG  net  %s has no power stripe, skip to
+       route.
+
+DESCRIPTION
+       Secondary PG net has no power stripe to connect.
+
+WHAT NEXT
+       Please add power stripe.",[fill severity],"Secondary PG net %s has no power stripe, skip to route. (MSG-3032)",[fill solution]
+ZRT-511,Warning,"NAME
+       ZRT-511 (Warning) Cell contains tie connections which are not connected
+       to real PG.
+
+DESCRIPTION
+       Cell contains some tie nets (tie_low or tie_high) which  are  not  con-
+       nected to real PG. These nets will not contain route information unless
+       they are realized with PG rail. To connect to PG rail,  users  need  to
+       call ""connect_pg_net"" command.
+
+       An example for query such a net is
+        get_nets -hierarchical -filter net_type=~tie_low
+
+WHAT NEXT
+       Run ""connect_pg_net"".",[fill severity],Warning: Cell contains tie connections which are not connected to real PG. (ZRT-511) (MSG-3032),[fill solution]
+ZRT-625,Warning,"NAME
+       ZRT-625  (warn)  Master  cell  %s  has duplicated redundant library pin
+       shapes at {%.3f %.3f} {%.3f %.3f} on layer %s.
+
+DESCRIPTION
+        Duplicated redundant library pin shapes are found at  the  give  loca-
+       tion.
+        The coordinates are relative to the library inside.
+        These  incorrect  data will impact the router performance and DRC con-
+       vergence.
+
+WHAT NEXT
+        Please remove the redundant pin shapes.
+        Please also review the tool flow, they might be generated from  incor-
+       rect
+        library preparation flow.",[fill severity],Warning: Master cell bit_coin has duplicated redundant library pin shapes at {-1.368 0.001} {-1.064 2499.319} on layer M3. (ZRT-625) (MSG-3032),[fill solution]
+ZRT-740,Warning,"NAME
+       ZRT-740 (warning)  %s is unplaced.  This may impact routing result.
+
+DESCRIPTION
+       A port is unplaced.  This is atypical and may impact routing result.
+
+WHAT NEXT
+       If this is not expected, please fix the issue.",[fill severity],Warning: Port sipo_sw_out of cell bit_coin is unplaced.  This may impact routing result. (ZRT-740) (MSG-3032),[fill solution]
+ZRT-763,Warning,"NAME
+       ZRT-763  (warning)  Cell  %s  is placed overlapping with other cells at
+       {{%.3f %.3f} {%.3f %.3f}}.
+
+DESCRIPTION
+       This warning message indicates that there are other  cells  overlapping
+       with  this  cell.  This  is  a  roughly check for overlapped cell.  For
+       detailed information, please run ""check_legality"".
+
+WHAT NEXT
+       Please make sure all the cells are placed legally  before  running  the
+       router and run check_legality before running check_routability.",[fill severity],Warning: Cell compile_ZBUF_4_inst_194305 is placed overlapping with other cells at {{3082.856 2029.648} {3086.504 2031.320}}. (ZRT-763) (MSG-3032),[fill solution]

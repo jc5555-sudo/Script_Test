@@ -1,0 +1,398 @@
+Code,Severity,Description,User Severity,rpt msg,solution
+ATR-012,Warning,"NAME
+       ATR-012 (warning) Attribute '%s' is already defined in class '%s'
+
+DESCRIPTION
+       While  defining  a  new user attribute, you specified an attribute name
+       that is already defined.  There is no mechanism to change an  attribute
+       definition.
+
+WHAT NEXT
+       Make  use  of  the  existing  attribute or use another name for the new
+       attribute.",[fill severity],Warning: Attribute 'sqs_step' is already defined in class 'lib_cell' (ATR-012) (MSG-3032),[fill solution]
+CMD-030,Warning,"NAME
+       CMD-030 (warning) File '%s' was not found in search path.
+
+DESCRIPTION
+       The 'which' command evaluated an filename argument and the file was not
+       found.
+
+WHAT NEXT
+       No adverse effect on the result of the  command,  but  check  spelling,
+       etc.",[fill severity],Warning: File 'config_setup.tcl' was not found in search path. (CMD-030) (MSG-3032),[fill solution]
+CTS-956,Warning,"NAME
+       CTS-956  (warning) Please use -largest / -smallest / -all switches with
+       -show_verbose_paths / -show_paths to report the clock paths.
+
+DESCRIPTION
+       -largest / -smallest /  -all  switches  have  to  add  with  -show_ver-
+       bose_paths / -show_paths to report the clock paths.
+
+WHAT NEXT
+       Add -largest / -smallest / -all switches to report the clock paths.",[fill severity],Warning: Please use -largest / -smallest / -all switches with -show_verbose_paths / -show_paths to report the clock paths. (CTS-956) (MSG-3032),[fill solution]
+FRAM-054,Warning,"NAME
+       FRAM-054  (warning)  Technology  used  to create frame-view and current
+       technology have inconsistency: %s.
+
+DESCRIPTION
+       The reported part of the technology are inconsistent between the refer-
+       ence library and the design library.
+
+WHAT NEXT
+       Update the library with consistent technology and try again.
+
+SEE ALSO
+       create_lib(2)
+       open_lib(2)
+       read_tech_file(2)",[fill severity],Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054) (MSG-3032),[fill solution]
+MV-074,Warning,"NAME
+       MV-074  (warning) The power switch cell '%s' is not associated with any
+       power switch strategies.
+
+DESCRIPTION
+       This message is printed when the specified power  switch  cell  is  not
+       associated with any power switch strategies.
+
+       The  tool cannot associate power switch cells with power switch strate-
+       gies if there are any discrepancies between them. In such a case,  sup-
+       ply  net  connections of the power switch cells cannot be automatically
+       derived by the tool. While it is sufficient to continue the implementa-
+       tion  flow if supply net connections are explicitly specified, the tool
+       will not be able to check and ensure that the power  switch  cells  are
+       properly  inserted  and  consistent  with  the  power switch strategies
+       intended for the cells.
+
+WHAT NEXT
+       Check the related power switch strategy  and  the  association  of  the
+       power switch cell.
+
+SEE ALSO
+       associate_mv_cells(2)
+       report_power_domains(2)
+       report_cell(2)",[fill severity],Warning: The power switch cell 'piso_secure_0/headerfooter_snps_PD_PISO_SECURE__SW_PISO_SECURE_snps_HEAD2X16_HVT_R887_C0_28' is not associated with any power switch strategies. (MV-074) (MSG-3032),[fill solution]
+NDM-102,Warning,"NAME
+       NDM-102  (warning)  Technology  '%s'  used  for  frame-view creation in
+       library '%s', is inconsistent  with  the  current  technology  '%s'  of
+       library  '%s'.  Please  run derive_design_level_via_regions to generate
+       up-do-date via region in the design library.
+
+DESCRIPTION
+       The technology of the reference library is inconsistent with technology
+       of  the  design library. Need to run derive_design_level_via_regions to
+       generate up-do-date via region in the design library.
+
+WHAT NEXT
+       Update the library with consistent technology and  try  again.  Or  run
+       derive_design_level_via_regions  to  generate  up-do-date via region in
+       the design library.
+
+SEE ALSO
+       create_lib(2)
+       open_lib(2)
+       read_tech_file(2)
+       derive_design_level_via_regions(2)",[fill severity],"Warning: Technology 'saed32nm_1p9m_mw.tf' used for frame-view creation in library 'sram2rw16x4_tt1p_v125c', is inconsistent with the current technology 'saed32nm_1p9m_mw.tf' of library 'bit_coin.nlib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102) (MSG-3032)",[fill solution]
+NDMUI-669,Warning,"NAME
+       NDMUI-669  (warning)  All  user-defined  attributes  are  persistent by
+       default from 2018.06 release. Please use the '-non_persistent' if  non-
+       persistent user attribute is preferred.
+
+DESCRIPTION
+       Earlier  user-defined  attributes  were non-persistent by default, user
+       had to specify -persistent option to make them  persistent.   But  from
+       2018.06 release, all user-defined attributes are persistent by default.
+
+WHAT NEXT
+       New  option  '-non_persistent'  has been added in next 2018.06 release.
+       The user script should be modified if user-defined attribute has to  be
+       non-persistent only.",[fill severity],Warning: All user-defined attributes are persistent by default from 2018.06 release. Please use the '-non_persistent' if non-persistent user attribute is preferred. (NDMUI-669) (MSG-3032),[fill solution]
+NEX-020,Warning,"NAME
+       NEX-020  (warning)   Net '%s' is exceeding threshold (over %d pins) and
+       will be skipped.
+
+DESCRIPTION
+       This net has a very large number of pins so it will not  be  extracted.
+       This  net was probably not meant to be detail routed.  There will be no
+       parasitics and no back-annotated delay computed for this  net.   Timing
+       analysis  will  use  the wire load model with the high fanout threshold
+       assumptions.  The current default for the max number of pins  is  1000.
+       You can use the option extract.high_fanout_threshold to adjust it.
+
+WHAT NEXT
+       Buffer this net and detail route it to be able to extract it.
+
+SEE ALSO
+       reg_extract_design(2)",[fill severity],Net '%s' is exceeding threshold (over %d pins) and will be skipped. (MSG-3032),[fill solution]
+PDC-003,Warning,"NAME
+       PDC-003 (Warning) Routing direction of metal layer %s is neither ""hori-
+       zontal"" nor ""vertical"".  PDC checks  will  not  be  performed  on  this
+       layer.
+
+DESCRIPTION
+       This  warning  message indicates that no routing direction has been set
+       on the metal layer.  This may result in DRC violations due  to  illegal
+       placement.
+
+WHAT NEXT
+       set_attribute  [get_layer <layer>] routing_direction <horizontal/verti-
+       cal>",[fill severity],"Warning: Routing direction of metal layer PO is neither ""horizontal"" nor ""vertical"".  PDC checks will not be performed on this layer. (PDC-003) (MSG-3032)",[fill solution]
+POW-009,Warning,"NAME
+       POW-009 (warning) Power analysis is disabled %s as leakage/swcap/inter-
+       nal   mode   power   app   options   can   be    off    and/or    leak-
+       age_power/dynamic_power scenario flags are set to false.
+
+DESCRIPTION
+       This  message  occurs  when  the  scenario power flags are false and/or
+       leakage/swcap/internal app options are 'off'.
+
+WHAT NEXT
+       Set the required power analysis app option to 'on' and enable the  sce-
+       nario power flags.
+
+SEE ALSO
+       report_power(2)
+       report_scenarios(2)
+       power.leakage_mode(3)
+       power.swcap_mode(3)
+       power.internal_mode(3)",[fill severity],Warning: Power analysis is disabled for scenario 'FUNC_0.85V_HOLD' as leakage/swcap/internal mode power app options can be off and/or leakage_power/dynamic_power scenario flags are set to false. (POW-009) (MSG-3032),[fill solution]
+POW-046,Warning,"NAME
+       POW-046 (warning) Power table extrapolation (%s mode) for port %s on %s
+       for parameter %s. Lowest table value = %f, highest table  value  =  %f,
+       value = %f
+
+DESCRIPTION
+       This  message  is  given  when a parameter during power table access is
+       outside of the table range. Based on the mode, it will be  extrapolated
+       or clipped to the range.
+
+WHAT NEXT
+       The  extrapolation mode can be set by app option power.table_extrapola-
+       tion
+
+SEE ALSO
+       report_power(2)",[fill severity],"Power table extrapolation (%s mode) for port %s on %s for parameter %s. Lowest table value = %f, highest table value = %f, value = %f (MSG-3032)",[fill solution]
+PVT-030,Warning,"NAME
+       PVT-030  (warning)  Corner %s:  %d process number, %d process label, %d
+       voltage, and %d temperature mismatches.
+
+DESCRIPTION
+       This message is issued when there are mismatches between the  specified
+       and  effective values of the process number, process label, voltage, or
+       temperature  operating  conditions  of  a   particular   corner.    The
+       report_pvt  command will print information and warnings identifying the
+       mismatched values, the relevant cell libraries, the number of  affected
+       cells, and the operating conditions that will actually be used for tim-
+       ing analysis.
+
+WHAT NEXT
+       Review the P/V/T operating conditions supported by  the  relevant  cell
+       libraries.   Review  whether  specified  P/V/T  is missing some library
+       cells.  Review the constraints for missing  or  incorrect  set_voltage,
+       set_temperature,  set_process_number, set_process_label, or set_operat-
+       ing_conditions commands.  Review the  UPF  data  for  an  incorrect  or
+       incomplete  supply net configuration.  The report_pvt command will give
+       more information about this situation.",[fill severity],"Corner %s:  %d process number, %d process label, %d voltage, and %d temperature mismatches. (MSG-3032)",[fill solution]
+PVT-031,Warning,"NAME
+       PVT-031 (warning)  %d cells affected for early, %d for late.
+
+DESCRIPTION
+       This  message is issued when there are mismatches between the specified
+       and effective values of the process number, process label, voltage,  or
+       temperature  operating conditions of a particular corner.  It describes
+       the number of cells affected by the mismatched PVT values.  It will  be
+       preceded by a PVT-030 warning, which lists the number of mismatches.
+
+WHAT NEXT
+       Review  the  P/V/T  operating conditions supported by the relevant cell
+       libraries.  Review the constraints for missing or  incorrect  set_volt-
+       age,   set_temperature,   set_process_number,   set_process_label,   or
+       set_operating_conditions commands.  Review the UPF data for  an  incor-
+       rect  or  incomplete  supply net configuration.  The report_pvt command
+       will give more information about this situation.",[fill severity],"%d cells affected for early, %d for late. (MSG-3032)",[fill solution]
+PVT-034,Warning,"NAME
+       PVT-034  (warning)   %d  port  driving_cells affected for early, %d for
+       late.
+
+DESCRIPTION
+       This message is issued when there are mismatches between the  specified
+       and  effective values of the process number, process label, voltage, or
+       temperature operating conditions of a particular corner.  It  describes
+       the number of port driving_cells affected by the mismatched PVT values.
+       It will be preceded by a PVT-030 warning, which  lists  the  number  of
+       mismatches.
+
+WHAT NEXT
+       Review  the  P/V/T  operating conditions supported by the relevant cell
+       libraries.  Review the constraints for missing or  incorrect  set_volt-
+       age,   set_temperature,   set_process_number,   set_process_label,   or
+       set_operating_conditions commands applied to the port or the top  level
+       of the design.  The report_pvt command will give more information about
+       this situation for a particular port.",[fill severity],"%d port driving_cells affected for early, %d for late. (MSG-3032)",[fill solution]
+TIM-204,Warning,"NAME
+       TIM-204  (Warning)  Advanced  receiver  model  has not been enabled for
+       detailed routed design.
+
+DESCRIPTION
+       Advanced reciever model  has  not  been  enabled  for  detailed  routed
+       design.   For  improving accuracy of delay calculation and to correlate
+       with PrimeTime,  it  is  recommended  to  set  the  application  option
+       'time.enable_ccs_rcv_cap' to true.
+
+WHAT NEXT
+       Enable time.enable_ccs_rcv_cap for signoff accurate delay calculation.",[fill severity],Advanced receiver model has not been enabled for detailed routed design. (MSG-3032),[fill solution]
+TIM-207,Warning,"NAME
+       TIM-207  (Warning)  Libraries  do not have CCS noise model for accurate
+       waveform analysis in advanced waveform propagation mode.
+
+DESCRIPTION
+       When advanced waveform propagation analysis is enabled, it is  required
+       that  the  stage driver cell has CCS noise model(s) for its timing arcs
+       in  terms of  either  arc-based  or   pin-based   CCS  noise  model(s).
+       When  such CCS noise model(s) are not present in the library,  analysis
+       with  desired accuracy cannot be performed.
+
+WHAT NEXT
+       Fix the library to ensure that all library cell timing arcs have either
+       arc-based or pin-based CCS noise models.
+
+SEE ALSO
+       time.delay_calc_waveform_analysis_mode (3)
+       time.awp_compatibility_mode (3)",[fill severity],Warning: Libraries do not have CCS noise model for accurate waveform analysis in advanced waveform propagation mode. (TIM-207) (MSG-3032),[fill solution]
+TIM-260,Warning,"NAME
+       TIM-260  (Warning)  Library %s is pre-18.06 version %u.%u,  Correlation
+       with Primetime can be low.
+
+DESCRIPTION
+       ICC2 Primetime delay calculation can work with reference library  built
+       by  version  later  than  2018.06  only.  If reference library is built
+       before 2018.06, delay calculation can have poor corrleation with Prime-
+       time.
+
+WHAT NEXT
+       Rebuild  the  reference library with library manager version later than
+       2018.06, or turn on library  configuration  app  option  lib.configura-
+       tion.update_timing_view_for_pt_delay",[fill severity],"Library %s is pre-18.06 version %u.%u,  Correlation with Primetime can be low. (MSG-3032)",[fill solution]
+UIC-058,Warning,"NAME
+       UIC-058  (warning) Scenario %s is not configured for %s analysis: skip-
+       ping.
+
+DESCRIPTION
+       The specified scenario has not been activated for setup or hold  analy-
+       sis.   Because  of this, no setup or hold timing paths can be found for
+       it.
+
+WHAT NEXT
+       If setup or hold analysis is deliberately being skipped for  this  sce-
+       nario,  this  warning  can  be  ignored.   Otherwise,  use the set_sce-
+       nario_status command to activate this scenario for setup or hold analy-
+       sis.",[fill severity],Warning: Scenario FUNC_0.85V_SETUP is not configured for hold analysis: skipping. (UIC-058) (MSG-3032),[fill solution]
+ZRT-022,Warning,"NAME
+       ZRT-022 (warn) Cannot find a default contact code for layer %s.
+
+DESCRIPTION
+       This  warning  message  indicates  that  a default contact code was not
+       found for the specified layer. This is most likely  due  to  a  missing
+       default contact code definition in the technology file.
+
+WHAT NEXT
+       Add  a  default  contact code definition to the technology file. If the
+       specified layer is a nonrouting layer, such as V0, you can ignore  this
+       message.",[fill severity],Warning: Cannot find a default contact code for layer CO. (ZRT-022) (MSG-3032),[fill solution]
+ZRT-027,Warning,"NAME
+       ZRT-027 (warn) Ignore %d top cell ports with no pins.
+
+DESCRIPTION
+       This  warning  message indicates that the design's top cell has logical
+       ports which have no physical shapes attached to them.  The router  will
+       ignore such ports.
+
+WHAT NEXT
+       Please check the top cell and create physical shapes for those ports if
+       needed.",[fill severity],Warning: Ignore 2 top cell ports with no pins. (ZRT-027) (MSG-3032),[fill solution]
+ZRT-044,Warning,"NAME
+       ZRT-044 (warn) Standard cell pin %s/%s has no valid via regions.
+
+DESCRIPTION
+       Via  regions  are  useful  in  avoiding  DRCs  in accessing pins and in
+       accessing pins off the routing grid. It is defined  with  the  matching
+       via specified by the contact code number.
+
+WHAT NEXT
+       Please  check  for  DRCs  in  accessing this pin, and check ZRT-038 for
+       error in contact code number, and generate the via  regions  if  neces-
+       sary.",[fill severity],Standard cell pin %s/%s has no valid via regions. (MSG-3032),[fill solution]
+ZRT-142,Warning,"NAME
+       ZRT-142 (warn) PG net %s has a %s shape with shape_use detail_route and
+       it is too long. Long part of the  shape  is  located  at  (%.3f,  %.3f)
+       (%.3f, %.3f). The shape's BBox is (%.3f, %.3f) (%.3f, %.3f).
+
+DESCRIPTION
+       In  general,  a  PG wire with shape_use detail_route is a tie-off wire.
+       However, a very long PG wire could be  a  part  of  PG  mesh  or  rail.
+       Please  review and correct the shape_use of the shape reported.  Please
+       be noted, this check only detects suspicious ones, not all of them.
+
+WHAT NEXT
+       Review and correct the shape_use of the shape reported.
+
+       The user could run check_routability -check_shield true to get a report
+       of  shield  data issues.  The user could also use set_app_options -name
+       route.common.check_shield -value true to enable shield data checker  in
+       all Zroute commands.",[fill severity],"Warning: PG net piso_sw_out has a path shape with shape_use detail_route and it is too long. Long part of the shape is located at (125.212, 1303.668) (217.684, 1303.724). The shape's BBox is (125.212, 1303.668) (217.684, 1303.724). (ZRT-142) (MSG-3032)",[fill solution]
+ZRT-311,Warning,"NAME
+       ZRT-311  (warning)  Skipping antenna analysis for net %s. The pin %s on
+       cell %s does not have enough gate area information.
+
+DESCRIPTION
+       One or more input pins of this net do not have the  correct  gate  area
+       values.  So antenna analysis will not be done for this net.
+
+       Limit for number of ZRT-311 messages is set to 100 by default for read-
+       ability of the log file. In order to print more or all the ZRT-311 mes-
+       sages,  set  this  message  limit to a very large number using set_mes-
+       sage_info command.
+
+WHAT NEXT
+       Check and set correct gate area for all the input pins of  the  net  on
+       all the metal & cut layers.
+        If gate area of some pins is not available, consider using app options
+       route.detail.default_gate_size   and   route.detail.default_port_exter-
+       nal_gate_size.  Value set for these options will be used for pins with-
+       out gate area information during antenna analysis.
+
+       If the gate area is unspecified but the diffusion area is specified for
+       some  pins, and you want to use the diffusion area for antenna analysis
+       for   such   pins,    then    set    app    option    route.detail.ana-
+       lyze_antenna_for_pins_with_diffusion_area to true.",[fill severity],Warning: Skipping antenna analysis for net bit_secure_0_slice_3_pout2mem[12]. The pin I2[0] on cell SRAM2RW16x4 does not have enough gate area information. (ZRT-311) (MSG-3032),[fill solution]
+ZRT-740,Warning,"NAME
+       ZRT-740 (warning)  %s is unplaced.  This may impact routing result.
+
+DESCRIPTION
+       A port is unplaced.  This is atypical and may impact routing result.
+
+WHAT NEXT
+       If this is not expected, please fix the issue.",[fill severity],Warning: Port sipo_sw_out of cell bit_coin is unplaced.  This may impact routing result. (ZRT-740) (MSG-3032),[fill solution]
+ZRT-762,Warning,"NAME
+       ZRT-762  (warning)  Please  run  the command ""check_routability"" before
+       running Zroute commands.
+
+DESCRIPTION
+       When  the  design  or  setting  is  changed,  please  run  the  command
+       ""check_routability""  before  running  Zroute  commands. The command can
+       detect incorrect desin and setting.  Please fix unexpected error to get
+       better result of router.
+
+WHAT NEXT
+       Run the command ""check_routability"" before running Zroute commands.",[fill severity],"Warning: Please run the command ""check_routability"" before running Zroute commands. (ZRT-762) (MSG-3032)",[fill solution]
+ZRT-825,Warning,"NAME
+       ZRT-825  (Warning)  Pin or route connects to PG user_route (%.3f, %.3f,
+       %.3f, %.3f) on layer (%s) is considered  as  tied.  Would  not  further
+       check or build connectivity to tie to other PG pre-routes.
+
+DESCRIPTION
+       This  warning  is issued for possible incorrect usage of PG user_route.
+       In router, pins or routes connect to PG user_routes are treated as con-
+       nected  to  pre-routes. Router will not take them as opens or floatings
+       which need further tie off connections.
+
+WHAT NEXT
+       Set the user_route to other shape_use if necessary.",[fill severity],"Pin or route connects to PG user_route (%.3f, %.3f, %.3f, %.3f) on layer (%s) is considered as tied. Would not further check or build connectivity to tie to other PG pre-routes.\n (MSG-3032)",[fill solution]

@@ -7,7 +7,7 @@ DESCRIPTION
        marked filler type.
 
 WHAT NEXT
-       Please check your filler ref cell type.",,Warning: filler ref cell DCAP_HVT not marked filler type. (CHF-011) (MSG-3032),
+       Please check your filler ref cell type.",[fill severity],Warning: filler ref cell DCAP_HVT not marked filler type. (CHF-011) (MSG-3032),[fill solution]
 CHF-014,Warning,"NAME
        CHF-014 (Warning) option -continue_on_error turned on automatically.
 
@@ -19,7 +19,7 @@ DESCRIPTION
        lead to unfillable gaps.
 
 WHAT NEXT
-       Please include fillers of all needed sizes",,Warning: option -continue_on_error turned on automatically. (CHF-014) (MSG-3032),
+       Please include fillers of all needed sizes",[fill severity],Warning: option -continue_on_error turned on automatically. (CHF-014) (MSG-3032),[fill solution]
 CHF-073,Warning,"NAME
        CHF-073 (Warning) Smallest filler provided is greater than specified in
        option place.rules.min_vt_filler_size
@@ -31,7 +31,7 @@ DESCRIPTION
 
 WHAT NEXT
        Please  include  missing   size   fillers   in   create_stdcell_fillers
-       -lib_cells.",,Warning: Smallest filler provided is greater than specified in option place.rules.min_vt_filler_size (CHF-073) (MSG-3032),
+       -lib_cells.",[fill severity],Warning: Smallest filler provided is greater than specified in option place.rules.min_vt_filler_size (CHF-073) (MSG-3032),[fill solution]
 ZRT-825,Warning,"NAME
        ZRT-825  (Warning)  Pin or route connects to PG user_route (%.3f, %.3f,
        %.3f, %.3f) on layer (%s) is considered  as  tied.  Would  not  further
@@ -44,4 +44,4 @@ DESCRIPTION
        which need further tie off connections.
 
 WHAT NEXT
-       Set the user_route to other shape_use if necessary.",,"Pin or route connects to PG user_route (%.3f, %.3f, %.3f, %.3f) on layer (%s) is considered as tied. Would not further check or build connectivity to tie to other PG pre-routes.\n (MSG-3032)",
+       Set the user_route to other shape_use if necessary.",[fill severity],"Pin or route connects to PG user_route (%.3f, %.3f, %.3f, %.3f) on layer (%s) is considered as tied. Would not further check or build connectivity to tie to other PG pre-routes.\n (MSG-3032)",[fill solution]

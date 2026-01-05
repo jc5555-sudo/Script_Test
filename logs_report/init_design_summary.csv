@@ -1,0 +1,429 @@
+Code,Severity,Description,User Severity,rpt msg,solution
+CMD-030,Warning,"NAME
+       CMD-030 (warning) File '%s' was not found in search path.
+
+DESCRIPTION
+       The 'which' command evaluated an filename argument and the file was not
+       found.
+
+WHAT NEXT
+       No adverse effect on the result of the  command,  but  check  spelling,
+       etc.",[fill severity],Warning: File 'dft_ports.tcl' was not found in search path. (CMD-030) (MSG-3032),[fill solution]
+DEFR-065,Warning,"NAME
+       DEFR-065 (warning) Cannot find %s '%s'.
+
+DESCRIPTION
+       The specified object cannot be found in the database.
+
+WHAT NEXT
+       Check that the specified object exists in the design, if it is a design
+       object. Or check that the specified object exists in the library, if it
+       is a library or technology object.",[fill severity],Warning: Cannot find net 'lv_scan_out'. (DEFR-065) (MSG-3032),[fill solution]
+EMS-040,Warning,"NAME
+       EMS-040 (Warning) EMS database ""%s"" already exists, over-writing it.
+
+DESCRIPTION
+       The  command executed creates an EMS database even if one exists by the
+       same name(over-writes the existing EMS database).
+
+WHAT NEXT
+       Use ""-ems_database"" to provide a new EMS database name if  you  do  not
+       want to overwrite the existing EMS database.
+
+SEE ALSO
+       check_design",[fill severity],"Warning: EMS database ""check_design.pre_placement_stage.ems"" already exists, over-writing it. (EMS-040) (MSG-3032)",[fill solution]
+FRAM-054,Warning,"NAME
+       FRAM-054  (warning)  Technology  used  to create frame-view and current
+       technology have inconsistency: %s.
+
+DESCRIPTION
+       The reported part of the technology are inconsistent between the refer-
+       ence library and the design library.
+
+WHAT NEXT
+       Update the library with consistent technology and try again.
+
+SEE ALSO
+       create_lib(2)
+       open_lib(2)
+       read_tech_file(2)",[fill severity],Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054) (MSG-3032),[fill solution]
+LGL-031,Warning,"NAME
+       LGL-031  (warning) Site master ""%s"" has neither X-Symmetry nor Y-Symme-
+       try. The ""legal orientations"" for the standard cells will be limited.
+
+DESCRIPTION
+       This message is indicating that the legalization has detected that  the
+       above  site master has neither X-Symmetry nor Y-Symmetry.  For a normal
+       design, usually, the site master may have either  ""X-Symmetry""  or  ""Y-
+       Symmetry"".
+
+       If a site master does not have either of ""X-Symmetry"" and ""Y-Symmetry"",
+       the standard cells will have limited  legal  orientations  because  the
+       standard cells will not be allowed to flip within the site rows.
+
+WHAT NEXT
+       Please  double-check  the  design and library setting and make sure the
+       setting is correct.",[fill severity],"Warning: Site master ""unit"" has neither X-Symmetry nor Y-Symmetry. The ""legal orientations"" for the standard cells will be limited. (LGL-031) (MSG-3032)",[fill solution]
+MV-012,Warning,"NAME
+       MV-012  (warning)  %s '%s' (supply net '%s' [%s]) cannot drive load pin
+       '%s' (supply net '%s' [%s]) due to voltage difference.
+
+DESCRIPTION
+       This message occurs when the voltage difference of  driver  supply  net
+       and load supply net is larger than the voltage threshold. This can hap-
+       pen when the driver supply net and the load supply net  have  different
+       voltage  values in power state table or the port states definitions are
+       incomplete.
+
+WHAT NEXT
+       o Check the voltage values of the two supply nets.
+
+       o Also, consider to change the voltage threshold if the voltage differ-
+       ence is within acceptable tolerance.
+
+       o  Check analyze_mv_design -level_shifter to report issues that prevent
+       Level Shifter insertion.
+
+       o Check analyze_mv_feasibility to know why Enabled Level Shifter  cells
+       cannot be use for insertion.
+
+       o Please check Level Shifter supply availability in Power Domains where
+       cell is expected to be inserted.
+
+       o Check if there is a dont_touch present on the net requiring  a  Level
+       Shifter.
+
+       o  To  debug Enabled Level Shifter issues, check report_mv_path for any
+       Isolation or Level Shifter strategy that may apply on the path.
+
+SEE ALSO
+       analyze_mv_design(2)
+       analyze_mv_feasibility(2)
+       report_mv_cells(2)
+       report_mv_lib_cells(2)
+       report_mv_path(2)
+       report_net(2)
+       report_pst(2)
+       report_supply_nets(2)
+       set_level_shifter(2)",[fill severity],Warning: Driver pin 'secure_data_in[12]' (supply net 'VDDH' [0.85V]) cannot drive load pin 'piso_secure_0/C66/DATA1[12]' (supply net 'piso_sw_out' [0.78V]) due to voltage difference. (MV-012) (MSG-3032),[fill solution]
+MV-013,Warning,"NAME
+       MV-013  (warning)  %s  '%s' [supply net '%s', power state '%s'] is less
+       always-on than the load pin '%s' [supply net '%s', power state '%s'].
+
+DESCRIPTION
+       This message occurs when the supply net of the specified driver pin  or
+       PG  net  is  less always-on than the related supply net of the load pin
+       and an Isolation Cell is missing. An Isolation Cell is required to iso-
+       late  the  signal  path  if  the driver of the net is less always-on or
+       unrelated to the load pin.
+
+WHAT NEXT
+       o Check the power states of the supply nets with report_pst.
+
+       o  Use report_mv_path to report any Isolation strategy that  may  apply
+       on the path.
+
+       o   Check  analyze_mv_feasibility  for Isolation Cell and Enabled Level
+       Shifter cell mapping related issues.
+
+       o Check report_mv_lib_cells for availability of  a  suitable  Isolation
+       Cells.
+
+       o  Run report_mv_path -net -isolation to check if there is any strategy
+       applied but not implemented.  If there is no strategy  applied,  please
+       add necessary Isolation strategy.
+
+SEE ALSO
+       report_net(2)
+       report_pst(2)
+       report_mv_path(2)
+       analyze_mv_feasibility(2)
+       report_mv_lib_cells(2)",[fill severity],"Warning: Driver pin 'bit_secure_11/piso_slice_first/dout_reg/Q' [supply net 'piso_sw_out', power state 'SSL_PISO_SECURE_OFF'] is less always-on than the load pin 'secure_data_out[22]' [supply net 'VDDH', power state 'SS_ON']. (MV-013) (MSG-3032)",[fill solution]
+MV-027,Warning,"NAME
+       MV-027 (warning) The tie-off connection '%s' has not been implemented.
+
+DESCRIPTION
+       This message occurs when 1'b1 or 1'b0 has not been implemented as a tie
+       cell or PG net.  Constant  nets  that  are  floating  or  connected  to
+       unmapped pins only are excluded.
+
+WHAT NEXT
+       Ensure  that related supply net of constant pins can be determined. Use
+       connect_pg_net to connect tie-off pins in either  automatic  or  manual
+       mode.
+
+SEE ALSO
+       report_net(2)
+       connect_pg_net(2)",[fill severity],Warning: The tie-off connection 'bit_secure_0/slice_19/*Logic0*' has not been implemented. (MV-027) (MSG-3032),[fill solution]
+MV-051,Warning,"NAME
+       MV-051  (warning)  '%s'  is  already connected to net '%s'. It might be
+       disconnected.
+
+DESCRIPTION
+       This message is printed when a port or pin specified for sleep  or  ack
+       out is already connected to a net. In this case, the tool might discon-
+       nect the original net and reconnect the port or the pin to the new net.
+
+WHAT NEXT
+       Typically this message occurs in relation to ack ports which  are  usu-
+       ally  hierarchical.  When  connecting these ack ports/nets they can get
+       disconnected or reused in some cases. Please check the  connections  of
+       the specified port or pin in this case.
+
+SEE ALSO
+       connect_power_switch(2)",[fill severity],Warning: 'power_ack_signals[19]' is already connected to net 'power_ack_signals[19]'. It might be disconnected. (MV-051) (MSG-3032),[fill solution]
+MV-103,Warning,"NAME
+       MV-103  (warning)  The  sequential  element '%s' belonging to retention
+       strategy '%s' in power domain '%s' is not mapped to a retention library
+       cell.
+
+DESCRIPTION
+       This  warning  message  indicates  that  the  sequential element is not
+       mapped to retention library cells despite being  part  of  a  retention
+       strategy.  This results in verification/simulation failure.
+
+       Sequential element can be a mapped/unmapped register, ETM or hard-macro
+       with sequential timing arcs.
+
+WHAT NEXT
+       Check the retention strategy commands for the correctness  and/or  make
+       sure  the  library  has required retention cells and run the command to
+       map the netlist.  If the reported sequential element is an ETM or hard-
+       macro  and  you didn't intend replace it with retention equivalent, you
+       can ignore this message for such elements.
+
+SEE ALSO
+       set_retention(2)
+       set_retention_control(2)
+       map_retention_cell(2)
+       check_mv_design(2)",[fill severity],Warning: The sequential element 'piso_secure_1/temp_reg[14]' belonging to retention strategy 'RET_PISO_SECURE' in power domain 'PD_PISO_SECURE' is not mapped to a retention library cell. (MV-103) (MSG-3032),[fill solution]
+NDM-102,Warning,"NAME
+       NDM-102  (warning)  Technology  '%s'  used  for  frame-view creation in
+       library '%s', is inconsistent  with  the  current  technology  '%s'  of
+       library  '%s'.  Please  run derive_design_level_via_regions to generate
+       up-do-date via region in the design library.
+
+DESCRIPTION
+       The technology of the reference library is inconsistent with technology
+       of  the  design library. Need to run derive_design_level_via_regions to
+       generate up-do-date via region in the design library.
+
+WHAT NEXT
+       Update the library with consistent technology and  try  again.  Or  run
+       derive_design_level_via_regions  to  generate  up-do-date via region in
+       the design library.
+
+SEE ALSO
+       create_lib(2)
+       open_lib(2)
+       read_tech_file(2)
+       derive_design_level_via_regions(2)",[fill severity],"Warning: Technology 'saed32nm_1p9m_mw.tf' used for frame-view creation in library 'sram2rw16x4_tt1p_v125c', is inconsistent with the current technology 'saed32nm_1p9m_mw.tf' of library 'bit_coin.nlib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102) (MSG-3032)",[fill solution]
+PDC-003,Warning,"NAME
+       PDC-003 (Warning) Routing direction of metal layer %s is neither ""hori-
+       zontal"" nor ""vertical"".  PDC checks  will  not  be  performed  on  this
+       layer.
+
+DESCRIPTION
+       This  warning  message indicates that no routing direction has been set
+       on the metal layer.  This may result in DRC violations due  to  illegal
+       placement.
+
+WHAT NEXT
+       set_attribute  [get_layer <layer>] routing_direction <horizontal/verti-
+       cal>",[fill severity],"Warning: Routing direction of metal layer MRDL is neither ""horizontal"" nor ""vertical"".  PDC checks will not be performed on this layer. (PDC-003) (MSG-3032)",[fill solution]
+PGR-093,Warning,"NAME
+       PGR-093  (warning)  Recommend to turn on the advanced legalizer if cell
+       spacing is expected to be checked.
+
+DESCRIPTION
+       The cell spacing rule defined by set_placement_spacing_rules is  mainly
+       supported by the advanced legalizer.  If the cell spacing rule has been
+       set, we  recommend  to  turn  on  the  advanced  legalizer  by  setting
+       place.legalize.enable_advanced_legalizer  be true to make sure the cor-
+       rect behavior of power switch array creation.
+
+WHAT NEXT
+       Please check if the setting is intended.",[fill severity],Warning: Recommend to turn on the advanced legalizer if cell spacing is expected to be checked. (PGR-093) (MSG-3032),[fill solution]
+POW-009,Warning,"NAME
+       POW-009 (warning) Power analysis is disabled %s as leakage/swcap/inter-
+       nal   mode   power   app   options   can   be    off    and/or    leak-
+       age_power/dynamic_power scenario flags are set to false.
+
+DESCRIPTION
+       This  message  occurs  when  the  scenario power flags are false and/or
+       leakage/swcap/internal app options are 'off'.
+
+WHAT NEXT
+       Set the required power analysis app option to 'on' and enable the  sce-
+       nario power flags.
+
+SEE ALSO
+       report_power(2)
+       report_scenarios(2)
+       power.leakage_mode(3)
+       power.swcap_mode(3)
+       power.internal_mode(3)",[fill severity],Warning: Power analysis is disabled for scenario 'FUNC_0.85V_HOLD' as leakage/swcap/internal mode power app options can be off and/or leakage_power/dynamic_power scenario flags are set to false. (POW-009) (MSG-3032),[fill solution]
+POW-046,Warning,"NAME
+       POW-046 (warning) Power table extrapolation (%s mode) for port %s on %s
+       for parameter %s. Lowest table value = %f, highest table  value  =  %f,
+       value = %f
+
+DESCRIPTION
+       This  message  is  given  when a parameter during power table access is
+       outside of the table range. Based on the mode, it will be  extrapolated
+       or clipped to the range.
+
+WHAT NEXT
+       The  extrapolation mode can be set by app option power.table_extrapola-
+       tion
+
+SEE ALSO
+       report_power(2)",[fill severity],"Power table extrapolation (%s mode) for port %s on %s for parameter %s. Lowest table value = %f, highest table value = %f, value = %f (MSG-3032)",[fill solution]
+PVT-030,Warning,"NAME
+       PVT-030  (warning)  Corner %s:  %d process number, %d process label, %d
+       voltage, and %d temperature mismatches.
+
+DESCRIPTION
+       This message is issued when there are mismatches between the  specified
+       and  effective values of the process number, process label, voltage, or
+       temperature  operating  conditions  of  a   particular   corner.    The
+       report_pvt  command will print information and warnings identifying the
+       mismatched values, the relevant cell libraries, the number of  affected
+       cells, and the operating conditions that will actually be used for tim-
+       ing analysis.
+
+WHAT NEXT
+       Review the P/V/T operating conditions supported by  the  relevant  cell
+       libraries.   Review  whether  specified  P/V/T  is missing some library
+       cells.  Review the constraints for missing  or  incorrect  set_voltage,
+       set_temperature,  set_process_number, set_process_label, or set_operat-
+       ing_conditions commands.  Review the  UPF  data  for  an  incorrect  or
+       incomplete  supply net configuration.  The report_pvt command will give
+       more information about this situation.",[fill severity],"Corner %s:  %d process number, %d process label, %d voltage, and %d temperature mismatches. (MSG-3032)",[fill solution]
+PVT-031,Warning,"NAME
+       PVT-031 (warning)  %d cells affected for early, %d for late.
+
+DESCRIPTION
+       This  message is issued when there are mismatches between the specified
+       and effective values of the process number, process label, voltage,  or
+       temperature  operating conditions of a particular corner.  It describes
+       the number of cells affected by the mismatched PVT values.  It will  be
+       preceded by a PVT-030 warning, which lists the number of mismatches.
+
+WHAT NEXT
+       Review  the  P/V/T  operating conditions supported by the relevant cell
+       libraries.  Review the constraints for missing or  incorrect  set_volt-
+       age,   set_temperature,   set_process_number,   set_process_label,   or
+       set_operating_conditions commands.  Review the UPF data for  an  incor-
+       rect  or  incomplete  supply net configuration.  The report_pvt command
+       will give more information about this situation.",[fill severity],"%d cells affected for early, %d for late. (MSG-3032)",[fill solution]
+PVT-034,Warning,"NAME
+       PVT-034  (warning)   %d  port  driving_cells affected for early, %d for
+       late.
+
+DESCRIPTION
+       This message is issued when there are mismatches between the  specified
+       and  effective values of the process number, process label, voltage, or
+       temperature operating conditions of a particular corner.  It  describes
+       the number of port driving_cells affected by the mismatched PVT values.
+       It will be preceded by a PVT-030 warning, which  lists  the  number  of
+       mismatches.
+
+WHAT NEXT
+       Review  the  P/V/T  operating conditions supported by the relevant cell
+       libraries.  Review the constraints for missing or  incorrect  set_volt-
+       age,   set_temperature,   set_process_number,   set_process_label,   or
+       set_operating_conditions commands applied to the port or the top  level
+       of the design.  The report_pvt command will give more information about
+       this situation for a particular port.",[fill severity],"%d port driving_cells affected for early, %d for late. (MSG-3032)",[fill solution]
+TCK-001,Warning,"NAME
+       TCK-001  (Warning) The reported endpoint '%s' is unconstrained. Reason:
+       %s.
+
+DESCRIPTION
+       The error message occurs when there are unconstrained endpoints in  the
+       design.  The design is not fully constrained. There are several reasons
+       for the unconstrained endpoints: false path, no check, unclocked,  dis-
+       abeld check, case constant, or no arrival path.
+
+WHAT NEXT
+       The  violation  message  identifies  the unconstrained endpoint and the
+       reason. You could check whether it is a expected behavior.",[fill severity],The reported endpoint '%s' is unconstrained. Reason: %s. (MSG-3032),[fill solution]
+TCK-012,Warning,"NAME
+       TCK-012 (Warning) The input port '%s' has no clock_relative delay spec-
+       ified.
+
+DESCRIPTION
+       The reported input port is not a clock source. The port does  not  have
+       an  input delay value, and it also has paths from it which are not dis-
+       abled or false paths. In order to enable proper constraining  of  paths
+       from  the  port,  a  realistic input delay needs to be provided for all
+       data input ports.
+
+WHAT NEXT
+       The violation message will give you the input port which has  no  input
+       delay  specified.   To  resolve  this  issue, consider specifying input
+       delay for each non-clock source input port.  This  input  delay  should
+       also be relative to a clock in the design.",[fill severity],The input port '%s' has no clock_relative delay specified. (MSG-3032),[fill solution]
+UIC-009,Warning,"NAME
+       UIC-009  (warning)  Object  '%s' is not a valid %s. The %s command will
+       not match this object.
+
+DESCRIPTION
+       The specified object is neither a valid timing startpoint nor endpoint.
+       Commands  such  as  set_false_path, set_multicycle_path, and group_path
+       require the -from option from_list objects to be  valid  timing  start-
+       points and the -to option to_list objects to be valid timing endpoints.
+
+       One important limitation to note is that the call to update_timing com-
+       mand may cause the creation of path endpoints  at  combinational  pins.
+       One  major  example  is  clock gating checks if the pin connects to the
+       signal gating the clock signal. In that  case,  entering  an  exception
+       before an update_timing would emit this message, whereas doing so after
+       an update_timing would not.
+
+WHAT NEXT
+       Use input ports or register clock pins for the from_list objects.   Use
+       output ports or register data pins for the to_list objects.
+
+SEE ALSO
+       group_path(2)
+       set_false_path(2)
+       set_multicycle_path(2)
+       update_timing(2)",[fill severity],Warning: Object 'bit_secure_0/slice_0/nibble_0/O2[1]' is not a valid endpoint. The set_multicycle_path command will not match this object. (UIC-009) (MSG-3032),[fill solution]
+UIC-058,Warning,"NAME
+       UIC-058  (warning) Scenario %s is not configured for %s analysis: skip-
+       ping.
+
+DESCRIPTION
+       The specified scenario has not been activated for setup or hold  analy-
+       sis.   Because  of this, no setup or hold timing paths can be found for
+       it.
+
+WHAT NEXT
+       If setup or hold analysis is deliberately being skipped for  this  sce-
+       nario,  this  warning  can  be  ignored.   Otherwise,  use the set_sce-
+       nario_status command to activate this scenario for setup or hold analy-
+       sis.",[fill severity],Warning: Scenario FUNC_0.85V_HOLD is not configured for setup analysis: skipping. (UIC-058) (MSG-3032),[fill solution]
+VER-936,Warning,"NAME
+       VER-936  (warning)  %s  the  undeclared symbol '%s' assumed to have the
+       default net type, which is '%s'.
+
+DESCRIPTION
+       The Verilog standard says that if no explicit declaration is given  for
+       an   identifier   and   the  identifier  is  not  in  the  scope  of  a
+       '`default_nettype none' compiler directive, then it shall be assumed to
+       be  implicitly  declared  as  a  net  of the default net type, which is
+       'wire' unless overridden with the `default_nettype compiler  directive.
+       Specifically, this is assumed for undeclared identifiers used in a port
+       expression declaration, for undeclared identifiers used in the terminal
+       list  of  a  primitive  instance  or a module instance, and, in Verilog
+       2001, for undeclared identifiers that appear on the left-hand side of a
+       continuous assignment statement.
+
+WHAT NEXT
+       Check  your  design to make sure that you intended an implicit declara-
+       tion for this symbol.  If not, add an explicit declaration.
+
+SEE ALSO
+       analyze (2), read (2).",[fill severity],"Warning:  data/rtl/bit_top.v:906: the undeclared symbol 'lv_scan_out31' assumed to have the default net type, which is 'wire'. (VER-936) (MSG-3032)",[fill solution]

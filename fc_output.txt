@@ -1,5 +1,37 @@
-Code,Severity,Description,User Severity,rpt msg,solution
-CHF-011,Warning,"NAME
+ 
+                              Fusion Compiler (TM)
+
+                Version W-2024.09-SP3 for linux64 - Jan 16, 2025
+  This release has significant feature enhancements. Please review the Release
+                       Notes associated with this release.
+
+                    Copyright (c) 1988 - 2025 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Information: Term was not able to be set up using xterm-256color . Using "xterm" by default instead. (CLE-10)
+fc_shell> 
+fc_shell> puts "<<<CODE:CHF-011>>>"
+<<<CODE:CHF-011>>>
+fc_shell> 
+fc_shell> 
+fc_shell> man CHF-011
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
        CHF-011 (Warning) filler ref cell %s not marked filler type.
 
 DESCRIPTION
@@ -7,8 +39,25 @@ DESCRIPTION
        marked filler type.
 
 WHAT NEXT
-       Please check your filler ref cell type.",,Warning: filler ref cell DCAP_HVT not marked filler type. (CHF-011) (MSG-3032),
-CHF-014,Warning,"NAME
+       Please check your filler ref cell type.
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<END>>>"
+<<<END>>>
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<CODE:CHF-014>>>"
+<<<CODE:CHF-014>>>
+fc_shell> 
+fc_shell> 
+fc_shell> man CHF-014
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
        CHF-014 (Warning) option -continue_on_error turned on automatically.
 
 DESCRIPTION
@@ -19,20 +68,54 @@ DESCRIPTION
        lead to unfillable gaps.
 
 WHAT NEXT
-       Please include fillers of all needed sizes",,Warning: option -continue_on_error turned on automatically. (CHF-014) (MSG-3032),
-CHF-073,Warning,"NAME
+       Please include fillers of all needed sizes
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<END>>>"
+<<<END>>>
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<CODE:CHF-073>>>"
+<<<CODE:CHF-073>>>
+fc_shell> 
+fc_shell> 
+fc_shell> man CHF-073
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
        CHF-073 (Warning) Smallest filler provided is greater than specified in
        option place.rules.min_vt_filler_size
 
 DESCRIPTION
-       The smallest fillers specified in  ""create_stdcell_fillers  -lib_cells""
+       The smallest fillers specified in  "create_stdcell_fillers  -lib_cells"
        is     larger    than    what    is    specified    in    app    option
        place.rules.min_vt_filler_size. This may cause unfillable gaps.
 
 WHAT NEXT
        Please  include  missing   size   fillers   in   create_stdcell_fillers
-       -lib_cells.",,Warning: Smallest filler provided is greater than specified in option place.rules.min_vt_filler_size (CHF-073) (MSG-3032),
-CMD-013,Error,"NAME
+       -lib_cells.
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<END>>>"
+<<<END>>>
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<CODE:CMD-013>>>"
+<<<CODE:CMD-013>>>
+fc_shell> 
+fc_shell> 
+fc_shell> man CMD-013
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
        CMD-013 (error) %s Use error_info for more info.
 
 DESCRIPTION
@@ -41,8 +124,25 @@ DESCRIPTION
        error occurred.  The error_info command is used to display this stack.
 
 WHAT NEXT
-       Fix the error indicated by error_info.",,Error: 0\n	Use error_info for more info. (CMD-013) (MSG-3032),
-CMD-030,Warning,"NAME
+       Fix the error indicated by error_info.
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<END>>>"
+<<<END>>>
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<CODE:CMD-030>>>"
+<<<CODE:CMD-030>>>
+fc_shell> 
+fc_shell> 
+fc_shell> man CMD-030
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
        CMD-030 (warning) File '%s' was not found in search path.
 
 DESCRIPTION
@@ -51,8 +151,25 @@ DESCRIPTION
 
 WHAT NEXT
        No adverse effect on the result of the  command,  but  check  spelling,
-       etc.",,Warning: File 'config_setup.tcl' was not found in search path. (CMD-030) (MSG-3032),
-CTS-956,Warning,"NAME
+       etc.
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<END>>>"
+<<<END>>>
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<CODE:CTS-956>>>"
+<<<CODE:CTS-956>>>
+fc_shell> 
+fc_shell> 
+fc_shell> man CTS-956
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
        CTS-956  (warning) Please use -largest / -smallest / -all switches with
        -show_verbose_paths / -show_paths to report the clock paths.
 
@@ -61,8 +178,25 @@ DESCRIPTION
        bose_paths / -show_paths to report the clock paths.
 
 WHAT NEXT
-       Add -largest / -smallest / -all switches to report the clock paths.",,Warning: Please use -largest / -smallest / -all switches with -show_verbose_paths / -show_paths to report the clock paths. (CTS-956) (MSG-3032),
-EOPT-011,Error,"NAME
+       Add -largest / -smallest / -all switches to report the clock paths.
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<END>>>"
+<<<END>>>
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<CODE:EOPT-011>>>"
+<<<CODE:EOPT-011>>>
+fc_shell> 
+fc_shell> 
+fc_shell> man EOPT-011
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
        EOPT-011 (Error) : '%d' errors encountered.
 
 DESCRIPTION
@@ -73,8 +207,25 @@ WHAT NEXT
        User can examine the changelist output txt file for more details.
 
 SEE ALSO
-       eco_opt (2).  check_pt_qor (2).",,Error: '7' errors encountered. (EOPT-011) (MSG-3032),
-FRAM-054,Warning,"NAME
+       eco_opt (2).  check_pt_qor (2).
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<END>>>"
+<<<END>>>
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<CODE:FRAM-054>>>"
+<<<CODE:FRAM-054>>>
+fc_shell> 
+fc_shell> 
+fc_shell> man FRAM-054
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
        FRAM-054  (warning)  Technology  used  to create frame-view and current
        technology have inconsistency: %s.
 
@@ -88,8 +239,25 @@ WHAT NEXT
 SEE ALSO
        create_lib(2)
        open_lib(2)
-       read_tech_file(2)",,Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054) (MSG-3032),
-LEFW-005,Warning,"NAME
+       read_tech_file(2)
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<END>>>"
+<<<END>>>
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<CODE:LEFW-005>>>"
+<<<CODE:LEFW-005>>>
+fc_shell> 
+fc_shell> 
+fc_shell> man LEFW-005
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
        LEFW-005  (warning)  Block  '%s'  has no %s view with empty label, will
        ignore it.
 
@@ -100,8 +268,25 @@ DESCRIPTION
 WHAT NEXT
        Please  create  frame  view for the specifid block and try again. Or if
        non empty label need to be written out, please use  -design  option  to
-       specify the label to be written.",,"Warning: Block 'bit_coin' has no frame view with empty label, will ignore it. (LEFW-005) (MSG-3032)",
-LEFW-007,Warning,"NAME
+       specify the label to be written.
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<END>>>"
+<<<END>>>
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<CODE:LEFW-007>>>"
+<<<CODE:LEFW-007>>>
+fc_shell> 
+fc_shell> 
+fc_shell> man LEFW-007
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
        LEFW-007  (warning)  Use  %s  %s  as the WRONGDIRECTION width for layer
        '%s'.
 
@@ -117,8 +302,25 @@ DESCRIPTION
 
 WHAT NEXT
        Please  verify  whether  the reported width is truly the WRONGDIRECTION
-       width for the specified layer.",,Warning: Use defaultWidth 2 as the WRONGDIRECTION width for layer 'MRDL'. (LEFW-007) (MSG-3032),
-MV-013,Warning,"NAME
+       width for the specified layer.
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<END>>>"
+<<<END>>>
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<CODE:MV-013>>>"
+<<<CODE:MV-013>>>
+fc_shell> 
+fc_shell> 
+fc_shell> man MV-013
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
        MV-013  (warning)  %s  '%s' [supply net '%s', power state '%s'] is less
        always-on than the load pin '%s' [supply net '%s', power state '%s'].
 
@@ -150,8 +352,25 @@ SEE ALSO
        report_pst(2)
        report_mv_path(2)
        analyze_mv_feasibility(2)
-       report_mv_lib_cells(2)",,"Warning: Driver pin 'piso_secure_0/route_opt__1_PTECO_DRC_BUF6966/Y' [supply net 'piso_sw_out', power state 'SSL_PISO_SECURE_OFF'] is less always-on than the load pin 'piso_secure_0/headerfooter_snps_PD_PISO_SECURE__SW_PISO_SECURE_snps_HEAD2X16_HVT_R588_C87_2802/SLEEP' [supply net 'VDDL', power state 'SSL_ON']. (MV-013) (MSG-3032)",
-MV-074,Warning,"NAME
+       report_mv_lib_cells(2)
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<END>>>"
+<<<END>>>
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<CODE:MV-074>>>"
+<<<CODE:MV-074>>>
+fc_shell> 
+fc_shell> 
+fc_shell> man MV-074
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
        MV-074  (warning) The power switch cell '%s' is not associated with any
        power switch strategies.
 
@@ -175,8 +394,25 @@ WHAT NEXT
 SEE ALSO
        associate_mv_cells(2)
        report_power_domains(2)
-       report_cell(2)",,Warning: The power switch cell 'piso_secure_0/headerfooter_snps_PD_PISO_SECURE__SW_PISO_SECURE_snps_HEAD2X16_HVT_R887_C0_28' is not associated with any power switch strategies. (MV-074) (MSG-3032),
-NDM-102,Warning,"NAME
+       report_cell(2)
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<END>>>"
+<<<END>>>
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<CODE:NDM-102>>>"
+<<<CODE:NDM-102>>>
+fc_shell> 
+fc_shell> 
+fc_shell> man NDM-102
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
        NDM-102  (warning)  Technology  '%s'  used  for  frame-view creation in
        library '%s', is inconsistent  with  the  current  technology  '%s'  of
        library  '%s'.  Please  run derive_design_level_via_regions to generate
@@ -196,8 +432,25 @@ SEE ALSO
        create_lib(2)
        open_lib(2)
        read_tech_file(2)
-       derive_design_level_via_regions(2)",,"Warning: Technology 'saed32nm_1p9m_mw.tf' used for frame-view creation in library 'sram2rw16x4_tt1p_v125c', is inconsistent with the current technology 'saed32nm_1p9m_mw.tf' of library 'bit_coin.nlib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102) (MSG-3032)",
-NEX-020,Warning,"NAME
+       derive_design_level_via_regions(2)
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<END>>>"
+<<<END>>>
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<CODE:NEX-020>>>"
+<<<CODE:NEX-020>>>
+fc_shell> 
+fc_shell> 
+fc_shell> man NEX-020
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
        NEX-020  (warning)   Net '%s' is exceeding threshold (over %d pins) and
        will be skipped.
 
@@ -213,8 +466,25 @@ WHAT NEXT
        Buffer this net and detail route it to be able to extract it.
 
 SEE ALSO
-       reg_extract_design(2)",,Net '%s' is exceeding threshold (over %d pins) and will be skipped. (MSG-3032),
-NEX-055,Warning,"NAME
+       reg_extract_design(2)
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<END>>>"
+<<<END>>>
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<CODE:NEX-055>>>"
+<<<CODE:NEX-055>>>
+fc_shell> 
+fc_shell> 
+fc_shell> man NEX-055
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
        NEX-055 (warning) starrc_extract_rc: %s.
 
 DESCRIPTION
@@ -222,10 +492,27 @@ DESCRIPTION
        ning StarRCInDesign or PT ECO fusion.
 
 WHAT NEXT
-        Invoke 'set_starrc_in_design'",,Warning: starrc_extract_rc:  need to use newer starRC version than version 0.0 to run with ICC2 version W-2024.09-SP3. The recommended StarRC version is 2024.9. (NEX-055) (MSG-3032),
-PDC-003,Warning,"NAME
-       PDC-003 (Warning) Routing direction of metal layer %s is neither ""hori-
-       zontal"" nor ""vertical"".  PDC checks  will  not  be  performed  on  this
+        Invoke 'set_starrc_in_design'
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<END>>>"
+<<<END>>>
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<CODE:PDC-003>>>"
+<<<CODE:PDC-003>>>
+fc_shell> 
+fc_shell> 
+fc_shell> man PDC-003
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
+       PDC-003 (Warning) Routing direction of metal layer %s is neither "hori-
+       zontal" nor "vertical".  PDC checks  will  not  be  performed  on  this
        layer.
 
 DESCRIPTION
@@ -235,8 +522,25 @@ DESCRIPTION
 
 WHAT NEXT
        set_attribute  [get_layer <layer>] routing_direction <horizontal/verti-
-       cal>",,"Warning: Routing direction of metal layer PO is neither ""horizontal"" nor ""vertical"".  PDC checks will not be performed on this layer. (PDC-003) (MSG-3032)",
-POW-009,Warning,"NAME
+       cal>
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<END>>>"
+<<<END>>>
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<CODE:POW-009>>>"
+<<<CODE:POW-009>>>
+fc_shell> 
+fc_shell> 
+fc_shell> man POW-009
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
        POW-009 (warning) Power analysis is disabled %s as leakage/swcap/inter-
        nal   mode   power   app   options   can   be    off    and/or    leak-
        age_power/dynamic_power scenario flags are set to false.
@@ -254,8 +558,25 @@ SEE ALSO
        report_scenarios(2)
        power.leakage_mode(3)
        power.swcap_mode(3)
-       power.internal_mode(3)",,Warning: Power analysis is disabled for scenario 'FUNC_0.85V_HOLD' as leakage/swcap/internal mode power app options can be off and/or leakage_power/dynamic_power scenario flags are set to false. (POW-009) (MSG-3032),
-POW-046,Warning,"NAME
+       power.internal_mode(3)
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<END>>>"
+<<<END>>>
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<CODE:POW-046>>>"
+<<<CODE:POW-046>>>
+fc_shell> 
+fc_shell> 
+fc_shell> man POW-046
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
        POW-046 (warning) Power table extrapolation (%s mode) for port %s on %s
        for parameter %s. Lowest table value = %f, highest table  value  =  %f,
        value = %f
@@ -270,8 +591,25 @@ WHAT NEXT
        tion
 
 SEE ALSO
-       report_power(2)",,"Warning: Power table extrapolation (extrapolation mode) for port SLEEPOUT on cell piso_secure_0/headerfooter_snps_PD_PISO_SECURE__SW_PISO_SECURE_snps_HEAD2X16_HVT_R293_C0_10 for parameter Cout. Lowest table value = 0.000100, highest table value = 0.008000, value = 0.030777 (POW-046) (MSG-3032)",
-PVT-020,Warning,"NAME
+       report_power(2)
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<END>>>"
+<<<END>>>
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<CODE:PVT-020>>>"
+<<<CODE:PVT-020>>>
+fc_shell> 
+fc_shell> 
+fc_shell> man PVT-020
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
        PVT-020 (warning) Mismatched voltage in corner %s.
 
 DESCRIPTION
@@ -285,8 +623,25 @@ WHAT NEXT
        Review  the  P/V/T  operating conditions supported by the relevant cell
        library.  Review the constraints for missing or  incorrect  set_voltage
        commands.   Review  the  UPF data for an incorrect or incomplete supply
-       net configuration.",,Warning: Mismatched voltage in corner FUNC_0.85V_HOLD. (PVT-020) (MSG-3032),
-PVT-022,Warning,"NAME
+       net configuration.
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<END>>>"
+<<<END>>>
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<CODE:PVT-022>>>"
+<<<CODE:PVT-022>>>
+fc_shell> 
+fc_shell> 
+fc_shell> man PVT-022
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
        PVT-022 (warning) Mismatched process number in corner %s.
 
 DESCRIPTION
@@ -300,8 +655,25 @@ WHAT NEXT
        Review  the  P/V/T  operating conditions supported by the relevant cell
        library.    Review   the   constraints   for   missing   or   incorrect
        set_process_number  commands.   Review  the  constraints for missing or
-       incorrect set_operating_conditions commands.",,Warning: Mismatched process number in corner FUNC_0.85V_HOLD. (PVT-022) (MSG-3032),
-PVT-030,Warning,"NAME
+       incorrect set_operating_conditions commands.
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<END>>>"
+<<<END>>>
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<CODE:PVT-030>>>"
+<<<CODE:PVT-030>>>
+fc_shell> 
+fc_shell> 
+fc_shell> man PVT-030
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
        PVT-030  (warning)  Corner %s:  %d process number, %d process label, %d
        voltage, and %d temperature mismatches.
 
@@ -321,8 +693,25 @@ WHAT NEXT
        set_temperature,  set_process_number, set_process_label, or set_operat-
        ing_conditions commands.  Review the  UPF  data  for  an  incorrect  or
        incomplete  supply net configuration.  The report_pvt command will give
-       more information about this situation.",,"Warning: Corner FUNC_0.85V_HOLD:  12 process number, 0 process label, 17 voltage, and 0 temperature mismatches. (PVT-030) (MSG-3032)",
-PVT-031,Warning,"NAME
+       more information about this situation.
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<END>>>"
+<<<END>>>
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<CODE:PVT-031>>>"
+<<<CODE:PVT-031>>>
+fc_shell> 
+fc_shell> 
+fc_shell> man PVT-031
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
        PVT-031 (warning)  %d cells affected for early, %d for late.
 
 DESCRIPTION
@@ -338,8 +727,25 @@ WHAT NEXT
        age,   set_temperature,   set_process_number,   set_process_label,   or
        set_operating_conditions commands.  Review the UPF data for  an  incor-
        rect  or  incomplete  supply net configuration.  The report_pvt command
-       will give more information about this situation.",,"Warning: 106293 cells affected for early, 106293 for late. (PVT-031) (MSG-3032)",
-PVT-033,Warning,"NAME
+       will give more information about this situation.
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<END>>>"
+<<<END>>>
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<CODE:PVT-033>>>"
+<<<CODE:PVT-033>>>
+fc_shell> 
+fc_shell> 
+fc_shell> man PVT-033
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
        PVT-033 (warning) %d voltage and %d temperature extrapolations.
 
 DESCRIPTION
@@ -354,8 +760,25 @@ WHAT NEXT
        libraries.  Review the constraints for missing or  incorrect  set_volt-
        age, set_temperature, or set_operating_conditions commands.  Review the
        UPF data for an incorrect or incomplete supply net configuration.   The
-       report_pvt command will give more information about this situation.",,Warning: 1 voltage and 0 temperature extrapolations. (PVT-033) (MSG-3032),
-PVT-034,Warning,"NAME
+       report_pvt command will give more information about this situation.
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<END>>>"
+<<<END>>>
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<CODE:PVT-034>>>"
+<<<CODE:PVT-034>>>
+fc_shell> 
+fc_shell> 
+fc_shell> man PVT-034
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
        PVT-034  (warning)   %d  port  driving_cells affected for early, %d for
        late.
 
@@ -373,8 +796,25 @@ WHAT NEXT
        age,   set_temperature,   set_process_number,   set_process_label,   or
        set_operating_conditions commands applied to the port or the top  level
        of the design.  The report_pvt command will give more information about
-       this situation for a particular port.",,"Warning: 0 port driving_cells affected for early, 0 for late. (PVT-034) (MSG-3032)",
-SEL-004,Warning,"NAME
+       this situation for a particular port.
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<END>>>"
+<<<END>>>
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<CODE:SEL-004>>>"
+<<<CODE:SEL-004>>>
+fc_shell> 
+fc_shell> 
+fc_shell> man SEL-004
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
        SEL-004 (warning) No %s objects matched '%s'
 
 DESCRIPTION
@@ -382,8 +822,25 @@ DESCRIPTION
        acceptable for this command.
 
 WHAT NEXT
-       Check the pattern to see if it is what you expected.",,Warning: No cell objects matched 'route_opt__1_PTECO_DRC_BUF5384' (SEL-004) (MSG-3032),
-TIM-204,Warning,"NAME
+       Check the pattern to see if it is what you expected.
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<END>>>"
+<<<END>>>
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<CODE:TIM-204>>>"
+<<<CODE:TIM-204>>>
+fc_shell> 
+fc_shell> 
+fc_shell> man TIM-204
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
        TIM-204  (Warning)  Advanced  receiver  model  has not been enabled for
        detailed routed design.
 
@@ -394,8 +851,25 @@ DESCRIPTION
        'time.enable_ccs_rcv_cap' to true.
 
 WHAT NEXT
-       Enable time.enable_ccs_rcv_cap for signoff accurate delay calculation.",,Advanced receiver model has not been enabled for detailed routed design. (MSG-3032),
-TIM-207,Warning,"NAME
+       Enable time.enable_ccs_rcv_cap for signoff accurate delay calculation.
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<END>>>"
+<<<END>>>
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<CODE:TIM-207>>>"
+<<<CODE:TIM-207>>>
+fc_shell> 
+fc_shell> 
+fc_shell> man TIM-207
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
        TIM-207  (Warning)  Libraries  do not have CCS noise model for accurate
        waveform analysis in advanced waveform propagation mode.
 
@@ -412,8 +886,25 @@ WHAT NEXT
 
 SEE ALSO
        time.delay_calc_waveform_analysis_mode (3)
-       time.awp_compatibility_mode (3)",,Warning: Libraries do not have CCS noise model for accurate waveform analysis in advanced waveform propagation mode. (TIM-207) (MSG-3032),
-TIM-260,Warning,"NAME
+       time.awp_compatibility_mode (3)
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<END>>>"
+<<<END>>>
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<CODE:TIM-260>>>"
+<<<CODE:TIM-260>>>
+fc_shell> 
+fc_shell> 
+fc_shell> man TIM-260
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
        TIM-260  (Warning)  Library %s is pre-18.06 version %u.%u,  Correlation
        with Primetime can be low.
 
@@ -426,8 +917,25 @@ DESCRIPTION
 WHAT NEXT
        Rebuild  the  reference library with library manager version later than
        2018.06, or turn on library  configuration  app  option  lib.configura-
-       tion.update_timing_view_for_pt_delay",,"Library %s is pre-18.06 version %u.%u,  Correlation with Primetime can be low. (MSG-3032)",
-UIC-058,Warning,"NAME
+       tion.update_timing_view_for_pt_delay
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<END>>>"
+<<<END>>>
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<CODE:UIC-058>>>"
+<<<CODE:UIC-058>>>
+fc_shell> 
+fc_shell> 
+fc_shell> man UIC-058
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
        UIC-058  (warning) Scenario %s is not configured for %s analysis: skip-
        ping.
 
@@ -440,16 +948,50 @@ WHAT NEXT
        If setup or hold analysis is deliberately being skipped for  this  sce-
        nario,  this  warning  can  be  ignored.   Otherwise,  use the set_sce-
        nario_status command to activate this scenario for setup or hold analy-
-       sis.",,Warning: Scenario FUNC_0.85V_HOLD is not configured for setup analysis: skipping. (UIC-058) (MSG-3032),
-UIED-180,Error,"NAME
+       sis.
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<END>>>"
+<<<END>>>
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<CODE:UIED-180>>>"
+<<<CODE:UIED-180>>>
+fc_shell> 
+fc_shell> 
+fc_shell> man UIED-180
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
        UIED-180 (error) Failed to add buffers
 
 DESCRIPTION
        The command failed to add any buffers.
 
 WHAT NEXT
-       Review errors from the command, before this one to proceed.",,Error: Failed to add buffers (UIED-180) (MSG-3032),
-UIED-304,Error,"NAME
+       Review errors from the command, before this one to proceed.
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<END>>>"
+<<<END>>>
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<CODE:UIED-304>>>"
+<<<CODE:UIED-304>>>
+fc_shell> 
+fc_shell> 
+fc_shell> man UIED-304
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
        UIED-304  (error)  Can't  find place to insert buffer by given location
        (%.4f, %.4f).
 
@@ -463,8 +1005,25 @@ SEE ALSO
 
 WHAT NEXT
        You can re-assign the location (e.g. to be more close to the route) and
-       try again.",,"Error: Can't find place to insert buffer by given location (5888.0161, 1273.0680). (UIED-304) (MSG-3032)",
-UIED-309,Error,"NAME
+       try again.
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<END>>>"
+<<<END>>>
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<CODE:UIED-309>>>"
+<<<CODE:UIED-309>>>
+fc_shell> 
+fc_shell> 
+fc_shell> man UIED-309
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
        UIED-309  (Error)  Add  buffer on route fail to get or process route of
        net %s
 
@@ -472,16 +1031,50 @@ DESCRIPTION
        Could not get or process route of a net
 
 WHAT NEXT
-       Check whether the net is valid",,Error: Add buffer on route fail to get or process route of net bit_secure_7_slice_20_t_din2piso[14] (UIED-309) (MSG-3032),
-UIED-313,Warning,"NAME
+       Check whether the net is valid
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<END>>>"
+<<<END>>>
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<CODE:UIED-313>>>"
+<<<CODE:UIED-313>>>
+fc_shell> 
+fc_shell> 
+fc_shell> man UIED-313
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
        UIED-313 (Warning) Failed to add buffer on net %s
 
 DESCRIPTION
        Could not add buffer with current parameters on the net
 
 WHAT NEXT
-       Run the command with different parameters",,Warning: Failed to add buffer on net bit_secure_7_slice_20_t_din2piso[14] (UIED-313) (MSG-3032),
-UPF-236,Warning,"NAME
+       Run the command with different parameters
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<END>>>"
+<<<END>>>
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<CODE:UPF-236>>>"
+<<<CODE:UPF-236>>>
+fc_shell> 
+fc_shell> 
+fc_shell> man UPF-236
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
        UPF-236  (warning)  Crosstool  app  option  is set to true, UPF may not
        match Verilog or SPEF.
 
@@ -503,7 +1096,7 @@ DESCRIPTION
        the write_verilog  command.  When  the  app  option  is  set  to  true,
        write_verilog  will write a Verilog netlist and a compatible UPF at the
        same time.  The UPF will have the same name as the  Verilog  file  with
-       the added extension "".SNPS.upf"".
+       the added extension ".SNPS.upf".
 
 WHAT NEXT
        If   you   have  a  multi-voltage  design  and  are  allowing  physical
@@ -521,8 +1114,25 @@ SEE ALSO
        write_parasitics(2)
        save_upf(2)
        opt.common.allow_physical_feedthrough(3)
-       mv.upf.write_crosstool_wrappers(3)",,"Warning: Crosstool app option is set to true, UPF may not match Verilog or SPEF. (UPF-236) (MSG-3032)",
-ZRT-022,Warning,"NAME
+       mv.upf.write_crosstool_wrappers(3)
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<END>>>"
+<<<END>>>
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<CODE:ZRT-022>>>"
+<<<CODE:ZRT-022>>>
+fc_shell> 
+fc_shell> 
+fc_shell> man ZRT-022
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
        ZRT-022 (warn) Cannot find a default contact code for layer %s.
 
 DESCRIPTION
@@ -533,8 +1143,25 @@ DESCRIPTION
 WHAT NEXT
        Add  a  default  contact code definition to the technology file. If the
        specified layer is a nonrouting layer, such as V0, you can ignore  this
-       message.",,Warning: Cannot find a default contact code for layer CO. (ZRT-022) (MSG-3032),
-ZRT-027,Warning,"NAME
+       message.
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<END>>>"
+<<<END>>>
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<CODE:ZRT-027>>>"
+<<<CODE:ZRT-027>>>
+fc_shell> 
+fc_shell> 
+fc_shell> man ZRT-027
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
        ZRT-027 (warn) Ignore %d top cell ports with no pins.
 
 DESCRIPTION
@@ -544,8 +1171,25 @@ DESCRIPTION
 
 WHAT NEXT
        Please check the top cell and create physical shapes for those ports if
-       needed.",,Warning: Ignore 2 top cell ports with no pins. (ZRT-027) (MSG-3032),
-ZRT-044,Warning,"NAME
+       needed.
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<END>>>"
+<<<END>>>
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<CODE:ZRT-044>>>"
+<<<CODE:ZRT-044>>>
+fc_shell> 
+fc_shell> 
+fc_shell> man ZRT-044
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
        ZRT-044 (warn) Standard cell pin %s/%s has no valid via regions.
 
 DESCRIPTION
@@ -556,8 +1200,25 @@ DESCRIPTION
 WHAT NEXT
        Please  check  for  DRCs  in  accessing this pin, and check ZRT-038 for
        error in contact code number, and generate the via  regions  if  neces-
-       sary.",,Standard cell pin %s/%s has no valid via regions. (MSG-3032),
-ZRT-101,Warning,"NAME
+       sary.
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<END>>>"
+<<<END>>>
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<CODE:ZRT-101>>>"
+<<<CODE:ZRT-101>>>
+fc_shell> 
+fc_shell> 
+fc_shell> man ZRT-101
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
        ZRT-101 (warning) Power net %s has no power preroutes, skip tie-off.
 
 DESCRIPTION
@@ -565,8 +1226,25 @@ DESCRIPTION
        net.
 
 WHAT NEXT
-       Please add power preroutes.",,"Warning: Power net sipo_sw_out has no power preroutes, skip tie-off. (ZRT-101) (MSG-3032)",
-ZRT-142,Warning,"NAME
+       Please add power preroutes.
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<END>>>"
+<<<END>>>
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<CODE:ZRT-142>>>"
+<<<CODE:ZRT-142>>>
+fc_shell> 
+fc_shell> 
+fc_shell> man ZRT-142
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
        ZRT-142 (warn) PG net %s has a %s shape with shape_use detail_route and
        it is too long. Long part of the  shape  is  located  at  (%.3f,  %.3f)
        (%.3f, %.3f). The shape's BBox is (%.3f, %.3f) (%.3f, %.3f).
@@ -583,8 +1261,25 @@ WHAT NEXT
        The user could run check_routability -check_shield true to get a report
        of  shield  data issues.  The user could also use set_app_options -name
        route.common.check_shield -value true to enable shield data checker  in
-       all Zroute commands.",,"Warning: PG net piso_sw_out has a path shape with shape_use detail_route and it is too long. Long part of the shape is located at (123.844, 1668.772) (232.732, 1668.828). The shape's BBox is (123.844, 1668.772) (232.732, 1668.828). (ZRT-142) (MSG-3032)",
-ZRT-143,Warning,"NAME
+       all Zroute commands.
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<END>>>"
+<<<END>>>
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<CODE:ZRT-143>>>"
+<<<CODE:ZRT-143>>>
+fc_shell> 
+fc_shell> 
+fc_shell> man ZRT-143
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
        ZRT-143  (warning)  Secondary  PG  net  %s has no power stripe, skip to
        route.
 
@@ -592,8 +1287,25 @@ DESCRIPTION
        Secondary PG net has no power stripe to connect.
 
 WHAT NEXT
-       Please add power stripe.",,"Secondary PG net %s has no power stripe, skip to route. (MSG-3032)",
-ZRT-311,Warning,"NAME
+       Please add power stripe.
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<END>>>"
+<<<END>>>
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<CODE:ZRT-311>>>"
+<<<CODE:ZRT-311>>>
+fc_shell> 
+fc_shell> 
+fc_shell> man ZRT-311
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
        ZRT-311  (warning)  Skipping antenna analysis for net %s. The pin %s on
        cell %s does not have enough gate area information.
 
@@ -617,8 +1329,25 @@ WHAT NEXT
        If the gate area is unspecified but the diffusion area is specified for
        some  pins, and you want to use the diffusion area for antenna analysis
        for   such   pins,    then    set    app    option    route.detail.ana-
-       lyze_antenna_for_pins_with_diffusion_area to true.",,Warning: Skipping antenna analysis for net bit_secure_0_slice_0_pout2mem[9]. The pin I1[1] on cell SRAM2RW16x4 does not have enough gate area information. (ZRT-311) (MSG-3032),
-ZRT-543,Warning,"NAME
+       lyze_antenna_for_pins_with_diffusion_area to true.
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<END>>>"
+<<<END>>>
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<CODE:ZRT-543>>>"
+<<<CODE:ZRT-543>>>
+fc_shell> 
+fc_shell> 
+fc_shell> man ZRT-543
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
        ZRT-543  (warn)  Shape {%d %d %d %d} on layer %s is not on min manufac-
        turing grid. Snap it to {%d %d %d %d}. The shape belongs to Net: %s.
 
@@ -630,8 +1359,25 @@ DESCRIPTION
 WHAT NEXT
        If the off minGrid shape is a fixed shape from the libary, try  to  fix
        them  manully. If the shape is a routable shape, it should be automati-
-       clly fixed after running detailed route.",,Shape {%d %d %d %d} on layer %s is not on min manufacturing grid. Snap it to {%d %d %d %d}. The shape belongs to Net: %s. (MSG-3032),
-ZRT-626,Warning,"NAME
+       clly fixed after running detailed route.
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<END>>>"
+<<<END>>>
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<CODE:ZRT-626>>>"
+<<<CODE:ZRT-626>>>
+fc_shell> 
+fc_shell> 
+fc_shell> man ZRT-626
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
        ZRT-626  (warning)  High  fanout  net %s can affect runtime for antenna
        fixing.
 
@@ -643,17 +1389,51 @@ WHAT NEXT
        Please  check  the  design  and  address the high fanout net issue.  If
        antenna check is not needed for these nets, consider setting app option
        route.detail.max_antenna_pin_count.                              Option
-       ""route.detail.max_antenna_pin_count"" specifies the  maximum  number  of
-       pins on a net on which antenna checking is performed.",,Warning: High fanout net clock_opt_cts_ZCTSNET_1248 can affect runtime for antenna fixing. (ZRT-626) (MSG-3032),
-ZRT-740,Warning,"NAME
+       "route.detail.max_antenna_pin_count" specifies the  maximum  number  of
+       pins on a net on which antenna checking is performed.
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<END>>>"
+<<<END>>>
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<CODE:ZRT-740>>>"
+<<<CODE:ZRT-740>>>
+fc_shell> 
+fc_shell> 
+fc_shell> man ZRT-740
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
        ZRT-740 (warning)  %s is unplaced.  This may impact routing result.
 
 DESCRIPTION
        A port is unplaced.  This is atypical and may impact routing result.
 
 WHAT NEXT
-       If this is not expected, please fix the issue.",,Warning: Port sipo_sw_out of cell bit_coin is unplaced.  This may impact routing result. (ZRT-740) (MSG-3032),
-ZRT-825,Warning,"NAME
+       If this is not expected, please fix the issue.
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<END>>>"
+<<<END>>>
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<CODE:ZRT-825>>>"
+<<<CODE:ZRT-825>>>
+fc_shell> 
+fc_shell> 
+fc_shell> man ZRT-825
+N.  Messages                                                 Command Reference
+                                   messages
+
+NAME
        ZRT-825  (Warning)  Pin or route connects to PG user_route (%.3f, %.3f,
        %.3f, %.3f) on layer (%s) is considered  as  tied.  Would  not  further
        check or build connectivity to tie to other PG pre-routes.
@@ -665,4 +1445,20 @@ DESCRIPTION
        which need further tie off connections.
 
 WHAT NEXT
-       Set the user_route to other shape_use if necessary.",,"Pin or route connects to PG user_route (%.3f, %.3f, %.3f, %.3f) on layer (%s) is considered as tied. Would not further check or build connectivity to tie to other PG pre-routes.\n (MSG-3032)",
+       Set the user_route to other shape_use if necessary.
+
+                          Version W-2024.09-SP3
+            Copyright (c) 2025 Synopsys, Inc. All rights reserved.
+fc_shell> 
+fc_shell> 
+fc_shell> puts "<<<END>>>"
+<<<END>>>
+fc_shell> 
+fc_shell> 
+fc_shell> exit
+Maximum memory usage for this session: 369.32 MB
+Maximum memory usage for this session including child processes: 369.32 MB
+CPU usage for this session:      6 seconds (  0.00 hours)
+Elapsed time for this session:      6 seconds (  0.00 hours)
+Thank you for using Fusion Compiler.
+

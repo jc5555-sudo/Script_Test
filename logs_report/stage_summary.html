@@ -1,18 +1,16 @@
 <html><head><meta charset='UTF-8'>
-<title>stage_summary.html</title>
+<title>stage_summary.csv</title>
 <style>
 body { font-family: Arial, sans-serif; }
 table { border-collapse: collapse; width: 100%; }
 th, td { border: 1px solid #888; padding: 6px; vertical-align: top; }
 th { background-color: #f0f0f0; }
-.WARNING { background-color: #fff6cc; }
-.ERROR { background-color: #ffd6d6; }
-pre { white-space: pre-wrap; max-height: 320px; overflow-y: auto; }
+pre { white-space: pre-wrap; }
 </style></head><body>
-<h2>stage_summary.html</h2>
+<h2>stage_summary.csv</h2>
 <table>
 <tr><th>Code</th><th>Severity</th><th>Description</th><th>User Severity</th><th>rpt msg</th><th>solution</th></tr>
-<tr class='WARNING'><td>CHF-011</td><td>Warning</td><td><pre>NAME
+<tr><td>CHF-011</td><td>Warning</td><td>NAME
        CHF-011 (Warning) filler ref cell %s not marked filler type.
 
 DESCRIPTION
@@ -20,8 +18,8 @@ DESCRIPTION
        marked filler type.
 
 WHAT NEXT
-       Please check your filler ref cell type.</pre></td><td></td><td>Warning: filler ref cell DCAP_HVT not marked filler type. (CHF-011) (MSG-3032)</td><td></td></tr>
-<tr class='WARNING'><td>CHF-014</td><td>Warning</td><td><pre>NAME
+       Please check your filler ref cell type.</td><td>[fill severity]</td><td>Warning: filler ref cell DCAP_HVT not marked filler type. (CHF-011) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr><td>CHF-014</td><td>Warning</td><td>NAME
        CHF-014 (Warning) option -continue_on_error turned on automatically.
 
 DESCRIPTION
@@ -32,8 +30,8 @@ DESCRIPTION
        lead to unfillable gaps.
 
 WHAT NEXT
-       Please include fillers of all needed sizes</pre></td><td></td><td>Warning: option -continue_on_error turned on automatically. (CHF-014) (MSG-3032)</td><td></td></tr>
-<tr class='WARNING'><td>CHF-073</td><td>Warning</td><td><pre>NAME
+       Please include fillers of all needed sizes</td><td>[fill severity]</td><td>Warning: option -continue_on_error turned on automatically. (CHF-014) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr><td>CHF-073</td><td>Warning</td><td>NAME
        CHF-073 (Warning) Smallest filler provided is greater than specified in
        option place.rules.min_vt_filler_size
 
@@ -44,8 +42,8 @@ DESCRIPTION
 
 WHAT NEXT
        Please  include  missing   size   fillers   in   create_stdcell_fillers
-       -lib_cells.</pre></td><td></td><td>Warning: Smallest filler provided is greater than specified in option place.rules.min_vt_filler_size (CHF-073) (MSG-3032)</td><td></td></tr>
-<tr class='WARNING'><td>ZRT-825</td><td>Warning</td><td><pre>NAME
+       -lib_cells.</td><td>[fill severity]</td><td>Warning: Smallest filler provided is greater than specified in option place.rules.min_vt_filler_size (CHF-073) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr><td>ZRT-825</td><td>Warning</td><td>NAME
        ZRT-825  (Warning)  Pin or route connects to PG user_route (%.3f, %.3f,
        %.3f, %.3f) on layer (%s) is considered  as  tied.  Would  not  further
        check or build connectivity to tie to other PG pre-routes.
@@ -57,5 +55,5 @@ DESCRIPTION
        which need further tie off connections.
 
 WHAT NEXT
-       Set the user_route to other shape_use if necessary.</pre></td><td></td><td>Pin or route connects to PG user_route (%.3f, %.3f, %.3f, %.3f) on layer (%s) is considered as tied. Would not further check or build connectivity to tie to other PG pre-routes.\n (MSG-3032)</td><td></td></tr>
+       Set the user_route to other shape_use if necessary.</td><td>[fill severity]</td><td>Pin or route connects to PG user_route (%.3f, %.3f, %.3f, %.3f) on layer (%s) is considered as tied. Would not further check or build connectivity to tie to other PG pre-routes.\n (MSG-3032)</td><td>[fill solution]</td></tr>
 </table></body></html>
