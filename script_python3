@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-# Python 3.6 compatible
-# Generate WARNING / ERROR summary CSV + HTML (exclude INFO)
+# Python 3.6+
+# Generate WARNING / ERROR summary CSV + HTML
+# CSV is Windows Excel compatible with wrapped text
 
 import csv
 from pathlib import Path
@@ -11,12 +12,13 @@ import html
 # ==================================================
 CSV_DIR = Path("logs_report")
 KEEP_SEVERITY = {"WARNING", "ERROR"}
+WRAP_CHARS = 80  # number of chars before inserting a line break in Description
 
 # ==================================================
 # HTML WRITER
 # ==================================================
 def write_summary_html(html_path, fieldnames, rows):
-    with open(html_path, "w") as f:
+    with open(html_path, "w", encoding="utf-8") as f:
         f.write("<html><head><meta charset='UTF-8'>\n")
         f.write("<title>{}</title>\n".format(html.escape(html_path.name)))
         f.write("<style>\n")
@@ -41,17 +43,25 @@ def write_summary_html(html_path, fieldnames, rows):
         for row in rows:
             sev = row.get("Severity", "").upper()
             f.write("<tr class='{}'>".format(sev))
-
             for h in fieldnames:
                 val = row.get(h, "")
                 if h == "Description":
+                    # wrap text inside HTML pre
                     f.write("<td><pre>{}</pre></td>".format(html.escape(val)))
                 else:
                     f.write("<td>{}</td>".format(html.escape(val)))
-
             f.write("</tr>\n")
 
         f.write("</table></body></html>")
+
+# ==================================================
+# CSV WRAPPER FUNCTION FOR WINDOWS EXCEL
+# ==================================================
+def wrap_text(text, width):
+    """Insert line breaks every `width` chars"""
+    if not text:
+        return ""
+    return "\n".join(text[i:i+width] for i in range(0, len(text), width))
 
 # ==================================================
 # MAIN
@@ -61,27 +71,23 @@ if not CSV_DIR.is_dir():
     exit(1)
 
 csv_files = sorted(CSV_DIR.glob("*.csv"))
-
 if not csv_files:
     print("No CSV files found")
     exit(0)
 
 for csv_path in csv_files:
-    if csv_path.name.endswith(".bak"):
-        continue
-    if csv_path.name.endswith("_summary.csv"):
+    if csv_path.name.endswith(".bak") or csv_path.name.endswith("_summary.csv"):
         continue
 
     print("\nProcessing:", csv_path.name)
 
-    with open(csv_path, newline="") as f:
+    # Read CSV
+    with open(csv_path, newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
         fieldnames = reader.fieldnames
-
         if not fieldnames or "Severity" not in fieldnames:
             print("  → SKIPPED (no Severity column)")
             continue
-
         rows = [
             r for r in reader
             if r.get("Severity", "").upper() in KEEP_SEVERITY
@@ -91,24 +97,12 @@ for csv_path in csv_files:
         print("  → No WARNING / ERROR found")
         continue
 
-    # --------------------------------------------------
-    # Write summary CSV
-    # --------------------------------------------------
-    summary_csv = csv_path.with_name(csv_path.stem + "_summary.csv")
-    with open(summary_csv, "w", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
-        writer.writeheader()
-        for r in rows:
-            writer.writerow(r)
-
-    print("  → Summary CSV written:", summary_csv)
+    # Wrap Description text
+    for r in rows:
+        if "Description" in r:
+            r["Description"] = wrap_text(r["Description"], WRAP_CHARS)
 
     # --------------------------------------------------
-    # Write summary HTML
+    # Write summary CSV (Windows Excel compatible)
     # --------------------------------------------------
-    summary_html = csv_path.with_name(csv_path.stem + "_summary.html")
-    write_summary_html(summary_html, fieldnames, rows)
 
-    print("  → Summary HTML written:", summary_html)
-
-print("\nDONE: CSV + HTML summary generated")

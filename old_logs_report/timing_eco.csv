@@ -1,4 +1,15 @@
 "Code","Severity","Description","User Severity","rpt msg","solution"
+"ATTR-11","Info","NAME
+       ATTR-11 (information) The returned value for %s '%s' is the design spe-
+       cific attribute override defined within the current block '%s'.
+
+DESCRIPTION
+       This command returned the design specific attribute value from the cur-
+       rent  block,  instead  of the actual value from the library. Within the
+       block, the design specific attribute value overrides the library value.
+       It was set previously by the set_attribute command,
+         because library settings may not be overwritten. This override may
+         be removed by the remove_attributes command.","","Information: The returned value for lib_cell 'saed32rvt_tt_v125c:NBUFFX8_RVT.timing' is the design specific attribute override defined within the current block 'bit_coin'. (ATTR-11) (MSG-3032)",""
 "CHF-011","Warning","NAME
        CHF-011 (Warning) filler ref cell %s not marked filler type.
 
@@ -32,6 +43,13 @@ DESCRIPTION
 WHAT NEXT
        Please  include  missing   size   fillers   in   create_stdcell_fillers
        -lib_cells.","","Warning: Smallest filler provided is greater than specified in option place.rules.min_vt_filler_size (CHF-073) (MSG-3032)",""
+"CLE-10","Info","NAME
+       CLE-10  (information)  Term  was not able to be set up using %s . Using
+       ""xterm"" by default instead.
+
+DESCRIPTION
+       This warning message occurs in certain OS when the term cannot  be  set
+       up under its default term name.","","Information: Term was not able to be set up using xterm-256color . Using ""xterm"" by default instead. (CLE-10) (MSG-3032)",""
 "CMD-013","Error","NAME
        CMD-013 (error) %s Use error_info for more info.
 
@@ -62,6 +80,59 @@ DESCRIPTION
 
 WHAT NEXT
        Add -largest / -smallest / -all switches to report the clock paths.","","Warning: Please use -largest / -smallest / -all switches with -show_verbose_paths / -show_paths to report the clock paths. (CTS-956) (MSG-3032)",""
+"CTS-973","Info","NAME
+       CTS-973  (info)  The value of option cts.compile.enable_cell_relocation
+       has been overridden to ""leaf_only"" to support latency-driven placement.
+
+DESCRIPTION
+       If option place.coarse.latency_driven_placement is true, placement will
+       attempt to move clock gating cells to improve clock latency. To prevent
+       clock gate relocation from altering the locations of these cells, clock
+       gate  relocation  will be done in leaf_only mode. Only leaf-level clock
+       gates will be moved by clock gate  relocation.  This  overrides  option
+       cts.compile.enable_cell_relocation.
+
+       Latency-driven  placement  happens  at  the place_opt flow stage. Clock
+       gate relocation happens at the clock_opt flow stage.
+
+WHAT NEXT
+       To use clock gate relocation mode other than ""leaf_only"", it is  neces-
+       sary     to    disable    latency-driven    placement.    Set    option
+       place.coarse.latency_driven placement to  false  during  place_opt  and
+       clock_opt  flow  stages.  Clock latency may degrade as a consequence of
+       this.
+
+SEE ALSO
+       cts.compile.enable_cell_relocation(3)
+       place.coarse.latency_driven_placement(3)","","Information: The value of option cts.compile.enable_cell_relocation has been overridden to ""leaf_only"" to support latency-driven placement. (CTS-973) (MSG-3032)",""
+"DEFW-006","Info","NAME
+       DEFW-006  (information)  Creating  dummy  net '%s' for unconnected port
+       '%s'.
+
+DESCRIPTION
+       There are unconnected ports in the design. For each  unconnected  port,
+       write_def  generates a dummy net and connects the port to it. The dummy
+       net will appear in the PINS and regular NETS sections. The dummy net is
+       not actually created and connected in the design; it is merely a place-
+       holder in the DEF output file.
+
+WHAT NEXT
+       Verify whether the port should be connected  in  the  netlist.  Connect
+       them  to  avoid  seeing  this  message and dummy nets in the output DEF
+       file.","","Creating dummy net '%s' for unconnected port '%s'. (MSG-3032)",""
+"DEFW-032","Info","NAME
+       DEFW-032  (information)  Fill  shapes with '%s' purpose will be skipped
+       from output DEF.
+
+DESCRIPTION
+       Fill Shapes with purpose 'active_fill'  and  'special_router_extension'
+       are  written  out  based  on  the  file.def.fill_purpose_map app option
+       value. This message informs which shapes are excluded from  DEF  output
+       in the current settings.
+
+WHAT NEXT
+       Please use appropriate file.def.fill_purpose_map mapping if output file
+       is not expected.","","Information: Fill shapes with 'active_fill' purpose will be skipped from output DEF. (DEFW-032) (MSG-3032)",""
 "EOPT-011","Error","NAME
        EOPT-011 (Error) : '%d' errors encountered.
 
@@ -74,6 +145,44 @@ WHAT NEXT
 
 SEE ALSO
        eco_opt (2).  check_pt_qor (2).","","Error: '7' errors encountered. (EOPT-011) (MSG-3032)",""
+"FILE-007","Info","NAME
+       FILE-007 (information) Loading %s file '%s'
+
+DESCRIPTION
+       This  informational message shows the full path name and type of a file
+       being read into the application.
+
+WHAT NEXT
+       Use the full path name to  help  understand  any  problems  encountered
+       while reading the file.","","Information: Loading library file '/home/inf27/bitcoin_workdir/bitcoin_no_dft_derive_with_tie_anttcl_drcrs_compileprepgapowerswitch_keepout_ctscells_metalfill_maxtrans_all_5/data/lib/sram/ndms/sram2rw16x4_tt1p_v125c.ndm' (FILE-007) (MSG-3032)",""
+"FLW-8000","Info","NAME
+       FLW-8000 (info) Starting %s
+
+DESCRIPTION
+       Starting  message  of  a  command, compile stage or step.  This message
+       appears in pair with FLW-8001.
+
+WHAT NEXT
+       Information. No action needed.","","Information: Starting 'analyze_design_violations' (FLW-8000) (MSG-3032)",""
+"FLW-8001","Info","NAME
+       FLW-8001 (info) Ending %s
+
+DESCRIPTION
+       Ending  message  of  a  command,  compile  stage or step.  This message
+       appears in pair with FLW-8000.
+
+WHAT NEXT
+       Information. No action needed.","","Information: Ending   'analyze_design_violations' (FLW-8001) (MSG-3032)",""
+"FLW-8100","Info","NAME
+       FLW-8100  (info)  Time: %s / Session: %s / Command: %s / CPU: %s / Mem-
+       ory: %.0f MB
+
+DESCRIPTION
+       Information of timestamp, elapsed time in  the  tool  session,  elapsed
+       time and CPU time in the command and peak memory usage.
+
+WHAT NEXT
+       Information. No action needed.","","Information: Time: 2025-12-30 12:53:45 / Session:  02:58:13 / Command:  00:02:36 / CPU:  00:02:35 / Memory: 23201 MB (FLW-8100) (MSG-3032)",""
 "FRAM-054","Warning","NAME
        FRAM-054  (warning)  Technology  used  to create frame-view and current
        technology have inconsistency: %s.
@@ -118,6 +227,50 @@ DESCRIPTION
 WHAT NEXT
        Please  verify  whether  the reported width is truly the WRONGDIRECTION
        width for the specified layer.","","Warning: Use defaultWidth 2 as the WRONGDIRECTION width for layer 'MRDL'. (LEFW-007) (MSG-3032)",""
+"LNK-040","Info","NAME
+       LNK-040 (information) User %sunits loaded from library '%s'
+
+DESCRIPTION
+       This message appears when you have not explicitly set your design units
+       (time, capacitance, etc.) with the set_user_units command.   The  units
+       used  in your shell session will be taken from the default units in the
+       given library.
+
+WHAT NEXT
+       You can use report_user_units to see what  units  have  been  selected.
+       You can use the set_user_units to force different units of your choice.
+
+SEE ALSO
+       set_user_units(2)
+       report_user_units(2)","","Information: User units loaded from library 'saed32hvt_pg_c' (LNK-040) (MSG-3032)",""
+"MSG-3106","Info","","","Information: set_msg: changed msg 'ATTR-11' to level INFO (MSG-3106) (MSG-3032)",""
+"MSG-3913","Info","NAME
+       MSG-3913  (info) %d out of %d %s messages were not printed due to limit
+       %d %s
+
+DESCRIPTION
+       This message prints the summary of the suppressed messages at  the  end
+       of every source or mega command. This message will also be printed when
+       we change the limit of a message which was suppressed.
+
+       The file information will be  printed  if  this  message  is  triggered
+       before  the  end  of  the  source  file. The message will be printed as
+       below:
+
+       3 out of 5 NDMUI-669 messages were not printed due to  limit  2  (after
+       'set_message_info'  at  test.tcl:21) (MSG-3913) 2 out of 4 ATR-012 mes-
+       sages were not printed due to  limit  2  (after  'set_message_info'  at
+       test.tcl:22) (MSG-3913)
+
+       And  if  this  message  is triggered after the completion of the source
+       file. It will be printed as below:
+
+       1 out of 3 ATR-012 messages were not printed due to limit 2  (MSG-3913)
+       1  out  of  3  NDMUI-669  messages  were  not  printed  due  to limit 2
+       (MSG-3913)
+
+WHAT NEXT","","Information: 573737 out of 573747 POW-046 messages were not printed due to limit 10 (after 'source' at timing_eco.tcl:539) (MSG-3913) (MSG-3032)",""
+"MSG-3987","Info","","","Information: report_msg: adding -printed to avoid unintentional output overload. Use 'get_msg *' to list all messages.  (MSG-3987) (MSG-3032)",""
 "MV-013","Warning","NAME
        MV-013  (warning)  %s  '%s' [supply net '%s', power state '%s'] is less
        always-on than the load pin '%s' [supply net '%s', power state '%s'].
@@ -151,6 +304,31 @@ SEE ALSO
        report_mv_path(2)
        analyze_mv_feasibility(2)
        report_mv_lib_cells(2)","","Warning: Driver pin 'piso_secure_0/route_opt__1_PTECO_DRC_BUF6966/Y' [supply net 'piso_sw_out', power state 'SSL_PISO_SECURE_OFF'] is less always-on than the load pin 'piso_secure_0/headerfooter_snps_PD_PISO_SECURE__SW_PISO_SECURE_snps_HEAD2X16_HVT_R588_C87_2802/SLEEP' [supply net 'VDDL', power state 'SSL_ON']. (MV-013) (MSG-3032)",""
+"MV-072","Info","NAME
+       MV-072  (information) The level shifter '%s' is not associated with any
+       level shifter strategies.
+
+DESCRIPTION
+       This message is printed when the specified level shifter is not associ-
+       ated with any level shifter strategies.
+
+       When  the  tool cannot associate level shifter cells with level shifter
+       strategies, it might be caused by one of these reasons:  level  shifter
+       cell is not inserted based on any strategy, it might purely be inserted
+       to fix the voltage shifting automatically;  or  the  level  shifter  is
+       inserted base on certain strategy, but the nestlist got changed without
+       introducing any extra violation. In  any  case,  existing  power/ground
+       supply  nets  of  the  cell are maintained. No association will pose no
+       problem in downstream tools.
+
+WHAT NEXT
+       This is an information-only message. No action is required.
+
+SEE ALSO
+       associate_mv_cells(2)
+       report_power_domains(2)
+       report_mv_path(2)
+       report_cell(2)","","Information: The level shifter 'bit_secure_6_snps_PD_SIPO_SECURE__ISO_SIPO_OUT_snps_addr_3_ISO_SIPO_OUT' is not associated with any level shifter strategies. (MV-072) (MSG-3032)",""
 "MV-074","Warning","NAME
        MV-074  (warning) The power switch cell '%s' is not associated with any
        power switch strategies.
@@ -176,6 +354,80 @@ SEE ALSO
        associate_mv_cells(2)
        report_power_domains(2)
        report_cell(2)","","Warning: The power switch cell 'piso_secure_0/headerfooter_snps_PD_PISO_SECURE__SW_PISO_SECURE_snps_HEAD2X16_HVT_R887_C0_28' is not associated with any power switch strategies. (MV-074) (MSG-3032)",""
+"MV-079","Info","NAME
+       MV-079  (information)  Message '%s' limit (%d) exceeded. Remainder will
+       be suppressed. The  limit  can  be  changed  with  '-max_message_count'
+       option.
+
+DESCRIPTION
+       This message indicates that the message limit has been exceeded and the
+       remainder will be suppressed.
+
+WHAT NEXT
+       Run check_mv_design with different  value  for  the  -max_message_count
+       option.
+
+SEE ALSO
+       check_mv_design(2)","","Information: Message 'MV-013' limit (20) exceeded. Remainder will be suppressed. The limit can be changed with '-max_message_count' option. (MV-079) (MSG-3032)",""
+"MV-080","Info","NAME
+       MV-080 (information) Total %d %s violations.
+
+NAME
+       MV-080 (warning) Total %d %s violations.
+
+DESCRIPTION
+       This  message,  printed by check_mv_design, gives the total number of a
+       specific type of MV violation.  All violations may not  be  printed  in
+       the report.  By default, only 20 of each type of violation are printed.
+       This number can be controlled by the check_mv_design -max_message_count
+       option.   To  see  details  of  every  violation,  use  check_mv_design
+       -max_message_count all.
+
+WHAT NEXT
+       No further action is required.   Optionally,  increase  the  number  of
+       printed  violations  to  see  more  details  by  using  check_mv_design
+       -max_message_count.
+
+SEE ALSO
+       check_mv_design(2)","","Information: Total 22 MV-013 violations. (MV-080) (MSG-3032)",""
+"MV-082","Info","NAME
+       MV-082   (information)   Total  %d  error(s)  and  %d  warning(s)  from
+       check_mv_design.
+
+DESCRIPTION
+       This summary message shows the total number of error(s) and  warning(s)
+       reported  by  check_mv_design.   Details for some of these messages may
+       have been suppressed.  Use check_mv_design -max_message_count to  spec-
+       ify the count of detailed outputs per message tag.  Use check_mv_design
+       -max_message_count all to report all details.
+
+WHAT NEXT
+       Check the details of the reported  violations  in  the  check_mv_design
+       report.
+
+SEE ALSO
+       check_mv_design(2)","","Information: Total 0 error(s) and 2254 warning(s) from check_mv_design. (MV-082) (MSG-3032)",""
+"MV-382","Info","NAME
+       MV-382 (info) connections of %d power/ground pin(s) are %s.
+
+DESCRIPTION
+       This  message occurs when user executes the connect_pg_net command.  It
+       shows the number of connections of pin(s) that are created or changed.
+
+SEE ALSO
+       connect_pg_net(2)","","Information: connections of 0 power/ground pin(s) are created or changed. (MV-382) (MSG-3032)",""
+"MV-396","Info","NAME
+       MV-396 (information) Connecting to %s pins in automatic mode.
+
+DESCRIPTION
+       This message indicates whether automatic mode of connect_pg_net command
+       will make connections to PG, tie-off or both pin types.
+
+WHAT NEXT
+       This message is informational. No action is required.
+
+SEE ALSO
+       connect_pg_net(2) mv.pg.connect_pg_net_auto_mode_include_tie(n)","","Information: Connecting to PG and tie pins in automatic mode. (MV-396) (MSG-3032)",""
 "NDM-102","Warning","NAME
        NDM-102  (warning)  Technology  '%s'  used  for  frame-view creation in
        library '%s', is inconsistent  with  the  current  technology  '%s'  of
@@ -197,6 +449,24 @@ SEE ALSO
        open_lib(2)
        read_tech_file(2)
        derive_design_level_via_regions(2)","","Warning: Technology 'saed32nm_1p9m_mw.tf' used for frame-view creation in library 'sram2rw16x4_tt1p_v125c', is inconsistent with the current technology 'saed32nm_1p9m_mw.tf' of library 'bit_coin.nlib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102) (MSG-3032)",""
+"NEX-014","Info","NAME
+       NEX-014 (info) %s with %i threads
+
+DESCRIPTION
+       Extraction uses multi thread technology to speed up. This message tells
+       current specified step will run with how many num of threads.
+
+WHAT NEXT
+       Check extraction elapsed run time improvement.","","Information: GPD output -mt with 16 threads (NEX-014) (MSG-3032)",""
+"NEX-015","Info","NAME
+       NEX-015 (info) %s takes %2.2f seconds, elapse %2.2f seconds
+
+DESCRIPTION
+       This  is infomation message to tell run time usage of specified extrac-
+       tion step, it will print out cpu time and elapsed times
+
+WHAT NEXT
+       n/a","","Information: batch extract takes 0.00 seconds, elapse 0.00 seconds (NEX-015) (MSG-3032)",""
 "NEX-020","Warning","NAME
        NEX-020  (warning)   Net '%s' is exceeding threshold (over %d pins) and
        will be skipped.
@@ -214,6 +484,56 @@ WHAT NEXT
 
 SEE ALSO
        reg_extract_design(2)","","Net '%s' is exceeding threshold (over %d pins) and will be skipped. (MSG-3032)",""
+"NEX-022","Info","NAME
+       NEX-022 (information) The RC mode used is %s.
+
+DESCRIPTION
+       This message advises you of the RC model that the tool will use to com-
+       pute
+        RC value.
+
+       The valid RC modes and their descriptions  are  shown  below,  starting
+       with  the highest priority and ending with the lowest priority based on
+       design route status.
+
+     o  DR(detail routed), if 60% of all nets are detail routed
+
+     o  GR(global routed), if 60% of all nets are global or detail routed
+
+     o  CTO(clock routed), if 1 or more nets are global or detail routed
+
+     o  VR(virtual routed), can be done with/without routed net  depending  on
+       timer's control
+
+     o   RDE(route  driven  estimation),  can  be done with/without routed net
+       depending on timer's control. Estimation is  done  thru  captured  data
+       learned from routing.","","Information: The RC mode used is DR for design 'bit_coin'. (NEX-022) (MSG-3032)",""
+"NEX-024","Info","NAME
+       NEX-024  (info)  Design  %s  has  %i  nets, %i global routed, %i detail
+       routed.
+
+DESCRIPTION
+       Message about route status, which will decide extraction mode.
+
+WHAT NEXT
+       NEX-022 will be issued based on the ratio of routed/totalNets.","","Information: Design bit_coin has 208546 nets, 0 global routed, 208541 detail routed. (NEX-024) (MSG-3032)",""
+"NEX-028","Info","NAME
+       NEX-028 (info) %i nets are successfully extracted.
+
+DESCRIPTION
+       Message about extraction status, extracted means the net has content in
+       rcCache.
+
+WHAT NEXT
+       Timer/SPEF output can use RC in rcCache.","","Information: 208538 nets are successfully extracted. (NEX-028) (MSG-3032)",""
+"NEX-029","Info","NAME
+       NEX-029 (info) coupling capacitance is created explicitly.
+
+DESCRIPTION
+       Message about coupling capacitance is extracted.
+
+WHAT NEXT
+       Timer SI can work with coupling capacitance.","","Information: coupling capacitance is created explicitly. (NEX-029) (MSG-3032)",""
 "NEX-055","Warning","NAME
        NEX-055 (warning) starrc_extract_rc: %s.
 
@@ -236,6 +556,16 @@ DESCRIPTION
 WHAT NEXT
        set_attribute  [get_layer <layer>] routing_direction <horizontal/verti-
        cal>","","Warning: Routing direction of metal layer PO is neither ""horizontal"" nor ""vertical"".  PDC checks will not be performed on this layer. (PDC-003) (MSG-3032)",""
+"POW-005","Info","NAME
+       POW-005  (information) Activity for scenario %s was cached, no propaga-
+       tion required.
+
+DESCRIPTION
+       Switching activity for  a  scenario  was  already  calculated  earlier.
+       Therefore switching activity information will not be re-calculated.
+
+WHAT NEXT
+       No action is required.","","Information: Activity for scenario FUNC_0.85V_SETUP was cached, no propagation required. (POW-005) (MSG-3032)",""
 "POW-009","Warning","NAME
        POW-009 (warning) Power analysis is disabled %s as leakage/swcap/inter-
        nal   mode   power   app   options   can   be    off    and/or    leak-
@@ -255,6 +585,17 @@ SEE ALSO
        power.leakage_mode(3)
        power.swcap_mode(3)
        power.internal_mode(3)","","Warning: Power analysis is disabled for scenario 'FUNC_0.85V_HOLD' as leakage/swcap/internal mode power app options can be off and/or leakage_power/dynamic_power scenario flags are set to false. (POW-009) (MSG-3032)",""
+"POW-024","Info","NAME
+       POW-024 (information) Doing activity propagation for mode '%s' and cor-
+       ner '%s' with effort level '%s'.
+
+DESCRIPTION
+       Specifies that activity propagation is being done for a given mode  and
+       corner.
+
+WHAT NEXT
+       Activity propagation should proceed for a valid combination of mode and
+       corner.","","Information: Doing activity propagation for mode 'FUNC_085' and corner 'FUNC_0.85V_SETUP' with effort level 'medium'. (POW-024) (MSG-3032)",""
 "POW-046","Warning","NAME
        POW-046 (warning) Power table extrapolation (%s mode) for port %s on %s
        for parameter %s. Lowest table value = %f, highest table  value  =  %f,
@@ -271,6 +612,17 @@ WHAT NEXT
 
 SEE ALSO
        report_power(2)","","Warning: Power table extrapolation (extrapolation mode) for port SLEEPOUT on cell piso_secure_0/headerfooter_snps_PD_PISO_SECURE__SW_PISO_SECURE_snps_HEAD2X16_HVT_R293_C0_10 for parameter Cout. Lowest table value = 0.000100, highest table value = 0.008000, value = 0.030777 (POW-046) (MSG-3032)",""
+"POW-052","Info","NAME
+       POW-052 (information) Timer-derived activity data is cached on scenario
+       %s
+
+DESCRIPTION
+       Timer-derived activity informations been calculated and cached for  the
+       given scenario.  It will be invalidated and re-calculated automatically
+       on demand.
+
+WHAT NEXT
+       No action required.","","Information: Timer-derived activity data is cached on scenario FUNC_0.85V_SETUP (POW-052) (MSG-3032)",""
 "PVT-020","Warning","NAME
        PVT-020 (warning) Mismatched voltage in corner %s.
 
@@ -374,6 +726,7 @@ WHAT NEXT
        set_operating_conditions commands applied to the port or the top  level
        of the design.  The report_pvt command will give more information about
        this situation for a particular port.","","Warning: 0 port driving_cells affected for early, 0 for late. (PVT-034) (MSG-3032)",""
+"RSTR-1101","Info","","","Information: -source options for report_dont_touch command is only support when objects are specified (RSTR-1101) (MSG-3032)",""
 "SEL-004","Warning","NAME
        SEL-004 (warning) No %s objects matched '%s'
 
@@ -383,6 +736,75 @@ DESCRIPTION
 
 WHAT NEXT
        Check the pattern to see if it is what you expected.","","Warning: No cell objects matched 'route_opt__1_PTECO_DRC_BUF5384' (SEL-004) (MSG-3032)",""
+"TIM-050","Info","NAME
+       TIM-050 (Information) Timer using '%s'.
+
+DESCRIPTION
+       This message shows some timing related features that used in current IC
+       Compiler-II. These features include  Zero-interconnect  delay  calcula-
+       tion, PrimeTime delaly calculation, SI(Signal Integrity), Timing Window
+       Analysis,
+        AWP(Advanced Waveform Propagation), AOCV(Advanced On-Chip  Variation),
+       POCV (Parametric On-Chip Variation),
+        CRPR(Clock   Reconvergence   Pessimism  Removal),  LLE  (Local  Layout
+       Effect),
+
+        For LLE feature, LLE on means at least  one  cell  has  the  following
+       annotations:
+        1) physical parameters annotation
+        2) elelctrial parameters annotation
+        3)  the  corresponding  pane of the its lib cell has LLE related table
+       data.
+
+WHAT NEXT","","Information: Timer using 'SI, Timing Window Analysis, AWP, POCV-Slew_Variation, CRPR'. (TIM-050) (MSG-3032)",""
+"TIM-111","Info","NAME
+       TIM-111  (Information)  Update  timing completed net estimation for all
+       the timing graph nets
+
+DESCRIPTION
+       Full update timing was invoked on the design  which  led  the  tool  to
+       estimate  all the nets in the timing graph.  If any timing graph net is
+       across the physical hierachy, the parasitics from the constituent  sub-
+       blocks nets are stitched before estimating the net.
+
+WHAT NEXT","","Information: Update timing completed net estimation for all the timing graph nets (TIM-111) (MSG-3032)",""
+"TIM-112","Info","NAME
+       TIM-112  (Information)  Net  estimation statistics: timing graph nets =
+       %u, routed nets = %u, across physical hierarchy nets =  %u,  parasitics
+       cached  nets = %u, delay annotated nets = %u, parasitics annotated nets
+       = %u, multi-voltage nets = %u.
+
+DESCRIPTION
+       Show the full net estimation statistics with respect  to  timing  graph
+       net count.
+
+WHAT NEXT","","Information: Net estimation statistics: timing graph nets = 208541, routed nets = 208538, across physical hierarchy nets = 0, parasitics cached nets = 208538, delay annotated nets = 0, parasitics annotated nets = 0, multi-voltage nets = 27615. (TIM-112) (MSG-3032)",""
+"TIM-123","Info","NAME
+       TIM-123 (Information) The net parasitics of block %s are cleared.
+
+DESCRIPTION
+       The  net  parasitics  for  the block are stored in RC cache repository.
+       The extraction engine stores the extracted parasitics  for  the  routed
+       nets  in RC cache for the block.  The unrouted nets are estimated based
+       on virtual routing and are also stored  in  RC  cache.   If  the  timer
+       clients  forces  a full timing update or the design state changes, both
+       the timing delay data and the stored net parasitics are  cleared.   The
+       net  parasitics  will  be  re-calculated (extracted) during next timing
+       update.
+
+WHAT NEXT","","Information: The net parasitics of block bit_coin are cleared. (TIM-123) (MSG-3032)",""
+"TIM-125","Info","NAME
+       TIM-125  (Information)  The  stitching  and editing of coupling caps is
+       turned %s for design '%s'.
+
+DESCRIPTION
+       The extractor extract the coupling  caps  per  physical  block  in  the
+       design.   If SI analysis is turned on, coupling caps on the nets cross-
+       ing the physical hierarchy are stitched on the parasitic network.   The
+       coupling  caps are also edited during post route optimization flow cor-
+       responding to on-route optimization changes.
+
+WHAT NEXT","","Information: The stitching and editing of coupling caps is turned ON for design 'bit_coin.nlib:bit_coin/timing_eco.design'. (TIM-125) (MSG-3032)",""
 "TIM-204","Warning","NAME
        TIM-204  (Warning)  Advanced  receiver  model  has not been enabled for
        detailed routed design.
@@ -449,6 +871,13 @@ DESCRIPTION
 
 WHAT NEXT
        Review errors from the command, before this one to proceed.","","Error: Failed to add buffers (UIED-180) (MSG-3032)",""
+"UIED-189","Info","NAME
+       UIED-189 (information) The section: '%s' starts.
+
+DESCRIPTION
+       The section is running.
+
+WHAT NEXT","","Information: The section: 'Mark original net names' starts. (UIED-189) (MSG-3032)",""
 "UIED-304","Error","NAME
        UIED-304  (error)  Can't  find place to insert buffer by given location
        (%.4f, %.4f).
@@ -481,6 +910,14 @@ DESCRIPTION
 
 WHAT NEXT
        Run the command with different parameters","","Warning: Failed to add buffer on net bit_secure_7_slice_20_t_din2piso[14] (UIED-313) (MSG-3032)",""
+"UNDO-016","Info","NAME
+       UNDO-016 (info) The command '%s' cleared the undo history.
+
+DESCRIPTION
+       The  specified  command  is  not  undoable, therefore its execution has
+       cleared the undo history.
+
+WHAT NEXT","","Information: The command 'save_block' cleared the undo history. (UNDO-016) (MSG-3032)",""
 "UPF-236","Warning","NAME
        UPF-236  (warning)  Crosstool  app  option  is set to true, UPF may not
        match Verilog or SPEF.
@@ -522,6 +959,60 @@ SEE ALSO
        save_upf(2)
        opt.common.allow_physical_feedthrough(3)
        mv.upf.write_crosstool_wrappers(3)","","Warning: Crosstool app option is set to true, UPF may not match Verilog or SPEF. (UPF-236) (MSG-3032)",""
+"UPF-290","Info","NAME
+       UPF-290  (Information)  Usage  of  add_power_state -update will be made
+       mandatory in a future release.
+
+DESCRIPTION
+       This message occurs when the add_power_state is used to define a supply
+       set  state for a supply set and that supply set already has other power
+       states defined for it. -update should be used to  define  power  states
+       for supply set if it already has other power states
+
+WHAT NEXT
+       -update  option  of  add_power_state  command  should be used to define
+       power states for supply set if it already
+        has other power states
+
+SEE ALSO
+       add_power_state(2)","","Information: Usage of add_power_state -update will be made mandatory in a future release. (UPF-290) (MSG-3032)",""
+"UPF-450","Info","NAME
+       UPF-450  (information) Explicit supply net connections to isolation and
+       retention cells will be written out.  Use  mv.upf.save_upf_include_sup-
+       ply_exceptions_for_iso_retn to control this.
+
+DESCRIPTION
+       This  information  message informs that explicit supply net connections
+       to PG pins of isolation and retention cells  will  be  written  out  by
+       save_upf. If this behavior is not desired, it can be turned off by set-
+       ting    the    app     option     mv.upf.save_upf_include_supply_excep-
+       tions_for_iso_retn to false.
+
+WHAT NEXT
+       No action is required.
+
+SEE ALSO
+       save_upf(2)
+       mv.upf.save_upf_include_supply_exceptions_for_iso_retn(3)","","Information: Explicit supply net connections to isolation and retention cells will be written out. Use mv.upf.save_upf_include_supply_exceptions_for_iso_retn to control this. (UPF-450) (MSG-3032)",""
+"UPF-518","Info","NAME
+       UPF-518 (Information) The design attribute ""hetero_fanout_isolation"" is
+       not set. Tool will insert isolation cells on hetero-fanout path. It  is
+       recommended  to  set the attribute ""hetero_fanout_isolation"" to TRUE in
+       the input UPF to ensure cross tool consistency for path based isolation
+       cell insertion on heterogeneous fanouts.
+
+DESCRIPTION
+       This   information  message  is  issued  when  design  attribute  ""het-
+       ero_fanout_isolation"" is not set in input UPF  and  UPF  has  isolation
+       strategy  with  -sink/-diff_supply_only.   Tool  will  insert isolation
+       cells on hetero-fanout path. Its recommended to set the attribute ""het-
+       ero_fanout_isolation""  to  TRUE  in  the input UPF to ensure cross tool
+       consistency for path based isolation cell  insertion  on  heterogeneous
+       fanouts.
+
+WHAT NEXT
+SEE ALSO
+       set_design_attributes(2)","","Information: The design attribute ""hetero_fanout_isolation"" is not set. Tool will insert isolation cells on hetero-fanout path. It is recommended to set the attribute ""hetero_fanout_isolation"" to TRUE in the input UPF to ensure cross tool consistency for path based isolation cell insertion on heterogeneous fanouts. (UPF-518) (MSG-3032)",""
 "ZRT-022","Warning","NAME
        ZRT-022 (warn) Cannot find a default contact code for layer %s.
 
@@ -593,6 +1084,20 @@ DESCRIPTION
 
 WHAT NEXT
        Please add power stripe.","","Secondary PG net %s has no power stripe, skip to route. (MSG-3032)",""
+"ZRT-305","Info","NAME
+       ZRT-305 (info) Merged away %d aligned/redundant DRCs.
+
+DESCRIPTION
+       DRCs  can be merged if at least two opposing edges are aligned and they
+       are of the same type, layer, and nets.  For example, if two overlapping
+       different-net-metal-spacing  DRCs are between shapes of the same layer,
+       from the same two nets, and have top and  bottom  edges  aligned,  then
+       they  will  be  merged  to one DRC.  Merging is done to give the user a
+       more realistic number of DRCs,  and  to  minimize  the  effect  of  the
+       router's internal representation of the shapes on the DRC count.
+
+WHAT NEXT
+       No action necessary.","","Information: Merged away 213 aligned/redundant DRCs. (ZRT-305) (MSG-3032)",""
 "ZRT-311","Warning","NAME
        ZRT-311  (warning)  Skipping antenna analysis for net %s. The pin %s on
        cell %s does not have enough gate area information.
@@ -618,6 +1123,18 @@ WHAT NEXT
        some  pins, and you want to use the diffusion area for antenna analysis
        for   such   pins,    then    set    app    option    route.detail.ana-
        lyze_antenna_for_pins_with_diffusion_area to true.","","Warning: Skipping antenna analysis for net bit_secure_0_slice_0_pout2mem[9]. The pin I1[1] on cell SRAM2RW16x4 does not have enough gate area information. (ZRT-311) (MSG-3032)",""
+"ZRT-444","Info","NAME
+       ZRT-444 (info) Using %d threads for routing.
+
+DESCRIPTION
+       This message reports the number of threads used in multi-threaded rout-
+       ing.
+
+WHAT NEXT
+       No action is required.
+
+SEE ALSO
+       set_host_options(2)","","Information: Using 16 threads for routing. (ZRT-444) (MSG-3032)",""
 "ZRT-543","Warning","NAME
        ZRT-543  (warn)  Shape {%d %d %d %d} on layer %s is not on min manufac-
        turing grid. Snap it to {%d %d %d %d}. The shape belongs to Net: %s.
@@ -631,6 +1148,66 @@ WHAT NEXT
        If the off minGrid shape is a fixed shape from the libary, try  to  fix
        them  manully. If the shape is a routable shape, it should be automati-
        clly fixed after running detailed route.","","Shape {%d %d %d %d} on layer %s is not on min manufacturing grid. Snap it to {%d %d %d %d}. The shape belongs to Net: %s. (MSG-3032)",""
+"ZRT-559","Info","NAME
+       ZRT-559 (info) Routes in non-preferred voltage areas = %d
+
+DESCRIPTION
+       Voltage  areas  are a soft constraint, and routing outside of preferred
+       voltage areas is occasionally necessary and not indicative of an error.
+
+       For example, routes may cross through non-preferred  voltage  areas  to
+       avoid  unacceptably long detours.  Short routes may also enter a nearby
+       non-preferred voltage area along the border.  These behaviors are  nor-
+       mal.
+
+WHAT NEXT
+       No action necessary.","","Information: Routes in non-preferred voltage areas = 0 (ZRT-559) (MSG-3032)",""
+"ZRT-574","Info","NAME
+       ZRT-574 (Information) Freeing timing information from routing.
+
+DESCRIPTION
+       This  information  indicates  that  timing  update  has  happened after
+       route_global or route_track command and all timing information used  in
+       route_global  or  route_track  command is freed.  To be consistent with
+       route_auto ICC2 use  the  same  timing  information  for  route_global,
+       route_track and route_detail steps when timing driven is on. But if the
+       user        calls        update_timing        explicitly        between
+       route_global/route_track/route_detail,  the existing timing information
+       will be freed and the next route_command  will  use  up-to-date  timing
+       information.
+
+WHAT NEXT","","Information: Freeing timing information from routing. (ZRT-574) (MSG-3032)",""
+"ZRT-613","Info","NAME
+       ZRT-613 (info) RC layer preference is turned %s for this design.
+
+DESCRIPTION
+       RC  layer  preference  is turned off if the design does not have enough
+       variation in RC value among the reasonable routing layers. A  layer  is
+       reasonable if it is within min and max routing layers, and its pitch is
+       within six times the average pitch of the lower five metal routing lay-
+       ers.
+
+WHAT NEXT
+       No action necessary.","","Information: RC layer preference is turned on for this design. (ZRT-613) (MSG-3032)",""
+"ZRT-619","Info","NAME
+       ZRT-619  (info)  Via  ladder engine would be activated for pattern must
+       join connection in certain commands. Please refer to man-page  for  the
+       command list.
+
+DESCRIPTION
+       This  design  contains  pattern must join pins, which is required to be
+       connected by pattern must join connection  shapes.  Pattern  must  join
+       connection has similar structure to via ladder, and is also constructed
+       by via ladder engine.  It would be processed during via ladder  related
+       commands,  and  full  routing  commands.  Here  is  the  command  list:
+       insert_via_ladders,      verify_via_ladders,       refresh_via_ladders,
+       route_group,  route_auto, route_eco, route_opt.  To separate route_auto
+       into  several  commands,  please   run   through:   insert_via_ladders,
+       route_global, route_track, route_detail.
+
+WHAT NEXT
+       If  this  pattern  must join connection is unexpected, please check the
+       attribute of pin, pattern_must_join.","","Information: Via ladder engine would be activated for pattern must join connection in certain commands. Please refer to man-page for the command list. (ZRT-619) (MSG-3032)",""
 "ZRT-626","Warning","NAME
        ZRT-626  (warning)  High  fanout  net %s can affect runtime for antenna
        fixing.
@@ -645,6 +1222,40 @@ WHAT NEXT
        route.detail.max_antenna_pin_count.                              Option
        ""route.detail.max_antenna_pin_count"" specifies the  maximum  number  of
        pins on a net on which antenna checking is performed.","","Warning: High fanout net clock_opt_cts_ZCTSNET_1248 can affect runtime for antenna fixing. (ZRT-626) (MSG-3032)",""
+"ZRT-703","Info","NAME
+       ZRT-703  (info) Option route.detail.force_end_on_preferred_grid will be
+       ignored since none of the layers have preferred grid.
+
+DESCRIPTION
+       Ignore option route.detail.force_end_on_preferred_grid since there  are
+       no preferred grids in this design.
+
+WHAT NEXT","","Information: Option route.detail.force_end_on_preferred_grid will be ignored since none of the layers have preferred grid. (ZRT-703) (MSG-3032)",""
+"ZRT-706","Info","NAME
+       ZRT-706  (Information)  When applicable layer based tapering will taper
+       up to %.2f in distance from the pin.
+
+DESCRIPTION
+       Distance control for layer based tapering is turned on.
+
+WHAT NEXT","","Information: When applicable layer based tapering will taper up to 0.00 in distance from the pin. (ZRT-706) (MSG-3032)",""
+"ZRT-707","Info","NAME
+       ZRT-707  (Information)  When applicable Min-max layer allow_pin_connec-
+       tion mode will allow paths of length %.2f outside the layer range.
+
+DESCRIPTION
+       Distance threshold for min-max layer allow pin conn mode.
+
+WHAT NEXT","","Information: When applicable Min-max layer allow_pin_connection mode will allow paths of length 5.32 outside the layer range. (ZRT-707) (MSG-3032)",""
+"ZRT-718","Info","NAME
+       ZRT-718  (Information)  When applicable Min-max layer allow_pin_connec-
+       tion mode will allow paths of length %.2f outside the  layer  range  on
+       clock nets.
+
+DESCRIPTION
+       Distance threshold for min-max layer allow pin conn mode on clock nets.
+
+WHAT NEXT","","Information: When applicable Min-max layer allow_pin_connection mode will allow paths of length 5.32 outside the layer range on clock nets. (ZRT-718) (MSG-3032)",""
 "ZRT-740","Warning","NAME
        ZRT-740 (warning)  %s is unplaced.  This may impact routing result.
 
@@ -653,6 +1264,15 @@ DESCRIPTION
 
 WHAT NEXT
        If this is not expected, please fix the issue.","","Warning: Port sipo_sw_out of cell bit_coin is unplaced.  This may impact routing result. (ZRT-740) (MSG-3032)",""
+"ZRT-807","Info","NAME
+       ZRT-807  (info)  The  app  option  ""%s"" will be on-by-default in future
+       release.
+
+DESCRIPTION
+       This app option will be on-by-default in future release.
+
+WHAT NEXT
+       No action necessary.","","Information: The app option ""route.detail.report_soft_drc_separately"" will be on-by-default in future release. (ZRT-807) (MSG-3032)",""
 "ZRT-825","Warning","NAME
        ZRT-825  (Warning)  Pin or route connects to PG user_route (%.3f, %.3f,
        %.3f, %.3f) on layer (%s) is considered  as  tied.  Would  not  further

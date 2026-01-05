@@ -1,5 +1,5 @@
-"Code","Severity","Description","User Severity","rpt msg","solution"
-"CHF-011","Warning","NAME
+Code,Severity,Description,User Severity,rpt msg,solution
+CHF-011,Warning,"NAME
        CHF-011 (Warning) filler ref cell %s not marked filler type.
 
 DESCRIPTION
@@ -7,8 +7,8 @@ DESCRIPTION
        marked filler type.
 
 WHAT NEXT
-       Please check your filler ref cell type.","","Warning: filler ref cell DCAP_HVT not marked filler type. (CHF-011) (MSG-3032)",""
-"CHF-014","Warning","NAME
+       Please check your filler ref cell type.",,Warning: filler ref cell DCAP_HVT not marked filler type. (CHF-011) (MSG-3032),
+CHF-014,Warning,"NAME
        CHF-014 (Warning) option -continue_on_error turned on automatically.
 
 DESCRIPTION
@@ -19,8 +19,8 @@ DESCRIPTION
        lead to unfillable gaps.
 
 WHAT NEXT
-       Please include fillers of all needed sizes","","Warning: option -continue_on_error turned on automatically. (CHF-014) (MSG-3032)",""
-"CHF-073","Warning","NAME
+       Please include fillers of all needed sizes",,Warning: option -continue_on_error turned on automatically. (CHF-014) (MSG-3032),
+CHF-073,Warning,"NAME
        CHF-073 (Warning) Smallest filler provided is greater than specified in
        option place.rules.min_vt_filler_size
 
@@ -31,8 +31,8 @@ DESCRIPTION
 
 WHAT NEXT
        Please  include  missing   size   fillers   in   create_stdcell_fillers
-       -lib_cells.","","Warning: Smallest filler provided is greater than specified in option place.rules.min_vt_filler_size (CHF-073) (MSG-3032)",""
-"ZRT-825","Warning","NAME
+       -lib_cells.",,Warning: Smallest filler provided is greater than specified in option place.rules.min_vt_filler_size (CHF-073) (MSG-3032),
+ZRT-825,Warning,"NAME
        ZRT-825  (Warning)  Pin or route connects to PG user_route (%.3f, %.3f,
        %.3f, %.3f) on layer (%s) is considered  as  tied.  Would  not  further
        check or build connectivity to tie to other PG pre-routes.
@@ -44,4 +44,4 @@ DESCRIPTION
        which need further tie off connections.
 
 WHAT NEXT
-       Set the user_route to other shape_use if necessary.","","Pin or route connects to PG user_route (%.3f, %.3f, %.3f, %.3f) on layer (%s) is considered as tied. Would not further check or build connectivity to tie to other PG pre-routes.\n (MSG-3032)",""
+       Set the user_route to other shape_use if necessary.",,"Pin or route connects to PG user_route (%.3f, %.3f, %.3f, %.3f) on layer (%s) is considered as tied. Would not further check or build connectivity to tie to other PG pre-routes.\n (MSG-3032)",
