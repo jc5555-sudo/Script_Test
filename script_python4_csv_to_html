@@ -1,0 +1,81 @@
+#!/usr/bin/env python3
+# Convert summary CSV files to HTML
+# Matches: *summary*.csv
+# Python 3.6 compatible
+
+import csv
+from pathlib import Path
+import html
+import sys
+
+# ==================================================
+# CONFIG
+# ==================================================
+BASE_DIR = Path.cwd()
+CSV_DIR  = BASE_DIR              # run in directory with CSV files
+PATTERN  = "*summary*.csv"
+
+print("Working directory:", BASE_DIR)
+
+csv_files = sorted(CSV_DIR.glob(PATTERN))
+
+if not csv_files:
+    print("No summary CSV files found matching:", PATTERN)
+    sys.exit(0)
+
+print(f"Found {len(csv_files)} summary CSV file(s)")
+
+# ==================================================
+# HTML WRITER
+# ==================================================
+def csv_to_html(csv_path):
+    html_path = csv_path.with_suffix(".html")
+
+    with open(csv_path, newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        fieldnames = reader.fieldnames
+        rows = list(reader)
+
+    if not fieldnames:
+        print(f"SKIPPED (empty CSV): {csv_path.name}")
+        return
+
+    with open(html_path, "w", encoding="utf-8") as f:
+        f.write("<html><head><meta charset='UTF-8'>\n")
+        f.write(f"<title>{html.escape(csv_path.name)}</title>\n")
+        f.write("<style>\n")
+        f.write("body { font-family: Arial, sans-serif; }\n")
+        f.write("table { border-collapse: collapse; width: 100%; }\n")
+        f.write("th, td { border: 1px solid #888; padding: 6px; vertical-align: top; }\n")
+        f.write("th { background-color: #f0f0f0; }\n")
+        f.write("pre { white-space: pre-wrap; }\n")
+        f.write("</style></head><body>\n")
+
+        f.write(f"<h2>{html.escape(csv_path.name)}</h2>\n")
+        f.write("<table>\n<tr>")
+
+        # Header
+        for h in fieldnames:
+            f.write(f"<th>{html.escape(h)}</th>")
+        f.write("</tr>\n")
+
+        # Rows
+        for row in rows:
+            f.write("<tr>")
+            for h in fieldnames:
+                val = row.get(h, "")
+                f.write(f"<td>{html.escape(val)}</td>")
+            f.write("</tr>\n")
+
+        f.write("</table></body></html>")
+
+    print("Generated:", html_path.name)
+
+# ==================================================
+# MAIN
+# ==================================================
+for csv_path in csv_files:
+    csv_to_html(csv_path)
+
+print("\nDONE: CSV → HTML conversion complete")
+

@@ -1,16 +1,18 @@
 <html><head><meta charset='UTF-8'>
-<title>init_design_summary.csv</title>
+<title>init_design_summary.html</title>
 <style>
 body { font-family: Arial, sans-serif; }
 table { border-collapse: collapse; width: 100%; }
 th, td { border: 1px solid #888; padding: 6px; vertical-align: top; }
 th { background-color: #f0f0f0; }
-pre { white-space: pre-wrap; }
+.WARNING { background-color: #fff6cc; }
+.ERROR { background-color: #ffd6d6; }
+pre { white-space: pre-wrap; max-height: 320px; overflow-y: auto; }
 </style></head><body>
-<h2>init_design_summary.csv</h2>
+<h2>init_design_summary.html</h2>
 <table>
 <tr><th>Code</th><th>Severity</th><th>Description</th><th>User Severity</th><th>rpt msg</th><th>solution</th></tr>
-<tr><td>CMD-030</td><td>Warning</td><td>NAME
+<tr class='WARNING'><td>CMD-030</td><td>Warning</td><td><pre>NAME
        CMD-030 (warning) File &#x27;%s&#x27; was not found in search path.
 
 DESCRIPTION
@@ -19,8 +21,8 @@ DESCRIPTION
 
 WHAT NEXT
        No adverse effect on the result of the  command,  but  check  spelling,
-       etc.</td><td>[fill severity]</td><td>Warning: File &#x27;dft_ports.tcl&#x27; was not found in search path. (CMD-030) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>DEFR-065</td><td>Warning</td><td>NAME
+       etc.</pre></td><td>[fill severity]</td><td>Warning: File &#x27;dft_ports.tcl&#x27; was not found in search path. (CMD-030) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>DEFR-065</td><td>Warning</td><td><pre>NAME
        DEFR-065 (warning) Cannot find %s &#x27;%s&#x27;.
 
 DESCRIPTION
@@ -29,8 +31,8 @@ DESCRIPTION
 WHAT NEXT
        Check that the specified object exists in the design, if it is a design
        object. Or check that the specified object exists in the library, if it
-       is a library or technology object.</td><td>[fill severity]</td><td>Warning: Cannot find net &#x27;lv_scan_out&#x27;. (DEFR-065) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>EMS-040</td><td>Warning</td><td>NAME
+       is a library or technology object.</pre></td><td>[fill severity]</td><td>Warning: Cannot find net &#x27;lv_scan_out&#x27;. (DEFR-065) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>EMS-040</td><td>Warning</td><td><pre>NAME
        EMS-040 (Warning) EMS database &quot;%s&quot; already exists, over-writing it.
 
 DESCRIPTION
@@ -42,8 +44,8 @@ WHAT NEXT
        want to overwrite the existing EMS database.
 
 SEE ALSO
-       check_design</td><td>[fill severity]</td><td>Warning: EMS database &quot;check_design.pre_placement_stage.ems&quot; already exists, over-writing it. (EMS-040) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>FRAM-054</td><td>Warning</td><td>NAME
+       check_design</pre></td><td>[fill severity]</td><td>Warning: EMS database &quot;check_design.pre_placement_stage.ems&quot; already exists, over-writing it. (EMS-040) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>FRAM-054</td><td>Warning</td><td><pre>NAME
        FRAM-054  (warning)  Technology  used  to create frame-view and current
        technology have inconsistency: %s.
 
@@ -57,8 +59,8 @@ WHAT NEXT
 SEE ALSO
        create_lib(2)
        open_lib(2)
-       read_tech_file(2)</td><td>[fill severity]</td><td>Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>LGL-031</td><td>Warning</td><td>NAME
+       read_tech_file(2)</pre></td><td>[fill severity]</td><td>Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>LGL-031</td><td>Warning</td><td><pre>NAME
        LGL-031  (warning) Site master &quot;%s&quot; has neither X-Symmetry nor Y-Symme-
        try. The &quot;legal orientations&quot; for the standard cells will be limited.
 
@@ -74,8 +76,8 @@ DESCRIPTION
 
 WHAT NEXT
        Please  double-check  the  design and library setting and make sure the
-       setting is correct.</td><td>[fill severity]</td><td>Warning: Site master &quot;unit&quot; has neither X-Symmetry nor Y-Symmetry. The &quot;legal orientations&quot; for the standard cells will be limited. (LGL-031) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>MV-012</td><td>Warning</td><td>NAME
+       setting is correct.</pre></td><td>[fill severity]</td><td>Warning: Site master &quot;unit&quot; has neither X-Symmetry nor Y-Symmetry. The &quot;legal orientations&quot; for the standard cells will be limited. (LGL-031) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>MV-012</td><td>Warning</td><td><pre>NAME
        MV-012  (warning)  %s &#x27;%s&#x27; (supply net &#x27;%s&#x27; [%s]) cannot drive load pin
        &#x27;%s&#x27; (supply net &#x27;%s&#x27; [%s]) due to voltage difference.
 
@@ -116,8 +118,8 @@ SEE ALSO
        report_net(2)
        report_pst(2)
        report_supply_nets(2)
-       set_level_shifter(2)</td><td>[fill severity]</td><td>Warning: Driver pin &#x27;secure_data_in[12]&#x27; (supply net &#x27;VDDH&#x27; [0.85V]) cannot drive load pin &#x27;piso_secure_0/C66/DATA1[12]&#x27; (supply net &#x27;piso_sw_out&#x27; [0.78V]) due to voltage difference. (MV-012) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>MV-013</td><td>Warning</td><td>NAME
+       set_level_shifter(2)</pre></td><td>[fill severity]</td><td>Warning: Driver pin &#x27;secure_data_in[12]&#x27; (supply net &#x27;VDDH&#x27; [0.85V]) cannot drive load pin &#x27;piso_secure_0/C66/DATA1[12]&#x27; (supply net &#x27;piso_sw_out&#x27; [0.78V]) due to voltage difference. (MV-012) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>MV-013</td><td>Warning</td><td><pre>NAME
        MV-013  (warning)  %s  &#x27;%s&#x27; [supply net &#x27;%s&#x27;, power state &#x27;%s&#x27;] is less
        always-on than the load pin &#x27;%s&#x27; [supply net &#x27;%s&#x27;, power state &#x27;%s&#x27;].
 
@@ -149,8 +151,8 @@ SEE ALSO
        report_pst(2)
        report_mv_path(2)
        analyze_mv_feasibility(2)
-       report_mv_lib_cells(2)</td><td>[fill severity]</td><td>Warning: Driver pin &#x27;bit_secure_11/piso_slice_first/dout_reg/Q&#x27; [supply net &#x27;piso_sw_out&#x27;, power state &#x27;SSL_PISO_SECURE_OFF&#x27;] is less always-on than the load pin &#x27;secure_data_out[22]&#x27; [supply net &#x27;VDDH&#x27;, power state &#x27;SS_ON&#x27;]. (MV-013) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>MV-027</td><td>Warning</td><td>NAME
+       report_mv_lib_cells(2)</pre></td><td>[fill severity]</td><td>Warning: Driver pin &#x27;bit_secure_11/piso_slice_first/dout_reg/Q&#x27; [supply net &#x27;piso_sw_out&#x27;, power state &#x27;SSL_PISO_SECURE_OFF&#x27;] is less always-on than the load pin &#x27;secure_data_out[22]&#x27; [supply net &#x27;VDDH&#x27;, power state &#x27;SS_ON&#x27;]. (MV-013) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>MV-027</td><td>Warning</td><td><pre>NAME
        MV-027 (warning) The tie-off connection &#x27;%s&#x27; has not been implemented.
 
 DESCRIPTION
@@ -165,8 +167,8 @@ WHAT NEXT
 
 SEE ALSO
        report_net(2)
-       connect_pg_net(2)</td><td>[fill severity]</td><td>Warning: The tie-off connection &#x27;bit_secure_0/slice_19/*Logic0*&#x27; has not been implemented. (MV-027) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>MV-051</td><td>Warning</td><td>NAME
+       connect_pg_net(2)</pre></td><td>[fill severity]</td><td>Warning: The tie-off connection &#x27;bit_secure_0/slice_19/*Logic0*&#x27; has not been implemented. (MV-027) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>MV-051</td><td>Warning</td><td><pre>NAME
        MV-051  (warning)  &#x27;%s&#x27;  is  already connected to net &#x27;%s&#x27;. It might be
        disconnected.
 
@@ -182,8 +184,8 @@ WHAT NEXT
        the specified port or pin in this case.
 
 SEE ALSO
-       connect_power_switch(2)</td><td>[fill severity]</td><td>Warning: &#x27;power_ack_signals[19]&#x27; is already connected to net &#x27;power_ack_signals[19]&#x27;. It might be disconnected. (MV-051) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>MV-103</td><td>Warning</td><td>NAME
+       connect_power_switch(2)</pre></td><td>[fill severity]</td><td>Warning: &#x27;power_ack_signals[19]&#x27; is already connected to net &#x27;power_ack_signals[19]&#x27;. It might be disconnected. (MV-051) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>MV-103</td><td>Warning</td><td><pre>NAME
        MV-103  (warning)  The  sequential  element &#x27;%s&#x27; belonging to retention
        strategy &#x27;%s&#x27; in power domain &#x27;%s&#x27; is not mapped to a retention library
        cell.
@@ -207,8 +209,8 @@ SEE ALSO
        set_retention(2)
        set_retention_control(2)
        map_retention_cell(2)
-       check_mv_design(2)</td><td>[fill severity]</td><td>Warning: The sequential element &#x27;piso_secure_1/temp_reg[14]&#x27; belonging to retention strategy &#x27;RET_PISO_SECURE&#x27; in power domain &#x27;PD_PISO_SECURE&#x27; is not mapped to a retention library cell. (MV-103) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>NDM-102</td><td>Warning</td><td>NAME
+       check_mv_design(2)</pre></td><td>[fill severity]</td><td>Warning: The sequential element &#x27;piso_secure_1/temp_reg[14]&#x27; belonging to retention strategy &#x27;RET_PISO_SECURE&#x27; in power domain &#x27;PD_PISO_SECURE&#x27; is not mapped to a retention library cell. (MV-103) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>NDM-102</td><td>Warning</td><td><pre>NAME
        NDM-102  (warning)  Technology  &#x27;%s&#x27;  used  for  frame-view creation in
        library &#x27;%s&#x27;, is inconsistent  with  the  current  technology  &#x27;%s&#x27;  of
        library  &#x27;%s&#x27;.  Please  run derive_design_level_via_regions to generate
@@ -228,8 +230,8 @@ SEE ALSO
        create_lib(2)
        open_lib(2)
        read_tech_file(2)
-       derive_design_level_via_regions(2)</td><td>[fill severity]</td><td>Warning: Technology &#x27;saed32nm_1p9m_mw.tf&#x27; used for frame-view creation in library &#x27;sram2rw16x4_tt1p_v125c&#x27;, is inconsistent with the current technology &#x27;saed32nm_1p9m_mw.tf&#x27; of library &#x27;bit_coin.nlib&#x27;. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>PDC-003</td><td>Warning</td><td>NAME
+       derive_design_level_via_regions(2)</pre></td><td>[fill severity]</td><td>Warning: Technology &#x27;saed32nm_1p9m_mw.tf&#x27; used for frame-view creation in library &#x27;sram2rw16x4_tt1p_v125c&#x27;, is inconsistent with the current technology &#x27;saed32nm_1p9m_mw.tf&#x27; of library &#x27;bit_coin.nlib&#x27;. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>PDC-003</td><td>Warning</td><td><pre>NAME
        PDC-003 (Warning) Routing direction of metal layer %s is neither &quot;hori-
        zontal&quot; nor &quot;vertical&quot;.  PDC checks  will  not  be  performed  on  this
        layer.
@@ -241,8 +243,8 @@ DESCRIPTION
 
 WHAT NEXT
        set_attribute  [get_layer &lt;layer&gt;] routing_direction &lt;horizontal/verti-
-       cal&gt;</td><td>[fill severity]</td><td>Warning: Routing direction of metal layer MRDL is neither &quot;horizontal&quot; nor &quot;vertical&quot;.  PDC checks will not be performed on this layer. (PDC-003) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>PGR-093</td><td>Warning</td><td>NAME
+       cal&gt;</pre></td><td>[fill severity]</td><td>Warning: Routing direction of metal layer MRDL is neither &quot;horizontal&quot; nor &quot;vertical&quot;.  PDC checks will not be performed on this layer. (PDC-003) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>PGR-093</td><td>Warning</td><td><pre>NAME
        PGR-093  (warning)  Recommend to turn on the advanced legalizer if cell
        spacing is expected to be checked.
 
@@ -254,8 +256,8 @@ DESCRIPTION
        rect behavior of power switch array creation.
 
 WHAT NEXT
-       Please check if the setting is intended.</td><td>[fill severity]</td><td>Warning: Recommend to turn on the advanced legalizer if cell spacing is expected to be checked. (PGR-093) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>POW-009</td><td>Warning</td><td>NAME
+       Please check if the setting is intended.</pre></td><td>[fill severity]</td><td>Warning: Recommend to turn on the advanced legalizer if cell spacing is expected to be checked. (PGR-093) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>POW-009</td><td>Warning</td><td><pre>NAME
        POW-009 (warning) Power analysis is disabled %s as leakage/swcap/inter-
        nal   mode   power   app   options   can   be    off    and/or    leak-
        age_power/dynamic_power scenario flags are set to false.
@@ -273,8 +275,8 @@ SEE ALSO
        report_scenarios(2)
        power.leakage_mode(3)
        power.swcap_mode(3)
-       power.internal_mode(3)</td><td>[fill severity]</td><td>Warning: Power analysis is disabled for scenario &#x27;FUNC_0.85V_HOLD&#x27; as leakage/swcap/internal mode power app options can be off and/or leakage_power/dynamic_power scenario flags are set to false. (POW-009) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>POW-046</td><td>Warning</td><td>NAME
+       power.internal_mode(3)</pre></td><td>[fill severity]</td><td>Warning: Power analysis is disabled for scenario &#x27;FUNC_0.85V_HOLD&#x27; as leakage/swcap/internal mode power app options can be off and/or leakage_power/dynamic_power scenario flags are set to false. (POW-009) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>POW-046</td><td>Warning</td><td><pre>NAME
        POW-046 (warning) Power table extrapolation (%s mode) for port %s on %s
        for parameter %s. Lowest table value = %f, highest table  value  =  %f,
        value = %f
@@ -289,8 +291,8 @@ WHAT NEXT
        tion
 
 SEE ALSO
-       report_power(2)</td><td>[fill severity]</td><td>Power table extrapolation (%s mode) for port %s on %s for parameter %s. Lowest table value = %f, highest table value = %f, value = %f (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>PVT-030</td><td>Warning</td><td>NAME
+       report_power(2)</pre></td><td>[fill severity]</td><td>Power table extrapolation (%s mode) for port %s on %s for parameter %s. Lowest table value = %f, highest table value = %f, value = %f (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>PVT-030</td><td>Warning</td><td><pre>NAME
        PVT-030  (warning)  Corner %s:  %d process number, %d process label, %d
        voltage, and %d temperature mismatches.
 
@@ -310,8 +312,8 @@ WHAT NEXT
        set_temperature,  set_process_number, set_process_label, or set_operat-
        ing_conditions commands.  Review the  UPF  data  for  an  incorrect  or
        incomplete  supply net configuration.  The report_pvt command will give
-       more information about this situation.</td><td>[fill severity]</td><td>Corner %s:  %d process number, %d process label, %d voltage, and %d temperature mismatches. (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>PVT-031</td><td>Warning</td><td>NAME
+       more information about this situation.</pre></td><td>[fill severity]</td><td>Corner %s:  %d process number, %d process label, %d voltage, and %d temperature mismatches. (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>PVT-031</td><td>Warning</td><td><pre>NAME
        PVT-031 (warning)  %d cells affected for early, %d for late.
 
 DESCRIPTION
@@ -327,8 +329,8 @@ WHAT NEXT
        age,   set_temperature,   set_process_number,   set_process_label,   or
        set_operating_conditions commands.  Review the UPF data for  an  incor-
        rect  or  incomplete  supply net configuration.  The report_pvt command
-       will give more information about this situation.</td><td>[fill severity]</td><td>%d cells affected for early, %d for late. (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>PVT-034</td><td>Warning</td><td>NAME
+       will give more information about this situation.</pre></td><td>[fill severity]</td><td>%d cells affected for early, %d for late. (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>PVT-034</td><td>Warning</td><td><pre>NAME
        PVT-034  (warning)   %d  port  driving_cells affected for early, %d for
        late.
 
@@ -346,8 +348,8 @@ WHAT NEXT
        age,   set_temperature,   set_process_number,   set_process_label,   or
        set_operating_conditions commands applied to the port or the top  level
        of the design.  The report_pvt command will give more information about
-       this situation for a particular port.</td><td>[fill severity]</td><td>%d port driving_cells affected for early, %d for late. (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>TCK-001</td><td>Warning</td><td>NAME
+       this situation for a particular port.</pre></td><td>[fill severity]</td><td>%d port driving_cells affected for early, %d for late. (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>TCK-001</td><td>Warning</td><td><pre>NAME
        TCK-001  (Warning) The reported endpoint &#x27;%s&#x27; is unconstrained. Reason:
        %s.
 
@@ -359,8 +361,8 @@ DESCRIPTION
 
 WHAT NEXT
        The  violation  message  identifies  the unconstrained endpoint and the
-       reason. You could check whether it is a expected behavior.</td><td>[fill severity]</td><td>The reported endpoint &#x27;%s&#x27; is unconstrained. Reason: %s. (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>TCK-012</td><td>Warning</td><td>NAME
+       reason. You could check whether it is a expected behavior.</pre></td><td>[fill severity]</td><td>The reported endpoint &#x27;%s&#x27; is unconstrained. Reason: %s. (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>TCK-012</td><td>Warning</td><td><pre>NAME
        TCK-012 (Warning) The input port &#x27;%s&#x27; has no clock_relative delay spec-
        ified.
 
@@ -375,8 +377,8 @@ WHAT NEXT
        The violation message will give you the input port which has  no  input
        delay  specified.   To  resolve  this  issue, consider specifying input
        delay for each non-clock source input port.  This  input  delay  should
-       also be relative to a clock in the design.</td><td>[fill severity]</td><td>The input port &#x27;%s&#x27; has no clock_relative delay specified. (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>UIC-009</td><td>Warning</td><td>NAME
+       also be relative to a clock in the design.</pre></td><td>[fill severity]</td><td>The input port &#x27;%s&#x27; has no clock_relative delay specified. (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>UIC-009</td><td>Warning</td><td><pre>NAME
        UIC-009  (warning)  Object  &#x27;%s&#x27; is not a valid %s. The %s command will
        not match this object.
 
@@ -401,8 +403,8 @@ SEE ALSO
        group_path(2)
        set_false_path(2)
        set_multicycle_path(2)
-       update_timing(2)</td><td>[fill severity]</td><td>Warning: Object &#x27;bit_secure_0/slice_0/nibble_0/O2[1]&#x27; is not a valid endpoint. The set_multicycle_path command will not match this object. (UIC-009) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>UIC-058</td><td>Warning</td><td>NAME
+       update_timing(2)</pre></td><td>[fill severity]</td><td>Warning: Object &#x27;bit_secure_0/slice_0/nibble_0/O2[1]&#x27; is not a valid endpoint. The set_multicycle_path command will not match this object. (UIC-009) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>UIC-058</td><td>Warning</td><td><pre>NAME
        UIC-058  (warning) Scenario %s is not configured for %s analysis: skip-
        ping.
 
@@ -415,8 +417,8 @@ WHAT NEXT
        If setup or hold analysis is deliberately being skipped for  this  sce-
        nario,  this  warning  can  be  ignored.   Otherwise,  use the set_sce-
        nario_status command to activate this scenario for setup or hold analy-
-       sis.</td><td>[fill severity]</td><td>Warning: Scenario FUNC_0.85V_HOLD is not configured for setup analysis: skipping. (UIC-058) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>VER-936</td><td>Warning</td><td>NAME
+       sis.</pre></td><td>[fill severity]</td><td>Warning: Scenario FUNC_0.85V_HOLD is not configured for setup analysis: skipping. (UIC-058) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>VER-936</td><td>Warning</td><td><pre>NAME
        VER-936  (warning)  %s  the  undeclared symbol &#x27;%s&#x27; assumed to have the
        default net type, which is &#x27;%s&#x27;.
 
@@ -437,5 +439,5 @@ WHAT NEXT
        tion for this symbol.  If not, add an explicit declaration.
 
 SEE ALSO
-       analyze (2), read (2).</td><td>[fill severity]</td><td>Warning:  data/rtl/bit_top.v:906: the undeclared symbol &#x27;lv_scan_out31&#x27; assumed to have the default net type, which is &#x27;wire&#x27;. (VER-936) (MSG-3032)</td><td>[fill solution]</td></tr>
+       analyze (2), read (2).</pre></td><td>[fill severity]</td><td>Warning:  data/rtl/bit_top.v:906: the undeclared symbol &#x27;lv_scan_out31&#x27; assumed to have the default net type, which is &#x27;wire&#x27;. (VER-936) (MSG-3032)</td><td>[fill solution]</td></tr>
 </table></body></html>

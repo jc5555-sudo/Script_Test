@@ -1,16 +1,18 @@
 <html><head><meta charset='UTF-8'>
-<title>timing_eco_summary.csv</title>
+<title>timing_eco_summary.html</title>
 <style>
 body { font-family: Arial, sans-serif; }
 table { border-collapse: collapse; width: 100%; }
 th, td { border: 1px solid #888; padding: 6px; vertical-align: top; }
 th { background-color: #f0f0f0; }
-pre { white-space: pre-wrap; }
+.WARNING { background-color: #fff6cc; }
+.ERROR { background-color: #ffd6d6; }
+pre { white-space: pre-wrap; max-height: 320px; overflow-y: auto; }
 </style></head><body>
-<h2>timing_eco_summary.csv</h2>
+<h2>timing_eco_summary.html</h2>
 <table>
 <tr><th>Code</th><th>Severity</th><th>Description</th><th>User Severity</th><th>rpt msg</th><th>solution</th></tr>
-<tr><td>CMD-013</td><td>Error</td><td>NAME
+<tr class='ERROR'><td>CMD-013</td><td>Error</td><td><pre>NAME
        CMD-013 (error) %s Use error_info for more info.
 
 DESCRIPTION
@@ -19,8 +21,8 @@ DESCRIPTION
        error occurred.  The error_info command is used to display this stack.
 
 WHAT NEXT
-       Fix the error indicated by error_info.</td><td>[WARNING]</td><td>Error: 0\n	Use error_info for more info. (CMD-013) (MSG-3032)</td><td>[NEED TO FIX]</td></tr>
-<tr><td>CMD-030</td><td>Warning</td><td>NAME
+       Fix the error indicated by error_info.</pre></td><td>[fill severity]</td><td>Error: 0\n	Use error_info for more info. (CMD-013) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>CMD-030</td><td>Warning</td><td><pre>NAME
        CMD-030 (warning) File &#x27;%s&#x27; was not found in search path.
 
 DESCRIPTION
@@ -29,8 +31,8 @@ DESCRIPTION
 
 WHAT NEXT
        No adverse effect on the result of the  command,  but  check  spelling,
-       etc.</td><td>[walaosjdfasfsafsf]</td><td>Warning: File &#x27;config_setup.tcl&#x27; was not found in search path. (CMD-030) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>CTS-956</td><td>Warning</td><td>NAME
+       etc.</pre></td><td>[fill severity]</td><td>Warning: File &#x27;config_setup.tcl&#x27; was not found in search path. (CMD-030) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>CTS-956</td><td>Warning</td><td><pre>NAME
        CTS-956  (warning) Please use -largest / -smallest / -all switches with
        -show_verbose_paths / -show_paths to report the clock paths.
 
@@ -39,8 +41,8 @@ DESCRIPTION
        bose_paths / -show_paths to report the clock paths.
 
 WHAT NEXT
-       Add -largest / -smallest / -all switches to report the clock paths.</td><td>[fill severity]</td><td>Warning: Please use -largest / -smallest / -all switches with -show_verbose_paths / -show_paths to report the clock paths. (CTS-956) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>EOPT-011</td><td>Error</td><td>NAME
+       Add -largest / -smallest / -all switches to report the clock paths.</pre></td><td>[fill severity]</td><td>Warning: Please use -largest / -smallest / -all switches with -show_verbose_paths / -show_paths to report the clock paths. (CTS-956) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='ERROR'><td>EOPT-011</td><td>Error</td><td><pre>NAME
        EOPT-011 (Error) : &#x27;%d&#x27; errors encountered.
 
 DESCRIPTION
@@ -51,8 +53,8 @@ WHAT NEXT
        User can examine the changelist output txt file for more details.
 
 SEE ALSO
-       eco_opt (2).  check_pt_qor (2).</td><td>[fill severity]</td><td>Error: &#x27;48&#x27; errors encountered. (EOPT-011) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>FRAM-054</td><td>Warning</td><td>NAME
+       eco_opt (2).  check_pt_qor (2).</pre></td><td>[fill severity]</td><td>Error: &#x27;48&#x27; errors encountered. (EOPT-011) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>FRAM-054</td><td>Warning</td><td><pre>NAME
        FRAM-054  (warning)  Technology  used  to create frame-view and current
        technology have inconsistency: %s.
 
@@ -66,8 +68,8 @@ WHAT NEXT
 SEE ALSO
        create_lib(2)
        open_lib(2)
-       read_tech_file(2)</td><td>[fill severity]</td><td>Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>LEFW-005</td><td>Warning</td><td>NAME
+       read_tech_file(2)</pre></td><td>[fill severity]</td><td>Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>LEFW-005</td><td>Warning</td><td><pre>NAME
        LEFW-005  (warning)  Block  &#x27;%s&#x27;  has no %s view with empty label, will
        ignore it.
 
@@ -78,8 +80,8 @@ DESCRIPTION
 WHAT NEXT
        Please  create  frame  view for the specifid block and try again. Or if
        non empty label need to be written out, please use  -design  option  to
-       specify the label to be written.</td><td>[fill severity]</td><td>Warning: Block &#x27;bit_coin&#x27; has no frame view with empty label, will ignore it. (LEFW-005) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>LEFW-007</td><td>Warning</td><td>NAME
+       specify the label to be written.</pre></td><td>[fill severity]</td><td>Warning: Block &#x27;bit_coin&#x27; has no frame view with empty label, will ignore it. (LEFW-005) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>LEFW-007</td><td>Warning</td><td><pre>NAME
        LEFW-007  (warning)  Use  %s  %s  as the WRONGDIRECTION width for layer
        &#x27;%s&#x27;.
 
@@ -95,8 +97,8 @@ DESCRIPTION
 
 WHAT NEXT
        Please  verify  whether  the reported width is truly the WRONGDIRECTION
-       width for the specified layer.</td><td>[fill severity]</td><td>Warning: Use defaultWidth 2 as the WRONGDIRECTION width for layer &#x27;MRDL&#x27;. (LEFW-007) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>MV-013</td><td>Warning</td><td>NAME
+       width for the specified layer.</pre></td><td>[fill severity]</td><td>Warning: Use defaultWidth 2 as the WRONGDIRECTION width for layer &#x27;MRDL&#x27;. (LEFW-007) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>MV-013</td><td>Warning</td><td><pre>NAME
        MV-013  (warning)  %s  &#x27;%s&#x27; [supply net &#x27;%s&#x27;, power state &#x27;%s&#x27;] is less
        always-on than the load pin &#x27;%s&#x27; [supply net &#x27;%s&#x27;, power state &#x27;%s&#x27;].
 
@@ -128,8 +130,8 @@ SEE ALSO
        report_pst(2)
        report_mv_path(2)
        analyze_mv_feasibility(2)
-       report_mv_lib_cells(2)</td><td>[fill severity]</td><td>Warning: Driver pin &#x27;piso_secure_0/route_opt__1_PTECO_DRC_BUF6585/Y&#x27; [supply net &#x27;piso_sw_out&#x27;, power state &#x27;SSL_PISO_SECURE_OFF&#x27;] is less always-on than the load pin &#x27;piso_secure_0/headerfooter_snps_PD_PISO_SECURE__SW_PISO_SECURE_snps_HEAD2X16_HVT_R293_C46_1482/SLEEP&#x27; [supply net &#x27;VDDL&#x27;, power state &#x27;SSL_ON&#x27;]. (MV-013) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>MV-074</td><td>Warning</td><td>NAME
+       report_mv_lib_cells(2)</pre></td><td>[fill severity]</td><td>Warning: Driver pin &#x27;piso_secure_0/route_opt__1_PTECO_DRC_BUF6585/Y&#x27; [supply net &#x27;piso_sw_out&#x27;, power state &#x27;SSL_PISO_SECURE_OFF&#x27;] is less always-on than the load pin &#x27;piso_secure_0/headerfooter_snps_PD_PISO_SECURE__SW_PISO_SECURE_snps_HEAD2X16_HVT_R293_C46_1482/SLEEP&#x27; [supply net &#x27;VDDL&#x27;, power state &#x27;SSL_ON&#x27;]. (MV-013) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>MV-074</td><td>Warning</td><td><pre>NAME
        MV-074  (warning) The power switch cell &#x27;%s&#x27; is not associated with any
        power switch strategies.
 
@@ -153,8 +155,8 @@ WHAT NEXT
 SEE ALSO
        associate_mv_cells(2)
        report_power_domains(2)
-       report_cell(2)</td><td>[fill severity]</td><td>Warning: The power switch cell &#x27;piso_secure_0/headerfooter_snps_PD_PISO_SECURE__SW_PISO_SECURE_snps_HEAD2X16_HVT_R887_C0_28&#x27; is not associated with any power switch strategies. (MV-074) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>NDM-102</td><td>Warning</td><td>NAME
+       report_cell(2)</pre></td><td>[fill severity]</td><td>Warning: The power switch cell &#x27;piso_secure_0/headerfooter_snps_PD_PISO_SECURE__SW_PISO_SECURE_snps_HEAD2X16_HVT_R887_C0_28&#x27; is not associated with any power switch strategies. (MV-074) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>NDM-102</td><td>Warning</td><td><pre>NAME
        NDM-102  (warning)  Technology  &#x27;%s&#x27;  used  for  frame-view creation in
        library &#x27;%s&#x27;, is inconsistent  with  the  current  technology  &#x27;%s&#x27;  of
        library  &#x27;%s&#x27;.  Please  run derive_design_level_via_regions to generate
@@ -174,8 +176,8 @@ SEE ALSO
        create_lib(2)
        open_lib(2)
        read_tech_file(2)
-       derive_design_level_via_regions(2)</td><td>[fill severity]</td><td>Warning: Technology &#x27;saed32nm_1p9m_mw.tf&#x27; used for frame-view creation in library &#x27;sram2rw16x4_tt1p_v125c&#x27;, is inconsistent with the current technology &#x27;saed32nm_1p9m_mw.tf&#x27; of library &#x27;bit_coin.nlib&#x27;. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>NEX-020</td><td>Warning</td><td>NAME
+       derive_design_level_via_regions(2)</pre></td><td>[fill severity]</td><td>Warning: Technology &#x27;saed32nm_1p9m_mw.tf&#x27; used for frame-view creation in library &#x27;sram2rw16x4_tt1p_v125c&#x27;, is inconsistent with the current technology &#x27;saed32nm_1p9m_mw.tf&#x27; of library &#x27;bit_coin.nlib&#x27;. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>NEX-020</td><td>Warning</td><td><pre>NAME
        NEX-020  (warning)   Net &#x27;%s&#x27; is exceeding threshold (over %d pins) and
        will be skipped.
 
@@ -191,8 +193,8 @@ WHAT NEXT
        Buffer this net and detail route it to be able to extract it.
 
 SEE ALSO
-       reg_extract_design(2)</td><td>[fill severity]</td><td>Net &#x27;%s&#x27; is exceeding threshold (over %d pins) and will be skipped. (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>PDC-003</td><td>Warning</td><td>NAME
+       reg_extract_design(2)</pre></td><td>[fill severity]</td><td>Net &#x27;%s&#x27; is exceeding threshold (over %d pins) and will be skipped. (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>PDC-003</td><td>Warning</td><td><pre>NAME
        PDC-003 (Warning) Routing direction of metal layer %s is neither &quot;hori-
        zontal&quot; nor &quot;vertical&quot;.  PDC checks  will  not  be  performed  on  this
        layer.
@@ -204,8 +206,8 @@ DESCRIPTION
 
 WHAT NEXT
        set_attribute  [get_layer &lt;layer&gt;] routing_direction &lt;horizontal/verti-
-       cal&gt;</td><td>[fill severity]</td><td>Warning: Routing direction of metal layer PO is neither &quot;horizontal&quot; nor &quot;vertical&quot;.  PDC checks will not be performed on this layer. (PDC-003) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>POW-009</td><td>Warning</td><td>NAME
+       cal&gt;</pre></td><td>[fill severity]</td><td>Warning: Routing direction of metal layer PO is neither &quot;horizontal&quot; nor &quot;vertical&quot;.  PDC checks will not be performed on this layer. (PDC-003) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>POW-009</td><td>Warning</td><td><pre>NAME
        POW-009 (warning) Power analysis is disabled %s as leakage/swcap/inter-
        nal   mode   power   app   options   can   be    off    and/or    leak-
        age_power/dynamic_power scenario flags are set to false.
@@ -223,8 +225,8 @@ SEE ALSO
        report_scenarios(2)
        power.leakage_mode(3)
        power.swcap_mode(3)
-       power.internal_mode(3)</td><td>[fill severity]</td><td>Warning: Power analysis is disabled for scenario &#x27;FUNC_0.85V_HOLD&#x27; as leakage/swcap/internal mode power app options can be off and/or leakage_power/dynamic_power scenario flags are set to false. (POW-009) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>POW-046</td><td>Warning</td><td>NAME
+       power.internal_mode(3)</pre></td><td>[fill severity]</td><td>Warning: Power analysis is disabled for scenario &#x27;FUNC_0.85V_HOLD&#x27; as leakage/swcap/internal mode power app options can be off and/or leakage_power/dynamic_power scenario flags are set to false. (POW-009) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>POW-046</td><td>Warning</td><td><pre>NAME
        POW-046 (warning) Power table extrapolation (%s mode) for port %s on %s
        for parameter %s. Lowest table value = %f, highest table  value  =  %f,
        value = %f
@@ -239,8 +241,8 @@ WHAT NEXT
        tion
 
 SEE ALSO
-       report_power(2)</td><td>[fill severity]</td><td>Power table extrapolation (%s mode) for port %s on %s for parameter %s. Lowest table value = %f, highest table value = %f, value = %f (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>PVT-020</td><td>Warning</td><td>NAME
+       report_power(2)</pre></td><td>[fill severity]</td><td>Power table extrapolation (%s mode) for port %s on %s for parameter %s. Lowest table value = %f, highest table value = %f, value = %f (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>PVT-020</td><td>Warning</td><td><pre>NAME
        PVT-020 (warning) Mismatched voltage in corner %s.
 
 DESCRIPTION
@@ -254,8 +256,8 @@ WHAT NEXT
        Review  the  P/V/T  operating conditions supported by the relevant cell
        library.  Review the constraints for missing or  incorrect  set_voltage
        commands.   Review  the  UPF data for an incorrect or incomplete supply
-       net configuration.</td><td>[fill severity]</td><td>Warning: Mismatched voltage in corner FUNC_0.85V_HOLD. (PVT-020) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>PVT-022</td><td>Warning</td><td>NAME
+       net configuration.</pre></td><td>[fill severity]</td><td>Warning: Mismatched voltage in corner FUNC_0.85V_HOLD. (PVT-020) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>PVT-022</td><td>Warning</td><td><pre>NAME
        PVT-022 (warning) Mismatched process number in corner %s.
 
 DESCRIPTION
@@ -269,8 +271,8 @@ WHAT NEXT
        Review  the  P/V/T  operating conditions supported by the relevant cell
        library.    Review   the   constraints   for   missing   or   incorrect
        set_process_number  commands.   Review  the  constraints for missing or
-       incorrect set_operating_conditions commands.</td><td>[fill severity]</td><td>Warning: Mismatched process number in corner FUNC_0.85V_HOLD. (PVT-022) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>PVT-030</td><td>Warning</td><td>NAME
+       incorrect set_operating_conditions commands.</pre></td><td>[fill severity]</td><td>Warning: Mismatched process number in corner FUNC_0.85V_HOLD. (PVT-022) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>PVT-030</td><td>Warning</td><td><pre>NAME
        PVT-030  (warning)  Corner %s:  %d process number, %d process label, %d
        voltage, and %d temperature mismatches.
 
@@ -290,8 +292,8 @@ WHAT NEXT
        set_temperature,  set_process_number, set_process_label, or set_operat-
        ing_conditions commands.  Review the  UPF  data  for  an  incorrect  or
        incomplete  supply net configuration.  The report_pvt command will give
-       more information about this situation.</td><td>[fill severity]</td><td>Warning: Corner FUNC_0.85V_HOLD:  4 process number, 0 process label, 9 voltage, and 0 temperature mismatches. (PVT-030) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>PVT-031</td><td>Warning</td><td>NAME
+       more information about this situation.</pre></td><td>[fill severity]</td><td>Warning: Corner FUNC_0.85V_HOLD:  4 process number, 0 process label, 9 voltage, and 0 temperature mismatches. (PVT-030) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>PVT-031</td><td>Warning</td><td><pre>NAME
        PVT-031 (warning)  %d cells affected for early, %d for late.
 
 DESCRIPTION
@@ -307,8 +309,8 @@ WHAT NEXT
        age,   set_temperature,   set_process_number,   set_process_label,   or
        set_operating_conditions commands.  Review the UPF data for  an  incor-
        rect  or  incomplete  supply net configuration.  The report_pvt command
-       will give more information about this situation.</td><td>[fill severity]</td><td>Warning: 102076 cells affected for early, 102076 for late. (PVT-031) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>PVT-034</td><td>Warning</td><td>NAME
+       will give more information about this situation.</pre></td><td>[fill severity]</td><td>Warning: 102076 cells affected for early, 102076 for late. (PVT-031) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>PVT-034</td><td>Warning</td><td><pre>NAME
        PVT-034  (warning)   %d  port  driving_cells affected for early, %d for
        late.
 
@@ -326,8 +328,8 @@ WHAT NEXT
        age,   set_temperature,   set_process_number,   set_process_label,   or
        set_operating_conditions commands applied to the port or the top  level
        of the design.  The report_pvt command will give more information about
-       this situation for a particular port.</td><td>[fill severity]</td><td>Warning: 0 port driving_cells affected for early, 0 for late. (PVT-034) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>SEL-004</td><td>Warning</td><td>NAME
+       this situation for a particular port.</pre></td><td>[fill severity]</td><td>Warning: 0 port driving_cells affected for early, 0 for late. (PVT-034) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>SEL-004</td><td>Warning</td><td><pre>NAME
        SEL-004 (warning) No %s objects matched &#x27;%s&#x27;
 
 DESCRIPTION
@@ -335,8 +337,8 @@ DESCRIPTION
        acceptable for this command.
 
 WHAT NEXT
-       Check the pattern to see if it is what you expected.</td><td>[fill severity]</td><td>Warning: No cell objects matched &#x27;route_opt__1_PTECO_HOLD_BUF16601&#x27; (SEL-004) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>TIM-204</td><td>Warning</td><td>NAME
+       Check the pattern to see if it is what you expected.</pre></td><td>[fill severity]</td><td>Warning: No cell objects matched &#x27;route_opt__1_PTECO_HOLD_BUF16601&#x27; (SEL-004) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>TIM-204</td><td>Warning</td><td><pre>NAME
        TIM-204  (Warning)  Advanced  receiver  model  has not been enabled for
        detailed routed design.
 
@@ -347,8 +349,8 @@ DESCRIPTION
        &#x27;time.enable_ccs_rcv_cap&#x27; to true.
 
 WHAT NEXT
-       Enable time.enable_ccs_rcv_cap for signoff accurate delay calculation.</td><td>[fill severity]</td><td>Advanced receiver model has not been enabled for detailed routed design. (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>TIM-207</td><td>Warning</td><td>NAME
+       Enable time.enable_ccs_rcv_cap for signoff accurate delay calculation.</pre></td><td>[fill severity]</td><td>Advanced receiver model has not been enabled for detailed routed design. (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>TIM-207</td><td>Warning</td><td><pre>NAME
        TIM-207  (Warning)  Libraries  do not have CCS noise model for accurate
        waveform analysis in advanced waveform propagation mode.
 
@@ -365,8 +367,8 @@ WHAT NEXT
 
 SEE ALSO
        time.delay_calc_waveform_analysis_mode (3)
-       time.awp_compatibility_mode (3)</td><td>[fill severity]</td><td>Warning: Libraries do not have CCS noise model for accurate waveform analysis in advanced waveform propagation mode. (TIM-207) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>TIM-260</td><td>Warning</td><td>NAME
+       time.awp_compatibility_mode (3)</pre></td><td>[fill severity]</td><td>Warning: Libraries do not have CCS noise model for accurate waveform analysis in advanced waveform propagation mode. (TIM-207) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>TIM-260</td><td>Warning</td><td><pre>NAME
        TIM-260  (Warning)  Library %s is pre-18.06 version %u.%u,  Correlation
        with Primetime can be low.
 
@@ -379,8 +381,8 @@ DESCRIPTION
 WHAT NEXT
        Rebuild  the  reference library with library manager version later than
        2018.06, or turn on library  configuration  app  option  lib.configura-
-       tion.update_timing_view_for_pt_delay</td><td>[fill severity]</td><td>Library %s is pre-18.06 version %u.%u,  Correlation with Primetime can be low. (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>UIC-058</td><td>Warning</td><td>NAME
+       tion.update_timing_view_for_pt_delay</pre></td><td>[fill severity]</td><td>Library %s is pre-18.06 version %u.%u,  Correlation with Primetime can be low. (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>UIC-058</td><td>Warning</td><td><pre>NAME
        UIC-058  (warning) Scenario %s is not configured for %s analysis: skip-
        ping.
 
@@ -393,8 +395,8 @@ WHAT NEXT
        If setup or hold analysis is deliberately being skipped for  this  sce-
        nario,  this  warning  can  be  ignored.   Otherwise,  use the set_sce-
        nario_status command to activate this scenario for setup or hold analy-
-       sis.</td><td>[fill severity]</td><td>Warning: Scenario FUNC_0.85V_HOLD is not configured for setup analysis: skipping. (UIC-058) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>UIED-159</td><td>Error</td><td>NAME
+       sis.</pre></td><td>[fill severity]</td><td>Warning: Scenario FUNC_0.85V_HOLD is not configured for setup analysis: skipping. (UIC-058) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='ERROR'><td>UIED-159</td><td>Error</td><td><pre>NAME
        UIED-159 (error) The net &#x27;%s&#x27; has dangling route.
 
 DESCRIPTION
@@ -402,16 +404,16 @@ DESCRIPTION
        tion behavior.
 
 WHAT NEXT
-       Please make sure the net has no dangling route.</td><td>[fill severity]</td><td>Error: The net &#x27;bit_secure_14_slice_2_sipo_bit/clock_opt_opto_HFSNET_0&#x27; has dangling route. (UIED-159) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>UIED-180</td><td>Error</td><td>NAME
+       Please make sure the net has no dangling route.</pre></td><td>[fill severity]</td><td>Error: The net &#x27;bit_secure_14_slice_2_sipo_bit/clock_opt_opto_HFSNET_0&#x27; has dangling route. (UIED-159) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='ERROR'><td>UIED-180</td><td>Error</td><td><pre>NAME
        UIED-180 (error) Failed to add buffers
 
 DESCRIPTION
        The command failed to add any buffers.
 
 WHAT NEXT
-       Review errors from the command, before this one to proceed.</td><td>[fill severity]</td><td>Error: Failed to add buffers (UIED-180) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>UIED-304</td><td>Error</td><td>NAME
+       Review errors from the command, before this one to proceed.</pre></td><td>[fill severity]</td><td>Error: Failed to add buffers (UIED-180) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='ERROR'><td>UIED-304</td><td>Error</td><td><pre>NAME
        UIED-304  (error)  Can&#x27;t  find place to insert buffer by given location
        (%.4f, %.4f).
 
@@ -425,8 +427,8 @@ SEE ALSO
 
 WHAT NEXT
        You can re-assign the location (e.g. to be more close to the route) and
-       try again.</td><td>[fill severity]</td><td>Error: Can&#x27;t find place to insert buffer by given location (4063.5601, 1737.8840). (UIED-304) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>UIED-309</td><td>Error</td><td>NAME
+       try again.</pre></td><td>[fill severity]</td><td>Error: Can&#x27;t find place to insert buffer by given location (4063.5601, 1737.8840). (UIED-304) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='ERROR'><td>UIED-309</td><td>Error</td><td><pre>NAME
        UIED-309  (Error)  Add  buffer on route fail to get or process route of
        net %s
 
@@ -434,16 +436,16 @@ DESCRIPTION
        Could not get or process route of a net
 
 WHAT NEXT
-       Check whether the net is valid</td><td>[fill severity]</td><td>Error: Add buffer on route fail to get or process route of net bit_secure_4_slice_13_t_din2piso[6] (UIED-309) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>UIED-313</td><td>Warning</td><td>NAME
+       Check whether the net is valid</pre></td><td>[fill severity]</td><td>Error: Add buffer on route fail to get or process route of net bit_secure_4_slice_13_t_din2piso[6] (UIED-309) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>UIED-313</td><td>Warning</td><td><pre>NAME
        UIED-313 (Warning) Failed to add buffer on net %s
 
 DESCRIPTION
        Could not add buffer with current parameters on the net
 
 WHAT NEXT
-       Run the command with different parameters</td><td>[fill severity]</td><td>Warning: Failed to add buffer on net bit_secure_14_slice_2_sipo_bit/clock_opt_opto_HFSNET_0 (UIED-313) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>UPF-236</td><td>Warning</td><td>NAME
+       Run the command with different parameters</pre></td><td>[fill severity]</td><td>Warning: Failed to add buffer on net bit_secure_14_slice_2_sipo_bit/clock_opt_opto_HFSNET_0 (UIED-313) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>UPF-236</td><td>Warning</td><td><pre>NAME
        UPF-236  (warning)  Crosstool  app  option  is set to true, UPF may not
        match Verilog or SPEF.
 
@@ -483,8 +485,8 @@ SEE ALSO
        write_parasitics(2)
        save_upf(2)
        opt.common.allow_physical_feedthrough(3)
-       mv.upf.write_crosstool_wrappers(3)</td><td>[fill severity]</td><td>Warning: Crosstool app option is set to true, UPF may not match Verilog or SPEF. (UPF-236) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>ZRT-022</td><td>Warning</td><td>NAME
+       mv.upf.write_crosstool_wrappers(3)</pre></td><td>[fill severity]</td><td>Warning: Crosstool app option is set to true, UPF may not match Verilog or SPEF. (UPF-236) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>ZRT-022</td><td>Warning</td><td><pre>NAME
        ZRT-022 (warn) Cannot find a default contact code for layer %s.
 
 DESCRIPTION
@@ -495,8 +497,8 @@ DESCRIPTION
 WHAT NEXT
        Add  a  default  contact code definition to the technology file. If the
        specified layer is a nonrouting layer, such as V0, you can ignore  this
-       message.</td><td>[fill severity]</td><td>Warning: Cannot find a default contact code for layer CO. (ZRT-022) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>ZRT-027</td><td>Warning</td><td>NAME
+       message.</pre></td><td>[fill severity]</td><td>Warning: Cannot find a default contact code for layer CO. (ZRT-022) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>ZRT-027</td><td>Warning</td><td><pre>NAME
        ZRT-027 (warn) Ignore %d top cell ports with no pins.
 
 DESCRIPTION
@@ -506,8 +508,8 @@ DESCRIPTION
 
 WHAT NEXT
        Please check the top cell and create physical shapes for those ports if
-       needed.</td><td>[fill severity]</td><td>Warning: Ignore 2 top cell ports with no pins. (ZRT-027) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>ZRT-044</td><td>Warning</td><td>NAME
+       needed.</pre></td><td>[fill severity]</td><td>Warning: Ignore 2 top cell ports with no pins. (ZRT-027) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>ZRT-044</td><td>Warning</td><td><pre>NAME
        ZRT-044 (warn) Standard cell pin %s/%s has no valid via regions.
 
 DESCRIPTION
@@ -518,8 +520,8 @@ DESCRIPTION
 WHAT NEXT
        Please  check  for  DRCs  in  accessing this pin, and check ZRT-038 for
        error in contact code number, and generate the via  regions  if  neces-
-       sary.</td><td>[fill severity]</td><td>Standard cell pin %s/%s has no valid via regions. (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>ZRT-101</td><td>Warning</td><td>NAME
+       sary.</pre></td><td>[fill severity]</td><td>Standard cell pin %s/%s has no valid via regions. (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>ZRT-101</td><td>Warning</td><td><pre>NAME
        ZRT-101 (warning) Power net %s has no power preroutes, skip tie-off.
 
 DESCRIPTION
@@ -527,8 +529,8 @@ DESCRIPTION
        net.
 
 WHAT NEXT
-       Please add power preroutes.</td><td>[fill severity]</td><td>Warning: Power net sipo_sw_out has no power preroutes, skip tie-off. (ZRT-101) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>ZRT-142</td><td>Warning</td><td>NAME
+       Please add power preroutes.</pre></td><td>[fill severity]</td><td>Warning: Power net sipo_sw_out has no power preroutes, skip tie-off. (ZRT-101) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>ZRT-142</td><td>Warning</td><td><pre>NAME
        ZRT-142 (warn) PG net %s has a %s shape with shape_use detail_route and
        it is too long. Long part of the  shape  is  located  at  (%.3f,  %.3f)
        (%.3f, %.3f). The shape&#x27;s BBox is (%.3f, %.3f) (%.3f, %.3f).
@@ -545,8 +547,8 @@ WHAT NEXT
        The user could run check_routability -check_shield true to get a report
        of  shield  data issues.  The user could also use set_app_options -name
        route.common.check_shield -value true to enable shield data checker  in
-       all Zroute commands.</td><td>[fill severity]</td><td>Warning: PG net piso_sw_out has a path shape with shape_use detail_route and it is too long. Long part of the shape is located at (125.212, 1303.668) (217.684, 1303.724). The shape&#x27;s BBox is (125.212, 1303.668) (217.684, 1303.724). (ZRT-142) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>ZRT-143</td><td>Warning</td><td>NAME
+       all Zroute commands.</pre></td><td>[fill severity]</td><td>Warning: PG net piso_sw_out has a path shape with shape_use detail_route and it is too long. Long part of the shape is located at (125.212, 1303.668) (217.684, 1303.724). The shape&#x27;s BBox is (125.212, 1303.668) (217.684, 1303.724). (ZRT-142) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>ZRT-143</td><td>Warning</td><td><pre>NAME
        ZRT-143  (warning)  Secondary  PG  net  %s has no power stripe, skip to
        route.
 
@@ -554,8 +556,8 @@ DESCRIPTION
        Secondary PG net has no power stripe to connect.
 
 WHAT NEXT
-       Please add power stripe.</td><td>[fill severity]</td><td>Secondary PG net %s has no power stripe, skip to route. (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>ZRT-311</td><td>Warning</td><td>NAME
+       Please add power stripe.</pre></td><td>[fill severity]</td><td>Secondary PG net %s has no power stripe, skip to route. (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>ZRT-311</td><td>Warning</td><td><pre>NAME
        ZRT-311  (warning)  Skipping antenna analysis for net %s. The pin %s on
        cell %s does not have enough gate area information.
 
@@ -579,16 +581,16 @@ WHAT NEXT
        If the gate area is unspecified but the diffusion area is specified for
        some  pins, and you want to use the diffusion area for antenna analysis
        for   such   pins,    then    set    app    option    route.detail.ana-
-       lyze_antenna_for_pins_with_diffusion_area to true.</td><td>[fill severity]</td><td>Warning: Skipping antenna analysis for net bit_secure_0_slice_2_pout2mem[10]. The pin I1[2] on cell SRAM2RW16x4 does not have enough gate area information. (ZRT-311) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>ZRT-740</td><td>Warning</td><td>NAME
+       lyze_antenna_for_pins_with_diffusion_area to true.</pre></td><td>[fill severity]</td><td>Warning: Skipping antenna analysis for net bit_secure_0_slice_2_pout2mem[10]. The pin I1[2] on cell SRAM2RW16x4 does not have enough gate area information. (ZRT-311) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>ZRT-740</td><td>Warning</td><td><pre>NAME
        ZRT-740 (warning)  %s is unplaced.  This may impact routing result.
 
 DESCRIPTION
        A port is unplaced.  This is atypical and may impact routing result.
 
 WHAT NEXT
-       If this is not expected, please fix the issue.</td><td>[fill severity]</td><td>Warning: Port sipo_sw_out of cell bit_coin is unplaced.  This may impact routing result. (ZRT-740) (MSG-3032)</td><td>[fill solution]</td></tr>
-<tr><td>ZRT-825</td><td>Warning</td><td>NAME
+       If this is not expected, please fix the issue.</pre></td><td>[fill severity]</td><td>Warning: Port sipo_sw_out of cell bit_coin is unplaced.  This may impact routing result. (ZRT-740) (MSG-3032)</td><td>[fill solution]</td></tr>
+<tr class='WARNING'><td>ZRT-825</td><td>Warning</td><td><pre>NAME
        ZRT-825  (Warning)  Pin or route connects to PG user_route (%.3f, %.3f,
        %.3f, %.3f) on layer (%s) is considered  as  tied.  Would  not  further
        check or build connectivity to tie to other PG pre-routes.
@@ -600,5 +602,5 @@ DESCRIPTION
        which need further tie off connections.
 
 WHAT NEXT
-       Set the user_route to other shape_use if necessary.</td><td>[fill severity]</td><td>Pin or route connects to PG user_route (%.3f, %.3f, %.3f, %.3f) on layer (%s) is considered as tied. Would not further check or build connectivity to tie to other PG pre-routes.\n (MSG-3032)</td><td>[fill solution]</td></tr>
+       Set the user_route to other shape_use if necessary.</pre></td><td>[fill severity]</td><td>Pin or route connects to PG user_route (%.3f, %.3f, %.3f, %.3f) on layer (%s) is considered as tied. Would not further check or build connectivity to tie to other PG pre-routes.\n (MSG-3032)</td><td>[fill solution]</td></tr>
 </table></body></html>

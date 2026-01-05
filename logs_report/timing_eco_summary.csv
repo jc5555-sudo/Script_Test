@@ -8,7 +8,7 @@ DESCRIPTION
        error occurred.  The error_info command is used to display this stack.
 
 WHAT NEXT
-       Fix the error indicated by error_info.",[WARNING],Error: 0\n	Use error_info for more info. (CMD-013) (MSG-3032),[NEED TO FIX]
+       Fix the error indicated by error_info.",[fill severity],Error: 0\n	Use error_info for more info. (CMD-013) (MSG-3032),[fill solution]
 CMD-030,Warning,"NAME
        CMD-030 (warning) File '%s' was not found in search path.
 
@@ -18,7 +18,7 @@ DESCRIPTION
 
 WHAT NEXT
        No adverse effect on the result of the  command,  but  check  spelling,
-       etc.",[walaosjdfasfsafsf],Warning: File 'config_setup.tcl' was not found in search path. (CMD-030) (MSG-3032),[fill solution]
+       etc.",[fill severity],Warning: File 'config_setup.tcl' was not found in search path. (CMD-030) (MSG-3032),[fill solution]
 CTS-956,Warning,"NAME
        CTS-956  (warning) Please use -largest / -smallest / -all switches with
        -show_verbose_paths / -show_paths to report the clock paths.
